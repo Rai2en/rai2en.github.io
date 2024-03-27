@@ -1,12 +1,6 @@
 # Welcome to Jekyll!
 #
 # About Theme
-#
-# Yet another theme for elegant writers with modern flat style and beautiful
-# night/dark mode.
-#
-# Website: https://github.com/jeffreytse/jekyll-theme-yat
-#
 # You can do anything you want, including projects for your clients, as long
 # as you mention an attribution back (credit links in footer or project).
 # See the LICENCE file.
@@ -42,10 +36,7 @@ author: R4zn
 #
 copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: >- # this means to ignore newlines until "baseurl:"Ici, vous trouverez principalement des write-ups de CTFc du contenu cyber en général, des cheats sheets, guides de pentesting, et tout ce qui est lié à l'informatique et que je trouve utile. Avant tout, ce blog constitue mon recueil de connaissances et mon espace de prise de notes.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rai2en.github.io" # the base hostname & protocol for your site, e.g. https://example.com
@@ -73,7 +64,7 @@ yat:
 # sitemap: false
 
 # If you want to change site language, you can set lang option
-# lang: "en"  # default lang is en
+lang: fr  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
@@ -159,12 +150,11 @@ yat:
 #   - tags.html
 #   - about.md
 
-# Page default value
-# defaults:
-#   home:
-#     heading: "Your awesome heading"
-#     subheading: "Your awesome subheading"
-#     banner: "Your image url"
+#Page default value
+defaults:
+  home:
+    heading: "Bienvenu sur mon blog !"
+    subheading: "une longue quête de connaissance nous attends."
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
