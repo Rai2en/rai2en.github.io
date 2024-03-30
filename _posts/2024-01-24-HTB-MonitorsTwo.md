@@ -1,8 +1,6 @@
 ---
 layout: post
 title: HTB MonitorsTwo
-subtitle:
-author: r4zn
 banner:
   image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo.png
   opacity: 0.38
