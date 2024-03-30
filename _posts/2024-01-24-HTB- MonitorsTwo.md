@@ -1,15 +1,14 @@
 ---
 layout: post
-title: HTB POV
+title: HTB MonitorsTwo
 subtitle:
 author: r4zn
-banner:
-  image: https://github.com/Rai2en/rai2en.github.io/blob/main/assets/images/HTB/Pov.png
-  opacity: 0.50
-categories: methodology
+excerpt_image: https://github.com/Rai2en/rai2en.github.io/blob/main/assets/images/HTB/MonitorsTwo.png
+categories:
 tags:
 ---
 
+![banner]https://github.com/Rai2en/rai2en.github.io/blob/main/assets/images/HTB/MonitorsTwo.png
 ## Overview
 
 [MonitorsTwo](https://app.hackthebox.com/machines/MonitorsTwo) is an Easy Difficulty Linux machine showcasing a variety of vulnerabilities and misconfigurations. 
