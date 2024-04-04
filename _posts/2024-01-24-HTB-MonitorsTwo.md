@@ -1,16 +1,14 @@
 ---
 layout: post
 title: HTB MonitorsTwo
-banner:
-  image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo.png
-  opacity: 0.38
-categories:
-tags:
+subtitle: 
+excerpt_image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo.png
+categories: markdown
+tags: [HTB, cacti, SQL, CVE-2022-46169, CVE-2021-41091, SUID bit]
+top: 2
 ---
 
-## Overview
-
-[MonitorsTwo](https://app.hackthebox.com/machines/MonitorsTwo) is an Easy Difficulty Linux machine showcasing a variety of vulnerabilities and misconfigurations. 
+![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo.png)
 
 **Initial foothold**:
 	Initial enumeration exposes a web application prone to pre-authentication Remote Code Execution (RCE) through a malicious X-Forwarded-For header. Exploiting this vulnerability grants a shell within a Docker container. 
