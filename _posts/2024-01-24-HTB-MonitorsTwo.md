@@ -10,9 +10,9 @@ top: 2
 
 ![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/cover.png)
 
-## Vue d'ensemble de la machine
+Aujourd'hui nous nous attaquons à [MonitorsTwo](https://app.hackthebox.com/machines/MonitorsTwo) qui est une machine Linux de difficulté facile. Elle met en avant quelques vulnérabilités et erreurs de configurations résumé dans notre propre kill-chain comme suit:
 
-Aujourd'hui nous nous attaquons à [MonitorsTwo](https://app.hackthebox.com/machines/MonitorsTwo) qui est une machine Linux de difficulté facile. Elle met en avant quelques vulnérabilités et erreurs de configurations résumé dans notre propre kill-chain ci après:
+## Vue d'ensemble de la machine
 
 **Phase d'accès Initial**:
 	Une première énumeration rapide nous permet de decouvrir une application web vulnérable à une exécution de code à distance (RCE) avec pré-authentification via un en-tête ``X-Forwarded-For ``malveillant. L'exploitation de cette vulnérabilité débouche sur un shell dans un conteneur Docker. 
@@ -140,7 +140,7 @@ find / -type f -perm -u=s 2>/dev/null
 
 Le binaire ``capsh`` semble convenir à ce que je cherche. En effectuant une recherche rapide sur [GTFOBins](https://gtfobins.github.io/gtfobins/capsh/#suid) (un site incontournable qui répertorie une liste de binaires Unix pouvant être utilisés pour contourner les restrictions de sécurité locale dans des systèmes mal configurés) nous obtenons ceci :
 
-![](gtfobins.png){: .normal width="60%"}
+![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/capsh.png)
 
 Suivons donc les directives de GTFOBins :
 
@@ -276,7 +276,7 @@ Linux monitorstwo 5.4.0-147-generic #164-Ubuntu SMP Tue Mar 21 14:23:17 UTC 2023
 
 Bien que cela semble être une version obsolète, la série de versions 5.4 est en fait la dernière selon la [documentation officielle](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes):
 
-![](kernel_doc.png)
+![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/linuxkernel.png)
 
 - La seconde [CVE-2020-25706](https://nvd.nist.gov/vuln/detail/CVE-2020-25706) fait référence à une vulnérabilité XSS pour ``Cacti 1.2.13`` or la version de l'application cible est ``Cacti 1.2.22``. 
 
