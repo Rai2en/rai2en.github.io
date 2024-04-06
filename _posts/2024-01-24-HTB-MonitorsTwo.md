@@ -1,18 +1,18 @@
 ---
 layout: post
 title: HTB MonitorsTwo
-subtitle: 
-excerpt_image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo.png
+subtitle: Easy
+excerpt_image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/cover.png
 categories: markdown
-tags: [HTB, CACTI, MySQL, CVE-2022-46169, CVE-2021-41091, SUID]
+tags: [MySQL, CVE-2022-46169, CVE-2021-41091, SUID]
 top: 2
 ---
 
 ![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/cover.png)
 
-Aujourd'hui nous nous attaquons à [MonitorsTwo](https://app.hackthebox.com/machines/MonitorsTwo) qui est une machine Linux de difficulté facile. Elle met en avant quelques vulnérabilités et erreurs de configurations résumé dans notre propre kill-chain comme suit:
-
 ## Vue d'ensemble de la machine
+
+Aujourd'hui nous nous attaquons à [MonitorsTwo](https://app.hackthebox.com/machines/MonitorsTwo) qui est une machine Linux de difficulté facile. Elle met en avant quelques vulnérabilités et erreurs de configurations qui seront exploitées afin de prendre le contrôle du système suivant notre kill-chain ci-après:
 
 **Phase d'accès Initial**:
 	Une première énumeration rapide nous permet de decouvrir une application web vulnérable à une exécution de code à distance (RCE) avec pré-authentification via un en-tête ``X-Forwarded-For ``malveillant. L'exploitation de cette vulnérabilité débouche sur un shell dans un conteneur Docker. 
@@ -55,11 +55,11 @@ Page d'accueil :
 
 ![](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/home.png)
 
-Nous avons la version de l'application : Cacti 1.2.22, donc avant de faire quoi que ce soit d'autre, recherchons des vulnérabilités connues :
+Nous avons la version de l'application ``Cacti 1.2.22`` il s'agira donc de chercher l'existence de vulnérabilités connues sur cette version:
 
 ![](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/vuln.png)
 
-Nous avons quatres références pour la même vulnérabilité de type RCE: [CVE-2022-46169](https://nvd.nist.gov/vuln/detail/CVE-2022-46169)! 
+Il en ressort plusieurs références pour la même vulnérabilité de type RCE: [CVE-2022-46169](https://nvd.nist.gov/vuln/detail/CVE-2022-46169) 
 
 **Vulnérabilité:**
 L'exploit consiste à accéder à l'endpoint vulnérable ``/remote_agent.php``, dont l'authentification peut être contournée en raison d'une implémentation faible de la fonction ``get_client_addr`` qui utilise un en-tête contrôlé par l'utilisateur, nommément ``X-Forwarded-For``, pour authentifier le client. Une fois que cette vérification initiale est contournée, nous déclencherons ensuite la fonction ``poll_for_data`` via l'action ``polldata``, qui est vulnérable à l'injection de commande via le paramètre ``$poller_id`` qui est passé à ``proc_open``, qui est une fonction PHP qui exécute des commandes système.
