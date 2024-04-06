@@ -421,7 +421,7 @@ Ainsi s'achève notre aventure ;)
 
 ### Initial foothold
 
-Nous pouvons en effet réaliser le [CVE-2022-46169](https://www.rapid7.com/db/modules/exploit/linux/http/cacti_unauthenticated_cmd_injection/). Récapitulons ce qui doit être fait (en se basant sur le [post de Rapid7](https://www.rapid7.com/db/modules/exploit/linux/http/cacti_unauthenticated_cmd_injection/)):
+Nous pouvons en effet réaliser l'exploitation du [CVE-2022-46169](https://www.rapid7.com/db/modules/exploit/linux/http/cacti_unauthenticated_cmd_injection/). Récapitulons ce qui doit être fait (en se basant sur le [post de Rapid7](https://www.rapid7.com/db/modules/exploit/linux/http/cacti_unauthenticated_cmd_injection/)) de façon manuelle:
 
   1. Si les paramètres `LOCAL_DATA_ID` et/ou `HOST_ID` ane sont pas définis, le module tentera de forcer la valeur (ou les valeurs) manquante(s). Si une combinaison valide est trouvée, le module utilisera ces valeurs pour tenter l'exploitation.
   2. Si `LOCAL_DATA_ID` et/ou `HOST_ID` sont tous les deux définis, le module tentera immédiatement l'exploitation.
