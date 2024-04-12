@@ -10,7 +10,7 @@ top: 2
 
 ![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/Nmap/cover.png)
 
-Dans le domaine du pentesting et des CTF (Capture The Flag), la phase de reconnaissance est une étape cruciale. C'est là que l'outil Nmap entre en jeu. Nmap, abréviation de``Network Mapper``, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q'un professionnel de la sécurité informatique pour explorer, analyser et sécuriser les réseaux.
+Dans le domaine du pentesting et des CTF (Capture The Flag), la phase d'énumération est une étape cruciale. C'est là que l'outil Nmap entre en jeu. Nmap, abréviation de``Network Mapper``, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q'un professionnel de la sécurité informatique pour explorer, analyser et sécuriser les réseaux.
 
 Que ce soit pour auditer la sécurité de notre propre réseau, découvrir les dispositifs connectés ou évaluer la sécurité d'un réseau distant, Nmap est l'outil de prédilection. Grâce à ses fonctionnalités avancées, il permet de cartographier les hôtes du réseau, d'identifier les ports ouverts, les services en cours d'exécution, et bien plus encore.
 
