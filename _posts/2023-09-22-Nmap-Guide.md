@@ -5,7 +5,6 @@ subtitle:
 excerpt_image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/Nmap/cover.png
 categories: markdown
 tags: [Nmap, Network Analysis]
-top: 2
 ---
 
 ![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/Nmap/cover.png)

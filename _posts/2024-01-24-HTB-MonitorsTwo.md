@@ -5,7 +5,6 @@ subtitle: Easy
 excerpt_image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/cover.png
 categories: markdown
 tags: [MySQL, CVE-2022-46169, CVE-2021-41091, SUID]
-top: 2
 ---
 
 ![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/cover.png)
