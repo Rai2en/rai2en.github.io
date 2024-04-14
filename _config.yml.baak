@@ -34,7 +34,7 @@ author: R4zn
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
+copyright: "Copyright © 2023-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"Ici, vous trouverez principalement des write-ups de CTFc du contenu cyber en général, des cheats sheets, guides de pentesting, et tout ce qui est lié à l'informatique et que je trouve utile. Avant tout, ce blog constitue mon recueil de connaissances et mon espace de prise de notes.
 
@@ -98,8 +98,8 @@ lang: fr  # default lang is en
 # coolblack: #090a0b
 # spacegrey: #353535
 # snowwhite: #ffffff
-#
-# theme_color: snowwhite
+
+  theme_color: snowwhite
 #
 # Custom color as below:
 # theme_color: "#882250"
