@@ -2,7 +2,7 @@
 layout: post
 title: Proxychains
 subtitle: 
-excerpt_image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/cover.png
+excerpt_image: https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/Proxychains/cover.png
 categories: markdown
 tags: [proxychains4, metasploit, socks]
 ---
