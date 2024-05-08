@@ -9,7 +9,7 @@ tags: [MySQL, CVE-2022-46169, CVE-2021-41091, SUID]
 
 ![banner](https://raw.githubusercontent.com/Rai2en/rai2en.github.io/main/assets/images/HTB/MonitorsTwo/cover.png)
 
-## Vue d'ensemble de la machine
+## Vue d'ensemble de la machine:
 
 Aujourd'hui nous nous attaquons à [MonitorsTwo](https://app.hackthebox.com/machines/MonitorsTwo) qui est une machine Linux de difficulté facile. Elle met en avant quelques vulnérabilités et erreurs de configurations qui seront exploitées afin de prendre le contrôle du système suivant notre kill-chain ci-après:
 
