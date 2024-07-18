@@ -29,9 +29,13 @@ Avant de plonger dans les détails de ProxyChains, il est important de comprendr
 
 Un proxy est un serveur intermédiaire qui agit comme une passerelle entre un utilisateur et Internet. Par exemple, lorsque vous visitez un site web comme google.com, au lieu d'envoyer directement les paquets au serveur de Google, vous les envoyez d'abord au proxy, qui les transmet ensuite à Google. Ce mécanisme permet au serveur de destination de voir les informations du proxy plutôt que celles de l'utilisateur, offrant ainsi une confidentialité accrue.
 
+![image-1]
+
 ### Qu'est-ce que ProxyChains ?
 
 ProxyChains améliore ce concept en utilisant plusieurs serveurs proxy en chaîne. Le trafic part de votre machine, passe par plusieurs serveurs proxy avant d'atteindre la destination finale, rendant le traçage de votre adresse IP d'origine beaucoup plus difficile. ProxyChains supporte l'intégration avec **Tor**, **SOCKS** et les **proxys HTTP**, permettant une flexibilité et une sécurité accrues lors de la navigation sur Internet. Il peut également être configuré pour fonctionner avec des applications telles que **Nmap** et **SQLmap**.
+
+![image-2]
 
 ## Applications de ProxyChains en Cybersécurité
 
@@ -49,6 +53,7 @@ ProxyChains-ng est préinstallé sur Kali. Pour vérifier son installation, entr
 proxychains4
 ````
 
+![image-3]
 
 ## Installation de ProxyChains sur Ubuntu
 
@@ -134,3 +139,7 @@ Les hackers utilisent des serveurs proxy pour masquer leur adresse IP et leur lo
 **Tor** crypte le trafic entre chaque relais de son réseau, tandis que ProxyChains ne fournit pas de cryptage, comptant sur les serveurs proxy pour sécuriser le trafic.
 
 ---
+
+[image-1]:	/img/howitwork.png
+[image-2]:	/img/proxychains.png
+[image-3]:	/img/i1.png
