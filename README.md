@@ -1,7 +1,7 @@
 
 # /Blog/Readme
 
-![](https://github.com/Rai2en/rai2en.github.io/blob/master/assets/img/readme.png)
+![](https://github.com/Rai2en/rai2en.github.io/assets/img/readme.png)
 
 ## À propos
 
