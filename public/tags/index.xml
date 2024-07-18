@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Raizen /Blog</title>
+    <link>//localhost:1313/tags/</link>
+    <description>Recent content in Tags on Raizen /Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Rai2en</copyright>
+    <lastBuildDate>Sat, 16 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Post</title>
+      <link>//localhost:1313/tags/post/</link>
+      <pubDate>Sat, 16 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tags/post/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>//localhost:1313/tags/network/</link>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tags/network/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Network Analysis</title>
+      <link>//localhost:1313/tags/network-analysis/</link>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tags/network-analysis/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nmap</title>
+      <link>//localhost:1313/tags/nmap/</link>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tags/nmap/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Proxychains</title>
+      <link>//localhost:1313/tags/proxychains/</link>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tags/proxychains/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>HackTheBox</title>
+      <link>//localhost:1313/tags/hackthebox/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tags/hackthebox/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Writups</title>
+      <link>//localhost:1313/tags/writups/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/tags/writups/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Nmap Guide &middot; Raizen /Blog</title>
+  <meta name="title" content="Nmap Guide &middot; Raizen /Blog" />
+  
+  <meta name="description" content="Nmap, abréviation de *Network Mapper*, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q&#39;un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser..." />
+  <meta name="keywords" content="Nmap, Network Analysis, " />
+  
+  
+  <link rel="canonical" href="//localhost:1313/posts/nmap-guide/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.85f006de1806b55b2d082d1122deedd8cec6fdc1f7c8a51be975a4496165d6c798f4a3de52545a6a87cc4bc09fc2d6f5201d44ea57acc1ac2b1c42a688c62bee.css"
+    integrity="sha512-hfAG3hgGtVstCC0RIt7t2M7G/cH3yKUb6XWkSWFl1seY9KPeUlRaaofMS8Cfwtb1IB1E6leswawrHEKmiMYr7g==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.8b56b0fd46524eaecbfe33f576b8ba2cd2a122521a89f8229a95be0b635a7ac8e774eb1d8b8b93b32bbd677c3deb734aeea62917443f124d5bf5478859767380.js"
+    integrity="sha512-i1aw/UZSTq7L/jP1dri6LNKhIlIaifgimpW&#43;C2NaesjndOsdi4uTsyu9Z3w963NK7qYpF0Q/Ek1b9UeIWXZzgA==" data-copy="" data-copied=""></script>
+  
+  
+  <script src="/js/zoom.min.js"></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="//localhost:1313/posts/nmap-guide/">
+  <meta property="og:site_name" content="Raizen /Blog">
+  <meta property="og:title" content="Nmap Guide">
+  <meta property="og:description" content="Nmap, abréviation de Network Mapper, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q’un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser…">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-09-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-23T00:00:00+00:00">
+    <meta property="article:tag" content="Nmap">
+    <meta property="article:tag" content="Network Analysis">
+    <meta property="og:image" content="//localhost:1313/posts/nmap-guide/cover.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="//localhost:1313/posts/nmap-guide/cover.png">
+  <meta name="twitter:title" content="Nmap Guide">
+  <meta name="twitter:description" content="Nmap, abréviation de Network Mapper, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q’un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser…">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Nmap Guide",
+    "headline": "Nmap Guide",
+    
+    "abstract": "Nmap, abréviation de \u003cem\u003eNetwork Mapper\u003c\/em\u003e, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q\u0026rsquo;un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser\u0026hellip;",
+    "inLanguage": "en",
+    "url" : "\/\/localhost:1313\/posts\/nmap-guide\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Rai2en"
+    },
+    "copyrightYear": "2023",
+    "dateCreated": "2023-09-23T00:00:00\u002b00:00",
+    "datePublished": "2023-09-23T00:00:00\u002b00:00",
+    
+    "dateModified": "2023-09-23T00:00:00\u002b00:00",
+    
+    "keywords": ["Nmap","Network Analysis"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2958"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="Rai2en" />
+  
+  
+  
+  <link href="mailto:r4izen777@gmail.com" rel="me" />
+  
+  
+  <link href="https://github.com/Rai2en" rel="me" />
+  
+  
+  <link href="https://www.linkedin.com/in/crispus-houessou/" rel="me" />
+  
+  
+  <link href="https://x.com/0xR4zn" rel="me" />
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.js" integrity=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
+  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative max-w-[64rem] ml-auto mr-auto">
+    <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
+    
+    
+    
+    <div>
+        <a href="/" class="flex">
+            <span class="sr-only">Raizen /Blog</span>
+
+            <img src="/img/avatar.png" width="173" height="161"
+                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="Raizen /Blog" />
+
+        </a>
+    </div>
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Raizen /Blog</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        About
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Posts
+    </p>
+</a>
+
+
+
+            
+            
+  <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Projects
+    </p>
+</a>
+
+
+
+            
+            
+  <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Resume
+    </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class="ltr:mr-14 rtl:ml-14 flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 -mr-2 md:hidden">
+
+        <label id="menu-button" for="menu-controller" class="block">
+            <input type="checkbox" id="menu-controller" class="hidden" />
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li>
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            About
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Posts
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Projects
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Resume
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('menu-blur');
+    background_blur.style.opacity = (scroll / 300);
+  });
+</script>
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+  
+  
+  
+  
+  
+
+
+<div id="hero" class="h-[150px] md:h-[200px]"></div>
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/posts/nmap-guide/cover_hud0222a60b1055b8d69f80a6a569e5bed_190403_1200x0_resize_box_3.png);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 300)
+    });
+</script>
+
+  
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/"
+      >Raizen /Blog</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline ">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/nmap-guide/"
+      >Nmap Guide</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      Nmap Guide
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2023-09-23 00:00:00 &#43;0000 UTC">23 September 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
+      alt="Rai2en" src="/img/av_hufc09ab187d7df6e535f92d14c1d1236b_177124_192x192_fill_box_smart1_3.png" />
+    
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Author
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      Rai2en
+    </div>
+    
+    
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">Just a human or maybe not</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:r4izen777@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/Rai2en"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/crispus-houessou/"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://x.com/0xR4zn"
+          target="_blank"
+          aria-label="X-Twitter"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#i--analyse-du-réseau">I- Analyse du Réseau</a></li>
+        <li><a href="#ii--techniques-de-scans">II- Techniques de Scans</a>
+          <ul>
+            <li><a href="#découverte-déquipement">Découverte d&rsquo;Équipement</a></li>
+            <li><a href="#options-de-port">Options de Port</a></li>
+            <li><a href="#scan-de-version--sv">Scan de Version (-sV)</a></li>
+            <li><a href="#détection-dos--o">Détection d&rsquo;OS (-O)</a></li>
+            <li><a href="#scripts">Scripts</a></li>
+            <li><a href="#contrôle-du-temps">Contrôle du Temps</a></li>
+            <li><a href="#contrôle-de-laggressivité">Contrôle de l&rsquo;Aggressivité</a></li>
+            <li><a href="#firewallids">Firewall/IDS</a></li>
+            <li><a href="#spécification-de-ladresse-source--s">Spécification de l&rsquo;Adresse Source (-S)</a></li>
+            <li><a href="#sélection-de-linterface-réseau--e">Sélection de l&rsquo;Interface Réseau (-e)</a></li>
+            <li><a href="#sorties">Sorties</a></li>
+          </ul>
+        </li>
+        <li><a href="#divers">Divers</a>
+          <ul>
+            <li><a href="#exécution">Exécution</a></li>
+            <li><a href="#vulnscan">Vulnscan</a></li>
+          </ul>
+        </li>
+        <li><a href="#accélérer-lanalyse-des-services-de-nmap-x16">Accélérer l&rsquo;analyse des services de Nmap x16</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#i--analyse-du-réseau">I- Analyse du Réseau</a></li>
+        <li><a href="#ii--techniques-de-scans">II- Techniques de Scans</a>
+          <ul>
+            <li><a href="#découverte-déquipement">Découverte d&rsquo;Équipement</a></li>
+            <li><a href="#options-de-port">Options de Port</a></li>
+            <li><a href="#scan-de-version--sv">Scan de Version (-sV)</a></li>
+            <li><a href="#détection-dos--o">Détection d&rsquo;OS (-O)</a></li>
+            <li><a href="#scripts">Scripts</a></li>
+            <li><a href="#contrôle-du-temps">Contrôle du Temps</a></li>
+            <li><a href="#contrôle-de-laggressivité">Contrôle de l&rsquo;Aggressivité</a></li>
+            <li><a href="#firewallids">Firewall/IDS</a></li>
+            <li><a href="#spécification-de-ladresse-source--s">Spécification de l&rsquo;Adresse Source (-S)</a></li>
+            <li><a href="#sélection-de-linterface-réseau--e">Sélection de l&rsquo;Interface Réseau (-e)</a></li>
+            <li><a href="#sorties">Sorties</a></li>
+          </ul>
+        </li>
+        <li><a href="#divers">Divers</a>
+          <ul>
+            <li><a href="#exécution">Exécution</a></li>
+            <li><a href="#vulnscan">Vulnscan</a></li>
+          </ul>
+        </li>
+        <li><a href="#accélérer-lanalyse-des-services-de-nmap-x16">Accélérer l&rsquo;analyse des services de Nmap x16</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          <p>Dans le domaine du pentesting et des CTF (Capture The Flag), la phase d&rsquo;énumération est une étape cruciale. C&rsquo;est là que l&rsquo;outil Nmap entre en jeu. Nmap, abréviation de <code>Network Mapper</code>, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q&rsquo;un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser un réseau.</p>
+<p>Que ce soit pour auditer la sécurité de notre propre réseau, découvrir les dispositifs connectés ou évaluer la sécurité d&rsquo;un réseau distant, Nmap est l&rsquo;outil de prédilection. Grâce à ses fonctionnalités avancées, il permet de cartographier les hôtes du réseau, d&rsquo;identifier les ports ouverts, les services en cours d&rsquo;exécution, et bien plus encore.</p>
+<p>Dans ce guide, nous explorerons de manière non-exhaustive mais autant que possible les différentes options d&rsquo;analyse qu&rsquo;offre Nmap et leurs utilités.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/nmap-guide/cover_hud0222a60b1055b8d69f80a6a569e5bed_190403_330x0_resize_box_3.png 330w,
+        /posts/nmap-guide/cover_hud0222a60b1055b8d69f80a6a569e5bed_190403_660x0_resize_box_3.png 660w,
+        /posts/nmap-guide/cover_hud0222a60b1055b8d69f80a6a569e5bed_190403_1024x0_resize_box_3.png 1024w,
+        /posts/nmap-guide/cover_hud0222a60b1055b8d69f80a6a569e5bed_190403_1320x0_resize_box_3.png 2x"
+        src="/posts/nmap-guide/cover_hud0222a60b1055b8d69f80a6a569e5bed_190403_660x0_resize_box_3.png"
+        alt="banner"
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">I- Analyse du Réseau 
+    <div id="i--analyse-du-r%C3%A9seau" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#i--analyse-du-r%C3%A9seau" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Avant de plonger dans les techniques avancées d&rsquo;analyse de ports offertes par Nmap, il est important de comprendre le fonctionnement général de cet outil et à quoi ressemble une commande standard de Nmap, ainsi que ses options par défaut.</p>
+<ul>
+<li>Fonctionnement Général de Nmap</li>
+</ul>
+<p>L&rsquo;outil <code>Nmap</code> fonctionne en envoyant des paquets réseau à la cible et se sert de l&rsquo;analyse des réponses pour déterminer entre autres quels ports sont ouverts, quels services sont en cours d&rsquo;exécution sur ces ports, et quelles sont les adresses IP des hôtes actifs sur le réseau. Il utilise différentes techniques de scan (que nous verront dans la section suivante) pour accomplir ces tâches. Chacune de ces techniques ayant leurs propres utilités, avantages et inconvénients en termes de discrétion, vitesse et détection.</p>
+<ul>
+<li>Commande Standard de Nmap</li>
+</ul>
+<p>Une commande standard de Nmap suit généralement la structure suivante :</p>
+<p><code>nmap [options] [cibles]</code></p>
+<blockquote>
+<p>Les &ldquo;options&rdquo; permettent de spécifier les paramètres du scan, tels que les techniques de scan à utiliser, les types de ports à scanner, etc. Les &ldquo;cibles&rdquo; sont les adresses IP ou les plages d&rsquo;adresses à scanner.</p>
+</blockquote>
+
+
+<h3 class="relative group">II- Techniques de Scans 
+    <div id="ii--techniques-de-scans" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ii--techniques-de-scans" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>
+<p>L&rsquo;option <code>-sS</code> exécute un <code>scan SYN</code>, qui ne complète pas la connexion TCP et ne laisse aucune trace, ce qui le rend idéal pour une utilisation discrète, mais nécessite souvent des privilèges.</p>
+</li>
+<li>
+<p>Avec <code>-sT</code>, Nmap effectue un scan connecté, complétant la connexion TCP. Bien que cette méthode laisse une trace, elle peut être utilisée en toute sécurité sans privilèges.</p>
+</li>
+<li>
+<p>Le <code>scan UDP</code>, activé par <code>-sU</code>, est plus lent car il teste les ports UDP, notamment ceux utilisés par des services comme <code>DNS</code>(port 53), <code>SNMP</code>(port 161/163) et <code>DHCP</code> (port 67/68).</p>
+</li>
+<li>
+<p><code>-sY</code> utilise le protocole <code>SCTP</code>, qui échoue à établir la connexion, évitant ainsi les journaux. Cela fonctionne de manière similaire à ``-PY.</p>
+</li>
+<li>
+<p>Les <code>scans Null</code> (-sN), <code>Fin</code> (-sF) et <code>Xmas</code> (-sX) envoient des paquets avec des flags TCP spécifiques pour pénétrer certains pare-feu et extraire des informations.</p>
+</li>
+<li>
+<p>Le <code>scan Maimon</code> (-sM) envoie des flags FIN et ACK, principalement pour BSD, mais actuellement, il rapportera tous les ports comme fermés.</p>
+</li>
+<li>
+<p>Les <code>scans ACK</code> (-sA) et <code>Window</code> (-sW) sont utilisés pour détecter les pare-feu en examinant la manière dont ils répondent aux paquets.</p>
+</li>
+<li>
+<p>Le <code>scan Idle</code> (-sI) est utilisé lorsque nous savons qu&rsquo;un pare-feu ne filtre pas certaines IP, permettant une reconnaissance plus discrète.</p>
+</li>
+<li>
+<p>L&rsquo;option <code>--badsum</code> envoie une somme de contrôle incorrecte, ce qui peut provoquer des réponses inattendues des pare-feu.</p>
+</li>
+<li>
+<p>Le scan <code>SCTP Weird</code> (-sZ) peut passer à travers des pare-feu, mais ne distingue pas entre les ports filtrés et ouverts.</p>
+</li>
+<li>
+<p>Le <code>scan de protocole IP</code> (-sO) envoie des en-têtes mal formés pour analyser les protocoles IP.</p>
+</li>
+<li>
+<p>L&rsquo;option <code>-b &lt;server&gt;</code> est utilisée pour scanner un hôte depuis un autre via FTP, mais est peu utile en pratique dans la plupart des cas.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Découverte d&rsquo;Équipement 
+    <div id="d%C3%A9couverte-d%C3%A9quipement" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#d%C3%A9couverte-d%C3%A9quipement" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Lorsque Nmap lance sa phase de découverte, il utilise par défaut une combinaison de techniques pour identifier les équipements actifs sur le réseau, comprenant : -PA80 -PS443 -PE -PP. Ces options sont des spécifications de types de sondes utilisées par défaut par Nmap lors de la phase de découverte des équipements sur le réseau.</p>
+<blockquote>
+<p><code>PA80</code> : Cette option signifie que Nmap envoie des paquets <code>TCP SYN</code> vers le <code>port 80</code> (HTTP) des hôtes pour tenter d&rsquo;initier une connexion. Le port 80 est souvent utilisé pour les <code>serveurs web</code>.</p>
+</blockquote>
+<blockquote>
+<p><code>PS443</code> : Cela indique à Nmap d&rsquo;envoyer des paquets <code>TCP SYN</code> vers le <code>port 443</code> (HTTPS) pour tester la connectivité. Le port 443 est généralement utilisé pour les connexions sécurisées <code>HTTPS</code>.</p>
+</blockquote>
+<blockquote>
+<p><code>PE</code> : Cette option signifie que Nmap envoie des paquets <code>ICMP Echo Request</code> pour tester la connectivité avec les hôtes. Il s&rsquo;agit d&rsquo;une méthode non intrusive de vérification de la disponibilité des hôtes sur le réseau.</p>
+</blockquote>
+<blockquote>
+<p><code>PP</code> : Cela indique à Nmap d&rsquo;envoyer des paquets <code>ICMP Timestamp Request</code> pour vérifier la connectivité avec les hôtes. Il s&rsquo;agit également d&rsquo;une méthode non intrusive de vérification de la disponibilité des hôtes.</p>
+</blockquote>
+<p>Ainsi, en utilisant une combinaison de ces sondes, Nmap peut identifier les équipements actifs sur le réseau et établir une base de données sur laquelle il pourra ensuite effectuer des scans plus approfondis des ports et des services</p>
+<ul>
+<li>
+<p><code>sL</code> : Ce scan non intrusif permet de lister les cibles en effectuant des <code>requêtes DNS</code> pour la <code>résolution des noms</code>. C&rsquo;est une approche discrète pour obtenir une liste d&rsquo;équipements actifs.</p>
+</li>
+<li>
+<p><code>Pn</code> : En désactivant le ping, cet option indique à Nmap de ne pas effectuer de vérification de la disponibilité des hôtes via le ping. Utile si vous êtes sûr que toutes les cibles sont actives.</p>
+</li>
+<li>
+<p><code>sn</code> : Ce scan ne fait pas de scan de ports après la phase de reconnaissance, ce qui le rend relativement discret et adapté à une découverte rapide du réseau.</p>
+</li>
+<li>
+<p><code>PR</code> : En utilisant le <code>ping ARP</code>, cette option est souvent utilisée par défaut lors de l&rsquo;analyse des ordinateurs dans votre propre réseau local.</p>
+</li>
+<li>
+<p><code>-PM</code> : Effectue un ping <code>ICMP address mask</code> pour vérifier si la cible est active.</p>
+</li>
+<li>
+<p><code>PS &lt;ports&gt;</code> : Envoie des paquets <code>SYN</code> pour tester la connectivité des ports. Les réponses indiquent si le port est ouvert, fermé ou injoignable.</p>
+</li>
+<li>
+<p><code>PA &lt;ports&gt;</code> : Similaire à l&rsquo;option précédente, mais en utilisant des paquets <code>ACK</code>. La combinaison des deux peut donner de meilleurs résultats.</p>
+</li>
+<li>
+<p><code>PU &lt;ports&gt;</code> : Envoie des sondes à des ports censés être fermés, ce qui est utile pour tester les pare-feu.</p>
+</li>
+<li>
+<p><code>PY &lt;ports&gt;</code> : Envoie des sondes <code>SCTP INIT</code>, généralement au port 80(HTTP) par défaut, pour détecter l&rsquo;état ouvert/fermé/inactif des ports.</p>
+</li>
+</ul>
+<p>-<code>PO &lt;protocols&gt;</code> : Indique les protocoles dans les en-têtes, par défaut <code>ICMP (1)</code>, <code>IGMP (2)</code> et <code>Encap IP (4)</code>.</p>
+<p><strong>Autres Options :</strong></p>
+<ul>
+<li>
+<p><code>-n</code> : Désactive la résolution DNS, ce qui peut accélérer le scan en évitant la résolution de noms d&rsquo;hôtes.</p>
+</li>
+<li>
+<p><code>-R</code> : Force la résolution DNS pour toutes les cibles, garantissant ainsi l&rsquo;affichage des noms d&rsquo;hôtes dans les résultats du scan.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Options de Port 
+    <div id="options-de-port" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#options-de-port" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p><code>-p «ports»</code>: Permet de spécifier les ports à scanner. Utilisez cette option suivie de la liste des ports que vous souhaitez scanner. Par exemple, pour scanner tous les ports, vous pouvez utiliser <code>-p-</code> ou <code>-p all</code>.</p>
+</li>
+<li>
+<p><code>-F</code>: Ce paramètre permet de réaliser un scan rapide en ne vérifiant que les 100 ports les plus couramment utilisés.</p>
+</li>
+<li>
+<p><code>--top-ports «nombre»</code>: Cette option vous permet de spécifier le nombre de ports les plus courants à scanner, de 1 à 65335.</p>
+</li>
+<li>
+<p><code>-r</code>: Ce paramètre indique à Nmap de scanner les ports dans un ordre aléatoire, ce qui peut aider à éviter la détection par les systèmes de sécurité.</p>
+</li>
+<li>
+<p><code>--port-ratio &lt;ratio&gt;</code> : Cette option permet d&rsquo;analyser les ports les plus courants en spécifiant un ratio entre 0 et 1. Cela permet de focaliser l&rsquo;analyse sur les ports les plus susceptibles d&rsquo;être ouverts.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Scan de Version (-sV) 
+    <div id="scan-de-version--sv" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#scan-de-version--sv" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p><code>-sV</code>: L&rsquo;option de scan de version permet à Nmap d&rsquo;identifier les versions des services qui tournent sur les ports ouverts. Vous pouvez régler l&rsquo;intensité de ce scan de 0 à 9, avec 7 comme valeur par défaut.</p>
+</li>
+<li>
+<p><code>--version-intensity «nombre»</code>: Cette option vous permet de régler l&rsquo;intensité du scan de version. Une intensité plus basse lancera uniquement les sondes les plus probables, ce qui réduit le temps de scan, notamment pour les scans UDP.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Détection d&rsquo;OS (-O) 
+    <div id="d%C3%A9tection-dos--o" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#d%C3%A9tection-dos--o" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p><code>-O</code>: L&rsquo;option -O permet à Nmap de tenter de détecter le système d&rsquo;exploitation des hôtes analysés en analysant diverses caractéristiques des paquets réseau.</p>
+</li>
+<li>
+<p><code>--osscan-limit</code>: Si cette option est activée, Nmap n&rsquo;essaiera pas de prédire l&rsquo;OS si moins de 2 ports (un ouvert, un fermé) sont détectés, ce qui économise du temps de scan.</p>
+</li>
+<li>
+<p><code>--osscan-guess</code>: Cette option améliore la détection d&rsquo;OS en cas d&rsquo;incertitude, en effectuant une analyse plus poussée des réponses réseau.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Scripts 
+    <div id="scripts" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#scripts" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p><code>--script «nom_fichier» | «catégorie» | «répertoire» | «expression» [,...]</code>: Cette option permet de spécifier les scripts à exécuter pendant le scan. Vous pouvez spécifier un nom de fichier, une catégorie, un répertoire ou une expression. Utilisez <code>-sC</code> ou <code>--script=default</code> pour exécuter les scripts par défaut.</p>
+<ul>
+<li><code>Auth</code>: Exécute tous les scripts disponibles pour l&rsquo;authentification.</li>
+<li><code>Default</code>: Exécute les scripts par défaut de la catégorie.</li>
+<li><code>Discovery</code>: Récupère des informations sur la cible.</li>
+<li><code>External</code>: Utilise des ressources externes.</li>
+<li><code>Intrusive</code>: Utilise des scripts considérés comme intrusifs.</li>
+<li><code>Malware</code>: Recherche des connexions ouvertes par des codes malveillants.</li>
+<li><code>Safe</code>: Exécute des scripts non intrusifs.</li>
+<li><code>Vuln</code>: Découvre les vulnérabilités connues.</li>
+<li><code>All</code>: Exécute tous les scripts NSE disponibles.</li>
+</ul>
+</li>
+<li>
+<p>Pour rechercher des scripts:</p>
+<ul>
+<li><code>nmap --script-help=&quot;http-*&quot;</code>: Scripts commençant par &ldquo;http-&rdquo;.</li>
+<li><code>nmap --script-help=&quot;not intrusive&quot;</code>: Tous sauf les intrusifs.</li>
+<li><code>nmap --script-help=&quot;default or safe&quot;</code>: Ceux qui sont dans l&rsquo;un ou l&rsquo;autre ou les deux.</li>
+<li><code>nmap --script-help=&quot;default and safe&quot;</code>: Ceux qui sont dans les deux.</li>
+<li><code>nmap --script-help=&quot;(default or safe or intrusive) and not http-*&quot;</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>--script-args «n1»=«v1»,«n2»={_«n3»=«v3»},«n4»={_«v4»_,_«v5»}</code>: Permet de spécifier des arguments pour les scripts. Vous pouvez spécifier des valeurs pour des arguments individuels ou des ensembles d&rsquo;arguments.</p>
+</li>
+<li>
+<p><code>--script-args-file «nom_fichier»</code>: Cette option lit les arguments depuis un fichier spécifié, ce qui peut être utile pour des configurations complexes.</p>
+</li>
+<li>
+<p><code>--script-help «nom_fichier» | «catégorie» | «répertoire» | «expression» | all[,...]</code>: Cette option fournit de l&rsquo;aide sur les scripts. Vous pouvez spécifier un nom de fichier, une catégorie, un répertoire, une expression ou simplement <code>all</code> pour obtenir une aide complète.</p>
+</li>
+<li>
+<p><code>--script-trace</code>: Cette option fournit des informations détaillées sur l&rsquo;exécution des scripts, ce qui peut être utile pour le débogage.</p>
+</li>
+<li>
+<p><code>--script-updatedb</code>: Cette option met à jour la base de données des scripts, ce qui peut être nécessaire pour intégrer de nouveaux scripts ou des mises à jour.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Contrôle du Temps 
+    <div id="contr%C3%B4le-du-temps" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#contr%C3%B4le-du-temps" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p>Nmap peut ajuster le temps en secondes, minutes, ou millisecondes : Vous pouvez définir le temps en utilisant <code>--host-timeout arguments 900000ms</code>, <code>900</code>, <code>900s</code>, et <code>15m</code> qui effectueront tous la même tâche.</p>
+</li>
+<li>
+<p><code>--min-hostgroup «numhosts»; --max-hostgroup «numhosts»</code>: Ces options ajustent la taille des groupes d&rsquo;analyse en parallèle.</p>
+</li>
+<li>
+<p><code>--min-parallelism «numprobes»; --max-parallelism «numprobes»</code>: Ces options contrôlent le nombre de scanneurs en parallèle.</p>
+</li>
+<li>
+<p><code>--min-rtt-timeout «time», --max-rtt-timeout «time», --initial-rtt-timeout «time»</code>: Ces options modifient les délais de temps pour les connexions.</p>
+</li>
+<li>
+<p><code>--max-retries «numtries»</code>: Cette option modifie le nombre de tentatives avant d&rsquo;abandonner.</p>
+</li>
+<li>
+<p><code>--host-timeout «time»</code>: Cette option modifie le temps de scan par hôte.</p>
+</li>
+<li>
+<p><code>--scan-delay «time»; --max-scan-delay «time»</code>: Ces options ajustent le délai entre chaque test.</p>
+</li>
+<li>
+<p><code>--min-rate «number»; --max-rate «number»</code>: Ces options modifient le nombre de paquets envoyés par seconde.</p>
+</li>
+<li>
+<p><code>--defeat-rst-ratelimit</code>: Cette option permet d&rsquo;accélérer le scan en ignorant les limites de réponse RST.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Contrôle de l&rsquo;Aggressivité 
+    <div id="contr%C3%B4le-de-laggressivit%C3%A9" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#contr%C3%B4le-de-laggressivit%C3%A9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><code>-T paranoid|sneaky|polite|normal|aggressive|insane</code>: Cette option ajuste l&rsquo;agressivité du scan.
+<ul>
+<li><code>-T0</code> (paranoid): Effectue un seul test à la fois, en attendant 5 minutes entre chaque test.</li>
+<li><code>-T1</code>(sneaky) et <code>-T2</code>(polite): Effectue les tests de manière similaire, mais en attendant respectivement 15 secondes et 0,4 secondes entre chaque test.</li>
+<li><code>-T3</code>(normal): C&rsquo;est l&rsquo;agressivité par défaut, incluant le parallélisme (équilibrage efficace de la vitesse du scan tout en maintenant une utilisation raisonnable des ressources).</li>
+<li><code>-T4</code>(agressive): tilise des paramètres prédéfinis pour un scan relativement rapide tout en évitant une utilisation excessive des ressources réseau. Il s&rsquo;agit d&rsquo;un bon compromis entre vitesse et prudence.</li>
+<li><code>-T5</code>(insane): Est considéré comme le niveau le plus agressif, utilisant toutes les ressources disponibles pour effectuer un scan aussi rapide que possible. Il s&rsquo;agit du niveau le plus rapide, mais aussi du plus intrusif et risqué.</li>
+</ul>
+</li>
+</ul>
+
+
+<h4 class="relative group">Firewall/IDS 
+    <div id="firewallids" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#firewallids" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p><code>-f</code>: Cette option fragmente les paquets. Par défaut, Nmap fragmente les paquets en morceaux de <code>8 octets</code> après l&rsquo;en-tête. Pour spécifier une taille de fragment différente, vous pouvez utiliser <code>..mtu</code> (dans ce cas, n&rsquo;utilisez pas -f). Assurez-vous que le décalage est un <code>multiple de 8</code>. Il est à noter que les scanners de version et les scripts ne prennent pas en charge la fragmentation.</p>
+</li>
+<li>
+<p>Masquage d&rsquo;Adresse (-D)</p>
+<ul>
+<li><code>-D decoy1,decoy2,ME</code>: Nmap envoie des scanners avec d&rsquo;autres adresses IP comme origine pour vous cacher. Si vous ajoutez ME à la liste, Nmap vous positionnera là; il est préférable de mettre 5 ou 6 adresses avant la vôtre pour vous masquer complètement. Vous pouvez générer des adresses IP aléatoires avec RND:«nombre» pour générer «nombre» d&rsquo;adresses IP aléatoires. Celles-ci ne fonctionnent pas avec la détection de versions sans connexion TCP. Si vous êtes dans un réseau, il est préférable d&rsquo;utiliser des adresses IP qui sont actives, sinon il sera très facile de savoir que vous êtes la seule active.</li>
+</ul>
+</li>
+<li>
+<p>Pour utiliser des adresses IP aléatoires : <code>nmap -D RND:10 Ip_cible</code></p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Spécification de l&rsquo;Adresse Source (-S) 
+    <div id="sp%C3%A9cification-de-ladresse-source--s" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#sp%C3%A9cification-de-ladresse-source--s" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><code>-S IP</code>: Cette option permet de spécifier l&rsquo;adresse IP source du paquet. Utile lorsque Nmap ne détecte pas automatiquement votre adresse IP ou pour faire croire qu&rsquo;un autre hôte effectue le scan.</li>
+</ul>
+
+
+<h4 class="relative group">Sélection de l&rsquo;Interface Réseau (-e) 
+    <div id="s%C3%A9lection-de-linterface-r%C3%A9seau--e" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#s%C3%A9lection-de-linterface-r%C3%A9seau--e" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><code>-e «interface»</code>: Cette option permet de choisir l&rsquo;interface réseau à utiliser pour le scan.</li>
+</ul>
+<blockquote>
+<p>Notons que certains admin réseaux trouvent plus pratique de laisser de nombreux ports ouverts plutôt que de chercher des solutions alternatives. Ces ports, tels que les ports DNS ou FTP, peuvent présenter des vulnérabilités. Pour explorer ces failles potentielles, Nmap propose les options &ndash;source-port «numéro de port» et -g «numéro de port» (équivalents).</p>
+</blockquote>
+<ul>
+<li>
+<p><code>--data</code> <em><code>«chaîne hexadécimale»</code></em>: Cette option permet d&rsquo;envoyer des données sous forme de texte en utilisant le format hexadécimal.</p>
+</li>
+<li>
+<p><code>--data-string</code> <em><code>«chaîne»</code></em>: Cette option permet d&rsquo;envoyer des données sous forme de texte normal.</p>
+</li>
+<li>
+<p><code>--data-length</code> <em><code>«nombre»</code></em>: Cette option spécifie la longueur des données à envoyer. Nmap envoie uniquement les en-têtes et ajoute un nombre spécifié d&rsquo;octets supplémentaires de manière aléatoire.</p>
+</li>
+<li>
+<p><code>--ip-options</code>: Utilisez cette option pour configurer complètement le paquet IP.</p>
+</li>
+<li>
+<p><code>--packet-trace</code>: Utilisez cette option si vous souhaitez voir les options dans les paquets envoyés et reçus.</p>
+</li>
+<li>
+<p><code>--ttl</code> <em><code>«valeur»</code></em>: Cette option permet de spécifier la valeur TTL (Time to Live) pour les paquets.</p>
+</li>
+<li>
+<p><code>--randomize-hosts</code>: Cette option rend l&rsquo;attaque moins évidente en randomisant l&rsquo;ordre des cibles.</p>
+</li>
+<li>
+<p><code>--spoof-mac</code> <em><code>«adresse MAC, préfixe ou nom de fournisseur»</code></em>: Utilisez cette option pour changer l&rsquo;adresse MAC utilisée lors du scan. Vous pouvez spécifier une adresse MAC, un préfixe ou le nom d&rsquo;un fournisseur.</p>
+</li>
+<li>
+<p><code>--proxies</code> <em><code>«liste d'URL de proxy séparées par des virgules»</code></em>: Utilisez cette option pour utiliser des proxys. Notez que parfois, un proxy ne maintient pas autant de connexions ouvertes que Nmap le souhaite, donc vous devrez peut-être modifier le parallélisme avec <code>--max-parallelism</code>.</p>
+</li>
+<li>
+<p><code>-sP</code>: Utilisez cette option pour découvrir les hôtes dans le réseau avec ARP.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Sorties 
+    <div id="sorties" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#sorties" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p><code>-oN file</code> : Produit une sortie normale dans le fichier spécifié.</p>
+</li>
+<li>
+<p><code>-oX file</code> : Produit une sortie XML dans le fichier spécifié.</p>
+</li>
+<li>
+<p><code>-oS file</code> : Produit une sortie conçue pour les script kiddies dans le fichier spécifié.</p>
+</li>
+<li>
+<p><code>-oG file</code> : Produit une sortie au format greppable dans le fichier spécifié.</p>
+</li>
+<li>
+<p><code>-oA file</code> : Produit toutes les sorties sauf -oS dans le fichier spécifié.</p>
+</li>
+<li>
+<p><code>-v level</code> : Définit le niveau de verbosité.</p>
+</li>
+<li>
+<p><code>-d level</code> : Définit le niveau de débogage.</p>
+</li>
+<li>
+<p><code>--reason</code> : Affiche la raison de l&rsquo;état de l&rsquo;hôte.</p>
+</li>
+<li>
+<p><code>--stats-every time</code> : Affiche les statistiques à intervalles réguliers.</p>
+</li>
+<li>
+<p><code>--packet-trace</code> : Affiche les paquets envoyés.</p>
+</li>
+<li>
+<p><code>--open</code> : Affiche les ports ouverts et leur état.</p>
+</li>
+<li>
+<p><code>--resume file</code> : Permet de reprendre une analyse à partir d&rsquo;un fichier de reprise.</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">Divers 
+    <div id="divers" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#divers" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>
+<p><code>-6</code> : Active la prise en charge d&rsquo;IPv6.</p>
+</li>
+<li>
+<p><code>-A</code> : Équivalent à -O -sV -sC &ndash;traceroute.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Exécution 
+    <div id="ex%C3%A9cution" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ex%C3%A9cution" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Pendant l&rsquo;exécution de Nmap, vous pouvez modifier les options en cours de route :</p>
+<ul>
+<li>
+<p><code>v / V</code> : Augmente / diminue le niveau de verbosité.</p>
+</li>
+<li>
+<p><code>d / D</code> : Augmente / diminue le niveau de débogage.</p>
+</li>
+<li>
+<p><code>p / P</code> : Active / désactive la traçabilité des paquets.</p>
+</li>
+<li>
+<p><code>?</code> : Affiche une aide interactive.</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Vulnscan 
+    <div id="vulnscan" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#vulnscan" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Les scripts de Nmap Vulnscan examinent les versions des services obtenues dans une base de données hors ligne (téléchargée depuis d&rsquo;autres sources très importantes) et renvoient les vulnérabilités potentielles.</p>
+<p>Les bases de données utilisées sont :</p>
+<ol>
+<li>Scipvuldb.csv - <a href="http://www.scip.ch/en/?vuldb" target="_blank">http://www.scip.ch/en/?vuldb</a></li>
+<li>Cve.csv - <a href="http://cve.mitre.org/" target="_blank">http://cve.mitre.org</a></li>
+<li>Osvdb.csv - <a href="http://www.osvdb.org/" target="_blank">http://www.osvdb.org</a></li>
+<li>Securityfocus.csv - <a href="http://www.securityfocus.com/bid/" target="_blank">http://www.securityfocus.com/bid/</a></li>
+<li>Securitytracker.csv - <a href="http://www.securitytracker.com/" target="_blank">http://www.securitytracker.com</a></li>
+<li>Xforce.csv - <a href="http://xforce.iss.net/" target="_blank">http://xforce.iss.net</a></li>
+<li>Exploitdb.csv - <a href="http://www.exploit-db.com/" target="_blank">http://www.exploit-db.com</a></li>
+<li>Openvas.csv - <a href="http://www.openvas.org/" target="_blank">http://www.openvas.org</a></li>
+</ol>
+<p>Il est également nécessaire de télécharger les paquets des bases de données et de les ajouter à /usr/share/nmap/scripts/vulscan/.</p>
+<p>Utilisation :</p>
+<ul>
+<li>Pour tout utiliser :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nmap -sV --script<span class="o">=</span>vulscan &lt;HOST&gt;
+</span></span></code></pre></div><ul>
+<li>Pour utiliser une base de données spécifique :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nmap -sV --script<span class="o">=</span>vulscan --script-args <span class="nv">vulscandb</span><span class="o">=</span>cve.csv &lt;HOST&gt;
+</span></span></code></pre></div>
+
+<h3 class="relative group">Accélérer l&rsquo;analyse des services de Nmap x16 
+    <div id="acc%C3%A9l%C3%A9rer-lanalyse-des-services-de-nmap-x16" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#acc%C3%A9l%C3%A9rer-lanalyse-des-services-de-nmap-x16" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Selon <a href="https://joshua.hu/nmap-speedup-service-scanning-16x" target="_blank">cette publication</a>, vous pouvez accélérer l&rsquo;analyse des services Nmap en modifiant toutes les valeurs <code>totalwaitms</code> dans <code>/usr/share/nmap/nmap-service-probes</code> à <code>300</code> et <code>tcpwrappedms</code> à <code>200</code>.</p>
+<p>De plus, les sondes qui n&rsquo;ont pas de <code>servicewaitms</code> spécifiquement défini utilisent une valeur par défaut de <code>5000</code>. Par conséquent, nous pouvons soit ajouter des valeurs à chacune des sondes, soit compiler Nmap nous-mêmes et changer la valeur par défaut dans <a href="https://github.com/nmap/nmap/blob/master/service_scan.h#L79" target="_blank">service_scan.h</a>.</p>
+<p>Si vous ne souhaitez pas du tout changer les valeurs <code>totalwaitms</code> et <code>tcpwrappedms</code> dans le fichier <code>/usr/share/nmap/nmap-service-probes</code>, vous pouvez modifier le <a href="https://github.com/nmap/nmap/blob/master/service_scan.cc#L1358" target="_blank">code d&rsquo;analyse</a> de manière à ce que ces valeurs dans le fichier <code>nmap-service-probes</code> soient complètement ignorées.</p>
+<p>En conclusion, l&rsquo;utilisation de Nmap offre une gamme très variée d&rsquo;options pour l&rsquo;analyse des réseaux, la détection des services et la détection d&rsquo;éventuelles vulnérabilités. En explorant ses fonctionnalités et en ajustant certains paramètres, il est possible d&rsquo;optimiser l&rsquo;analyse et accélérer le processus de découverte et de sécurisation des réseaux informatiques. Que ce soit pour des besoins de sécurité, de dépannage réseau ou de gestion des actifs, Nmap reste un outil précieux et polyvalent pour les tâches de scanning réseau.</p>
+
+        </div>
+        
+        
+
+        
+        
+  
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/posts/nmap-guide/&amp;title=Nmap%20Guide"
+      title="Share on LinkedIn"
+      aria-label="Share on LinkedIn"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://twitter.com/intent/tweet/?url=//localhost:1313/posts/nmap-guide/&amp;text=Nmap%20Guide"
+      title="Tweet on Twitter"
+      aria-label="Tweet on Twitter"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://api.whatsapp.com/send?text=//localhost:1313/posts/nmap-guide/&amp;resubmit=true&amp;title=Nmap%20Guide"
+      title=""
+      aria-label=""
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=//localhost:1313/posts/nmap-guide/&amp;description=Nmap%20Guide"
+      title="Pin on Pinterest"
+      aria-label="Pin on Pinterest"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://reddit.com/submit/?url=//localhost:1313/posts/nmap-guide/&amp;resubmit=true&amp;title=Nmap%20Guide"
+      title="Submit to Reddit"
+      aria-label="Submit to Reddit"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://www.facebook.com/sharer/sharer.php?u=//localhost:1313/posts/nmap-guide/&amp;quote=Nmap%20Guide"
+      title="Share on Facebook"
+      aria-label="Share on Facebook"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="mailto:?body=//localhost:1313/posts/nmap-guide/&amp;subject=Nmap%20Guide"
+      title="Send via email"
+      aria-label="Send via email"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+  </section>
+
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_posts\\nmap-guide\\index.md"
+        var oid_likes = "likes_posts\\nmap-guide\\index.md"
+      </script>
+      
+      
+      
+      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/proxychains/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Proxychains Guide</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-09-23 00:00:00 &#43;0000 UTC">23 September 2023</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/htb-monitorstwo/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >MonitorsTwo (HTB)</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-12-16 00:00:00 &#43;0000 UTC">16 December 2023</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+    <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+      <ul class="flex flex-col list-none sm:flex-row">
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/categories/"
+            title="">
+            
+            Categories
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/tags/"
+            title="">
+            
+            Tags
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href=""
+            title="">
+            
+            
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2024
+      Rai2en
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="//localhost:1313/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>
