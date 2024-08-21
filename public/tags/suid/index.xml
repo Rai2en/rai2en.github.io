@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SUID on Raizen /Blog</title>
+    <link>//localhost:1313/tags/suid/</link>
+    <description>Recent content in SUID on Raizen /Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Rai2en</copyright>
+    <lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/suid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTB MonitorsTwo</title>
+      <link>//localhost:1313/posts/htb-monitorstwo/</link>
+      <pubDate>Wed, 24 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/htb-monitorstwo/</guid>
+      <description>MonitorsTwo est une machine Linux de difficulté facile, qui met en avant quelques vulnérabilités et erreurs de configurations qui seront exploitées afin de prendre le contrôle du système suivant notre kill-chain ci-après:S Phase d&amp;rsquo;accès Initial: Une première énumeration rapide nous permet de decouvrir une application web vulnérable à une exécution de code à distance (RCE) avec pré-authentification via un en-tête &amp;lsquo;X-Forwarded-For&amp;rsquo; malveillant. L&amp;rsquo;exploitation de cette vulnérabilité débouche sur un shell dans un conteneur Docker.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/htb-monitorstwo/cover.png" />
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metasploit on Raizen /Blog</title>
+    <link>//localhost:1313/tags/metasploit/</link>
+    <description>Recent content in Metasploit on Raizen /Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Rai2en</copyright>
+    <lastBuildDate>Fri, 08 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/metasploit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proxychains</title>
+      <link>//localhost:1313/posts/proxychains/</link>
+      <pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/proxychains/</guid>
+      <description>Un proxy est un type de serveur situé entre un utilisateur et Internet. Il agit comme intermédiaire, en recevant les requêtes de l&amp;rsquo;utilisateur et les transmettant aux serveurs Internet. Les proxies peuvent être utilisés&amp;hellip;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/proxychains/cover.png" />
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on Raizen /Blog</title>
+    <link>//localhost:1313/categories/markdown/</link>
+    <description>Recent content in Markdown on Raizen /Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Rai2en</copyright>
+    <lastBuildDate>Sat, 23 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nmap Guide</title>
+      <link>//localhost:1313/posts/nmap-guide/</link>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/nmap-guide/</guid>
+      <description>Nmap, abréviation de &lt;em&gt;Network Mapper&lt;/em&gt;, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q&amp;rsquo;un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser&amp;hellip;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/nmap-guide/cover.png" />
+    </item>
+    
+  </channel>
+</rss>

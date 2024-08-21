@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raizen /Blog</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Raizen /Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Rai2en</copyright>
+    <lastBuildDate>Fri, 08 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proxychains</title>
+      <link>//localhost:1313/posts/proxychains/</link>
+      <pubDate>Fri, 08 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/proxychains/</guid>
+      <description>Un proxy est un type de serveur situé entre un utilisateur et Internet. Il agit comme intermédiaire, en recevant les requêtes de l&amp;rsquo;utilisateur et les transmettant aux serveurs Internet. Les proxies peuvent être utilisés&amp;hellip;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/proxychains/cover.png" />
+    </item>
+    
+    <item>
+      <title>MonitorsTwo (HTB)</title>
+      <link>//localhost:1313/posts/htb-monitorstwo/</link>
+      <pubDate>Sat, 16 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/htb-monitorstwo/</guid>
+      <description>MonitorsTwo est une machine Linux de difficulté facile. Elle met en avant quelques vulnérabilités et erreurs de configurations qui seront exploitées afin de prendre le contrôle du système suivant la kill-chain&amp;hellip;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/htb-monitorstwo/cover.png" />
+    </item>
+    
+    <item>
+      <title>Nmap Guide</title>
+      <link>//localhost:1313/posts/nmap-guide/</link>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/nmap-guide/</guid>
+      <description>Nmap, abréviation de &lt;em&gt;Network Mapper&lt;/em&gt;, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q&amp;rsquo;un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser&amp;hellip;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/nmap-guide/cover.png" />
+    </item>
+    
+    <item>
+      <title>HTB - Devvortex</title>
+      <link>//localhost:1313/posts/htb-devvortex/</link>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/htb-devvortex/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/htb-devvortex/cover.png" />
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/about/</guid>
+      <description>Profile Originally from Benin, I am currently a Cybersecurity student with a Bachelor of Science in Network Security. My journey in cybersecurity has taken me to exciting places, both professionally and personally.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
