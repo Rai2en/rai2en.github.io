@@ -5,7 +5,7 @@
 
 ## À propos
 
-Bienvenue sur le dépôt GitHub de mon blog. Ce Blog portera sur des sujets de cybersécurité, avec des articles détaillés, des guides pratiques, analyses de vulnérabilités et Writups de CTF (Principalement du HackTheBox).
+Ce Blog sera dédié à des sujets de cybersécurité, avec des articles détaillés, des guides pratiques, analyses de vulnérabilités et Writups de CTF (Principalement du HackTheBox).
 
 ## Accès au blog
 
