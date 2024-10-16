@@ -107,7 +107,7 @@
     "keywords": ["Nmap","Network Analysis"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2958"
+    "wordCount": "4159"
   }]
   </script>
 
@@ -592,7 +592,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-09-23 00:00:00 &#43;0000 UTC">23 September 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span>
+  <time datetime="2023-09-23 00:00:00 &#43;0000 UTC">23 September 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">20 mins</span>
   
 
   
@@ -759,26 +759,45 @@
         <li><a href="#i--analyse-du-réseau">I- Analyse du Réseau</a></li>
         <li><a href="#ii--techniques-de-scans">II- Techniques de Scans</a>
           <ul>
-            <li><a href="#découverte-déquipement">Découverte d&rsquo;Équipement</a></li>
-            <li><a href="#options-de-port">Options de Port</a></li>
-            <li><a href="#scan-de-version--sv">Scan de Version (-sV)</a></li>
-            <li><a href="#détection-dos--o">Détection d&rsquo;OS (-O)</a></li>
-            <li><a href="#scripts">Scripts</a></li>
-            <li><a href="#contrôle-du-temps">Contrôle du Temps</a></li>
-            <li><a href="#contrôle-de-laggressivité">Contrôle de l&rsquo;Aggressivité</a></li>
-            <li><a href="#firewallids">Firewall/IDS</a></li>
-            <li><a href="#spécification-de-ladresse-source--s">Spécification de l&rsquo;Adresse Source (-S)</a></li>
-            <li><a href="#sélection-de-linterface-réseau--e">Sélection de l&rsquo;Interface Réseau (-e)</a></li>
-            <li><a href="#sorties">Sorties</a></li>
+            <li></li>
           </ul>
         </li>
-        <li><a href="#divers">Divers</a>
+        <li><a href="#iii--scripts">III- Scripts</a>
           <ul>
-            <li><a href="#exécution">Exécution</a></li>
-            <li><a href="#vulnscan">Vulnscan</a></li>
+            <li></li>
           </ul>
         </li>
-        <li><a href="#accélérer-lanalyse-des-services-de-nmap-x16">Accélérer l&rsquo;analyse des services de Nmap x16</a></li>
+        <li><a href="#iv--contrôle-du-temps-et-de-laggressivité-des-scans">IV- Contrôle du Temps et de l&rsquo;Aggressivité des Scans</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#v--firewallids-options-de-masquage-et-de-fragmentation-dans-nmap">V- Firewall/IDS: Options de Masquage et de Fragmentation dans Nmap</a>
+          <ul>
+            <li><a href="#fragmentation-des-paquets">Fragmentation des Paquets</a></li>
+            <li><a href="#masquage-dadresse-ip">Masquage d&rsquo;Adresse IP</a></li>
+            <li><a href="#spécification-de-ladresse-source">Spécification de l&rsquo;Adresse Source</a></li>
+            <li><a href="#sélection-de-linterface-réseau">Sélection de l&rsquo;Interface Réseau</a></li>
+            <li><a href="#pratiques-de-sécurité">Pratiques de Sécurité</a></li>
+          </ul>
+        </li>
+        <li><a href="#vi--options-avancées-pour-les-paquets">VI- Options Avancées pour les Paquets</a></li>
+        <li><a href="#vii--options-de-sortie-dans-nmap">VII- Options de Sortie dans Nmap</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#viii--options-diverses">VIII- Options Diverses</a>
+          <ul>
+            <li><a href="#modification-des-options-en-cours-dexécution">Modification des Options en Cours d&rsquo;Exécution</a></li>
+          </ul>
+        </li>
+        <li><a href="#ix--nmap-vulnscan">IX- Nmap Vulnscan</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#x--accélérer-lanalyse-des-services-de-nmap-x16">X- Accélérer l&rsquo;analyse des services de Nmap x16</a></li>
       </ul>
     </li>
   </ul>
@@ -799,26 +818,45 @@
         <li><a href="#i--analyse-du-réseau">I- Analyse du Réseau</a></li>
         <li><a href="#ii--techniques-de-scans">II- Techniques de Scans</a>
           <ul>
-            <li><a href="#découverte-déquipement">Découverte d&rsquo;Équipement</a></li>
-            <li><a href="#options-de-port">Options de Port</a></li>
-            <li><a href="#scan-de-version--sv">Scan de Version (-sV)</a></li>
-            <li><a href="#détection-dos--o">Détection d&rsquo;OS (-O)</a></li>
-            <li><a href="#scripts">Scripts</a></li>
-            <li><a href="#contrôle-du-temps">Contrôle du Temps</a></li>
-            <li><a href="#contrôle-de-laggressivité">Contrôle de l&rsquo;Aggressivité</a></li>
-            <li><a href="#firewallids">Firewall/IDS</a></li>
-            <li><a href="#spécification-de-ladresse-source--s">Spécification de l&rsquo;Adresse Source (-S)</a></li>
-            <li><a href="#sélection-de-linterface-réseau--e">Sélection de l&rsquo;Interface Réseau (-e)</a></li>
-            <li><a href="#sorties">Sorties</a></li>
+            <li></li>
           </ul>
         </li>
-        <li><a href="#divers">Divers</a>
+        <li><a href="#iii--scripts">III- Scripts</a>
           <ul>
-            <li><a href="#exécution">Exécution</a></li>
-            <li><a href="#vulnscan">Vulnscan</a></li>
+            <li></li>
           </ul>
         </li>
-        <li><a href="#accélérer-lanalyse-des-services-de-nmap-x16">Accélérer l&rsquo;analyse des services de Nmap x16</a></li>
+        <li><a href="#iv--contrôle-du-temps-et-de-laggressivité-des-scans">IV- Contrôle du Temps et de l&rsquo;Aggressivité des Scans</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#v--firewallids-options-de-masquage-et-de-fragmentation-dans-nmap">V- Firewall/IDS: Options de Masquage et de Fragmentation dans Nmap</a>
+          <ul>
+            <li><a href="#fragmentation-des-paquets">Fragmentation des Paquets</a></li>
+            <li><a href="#masquage-dadresse-ip">Masquage d&rsquo;Adresse IP</a></li>
+            <li><a href="#spécification-de-ladresse-source">Spécification de l&rsquo;Adresse Source</a></li>
+            <li><a href="#sélection-de-linterface-réseau">Sélection de l&rsquo;Interface Réseau</a></li>
+            <li><a href="#pratiques-de-sécurité">Pratiques de Sécurité</a></li>
+          </ul>
+        </li>
+        <li><a href="#vi--options-avancées-pour-les-paquets">VI- Options Avancées pour les Paquets</a></li>
+        <li><a href="#vii--options-de-sortie-dans-nmap">VII- Options de Sortie dans Nmap</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#viii--options-diverses">VIII- Options Diverses</a>
+          <ul>
+            <li><a href="#modification-des-options-en-cours-dexécution">Modification des Options en Cours d&rsquo;Exécution</a></li>
+          </ul>
+        </li>
+        <li><a href="#ix--nmap-vulnscan">IX- Nmap Vulnscan</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#x--accélérer-lanalyse-des-services-de-nmap-x16">X- Accélérer l&rsquo;analyse des services de Nmap x16</a></li>
       </ul>
     </li>
   </ul>
@@ -864,10 +902,11 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Dans le domaine du pentesting et des CTF (Capture The Flag), la phase d&rsquo;énumération est une étape cruciale. C&rsquo;est là que l&rsquo;outil Nmap entre en jeu. Nmap, abréviation de <code>Network Mapper</code>, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q&rsquo;un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser un réseau.</p>
-<p>Que ce soit pour auditer la sécurité de notre propre réseau, découvrir les dispositifs connectés ou évaluer la sécurité d&rsquo;un réseau distant, Nmap est l&rsquo;outil de prédilection. Grâce à ses fonctionnalités avancées, il permet de cartographier les hôtes du réseau, d&rsquo;identifier les ports ouverts, les services en cours d&rsquo;exécution, et bien plus encore.</p>
-<p>Dans ce guide, nous explorerons de manière non-exhaustive mais autant que possible les différentes options d&rsquo;analyse qu&rsquo;offre Nmap et leurs utilités.</p>
-<p>
+          <p>Dans le cadre des tests d&rsquo;intrusion (pentesting) et des défis CTF (Capture The Flag), la phase d&rsquo;énumération constitue une étape essentielle. C&rsquo;est ici que Nmap, un outil incontournable pour les professionnels de la sécurité informatique, entre en scène.</p>
+<p>Nmap, abréviation de Network Mapper, est un utilitaire puissant et polyvalent, utilisé tant par les administrateurs réseau que par les experts en cybersécurité pour analyser, explorer et sécuriser les infrastructures réseau.</p>
+<p>Que ce soit pour auditer la sécurité d&rsquo;un réseau interne, identifier les dispositifs connectés ou évaluer la surface d&rsquo;attaque d&rsquo;un réseau distant, Nmap est un outil privilégié. Ses fonctionnalités avancées permettent de cartographier les hôtes d&rsquo;un réseau, de détecter les ports ouverts, d&rsquo;identifier les services actifs, et bien plus encore.</p>
+<p>Dans ce guide, nous explorerons les différentes options d&rsquo;analyse qu&rsquo;offre Nmap, et nous examinerons leur pertinence dans divers contextes de sécurité.
+
     <figure>
       <img
         class="my-0 rounded-md"
@@ -895,7 +934,7 @@
     </span>        
     
 </h3>
-<p>Avant de plonger dans les techniques avancées d&rsquo;analyse de ports offertes par Nmap, il est important de comprendre le fonctionnement général de cet outil et à quoi ressemble une commande standard de Nmap, ainsi que ses options par défaut.</p>
+<p>Avant d&rsquo;explorer les techniques avancées de scan de ports offertes par Nmap, il est crucial de comprendre le fonctionnement général de cet outil et de se familiariser avec la syntaxe d&rsquo;une commande standard ainsi que ses options par défaut.</p>
 <ul>
 <li>Fonctionnement Général de Nmap</li>
 </ul>
@@ -903,10 +942,10 @@
 <ul>
 <li>Commande Standard de Nmap</li>
 </ul>
-<p>Une commande standard de Nmap suit généralement la structure suivante :</p>
+<p>La structure d&rsquo;une commande Nmap est généralement la suivante :</p>
 <p><code>nmap [options] [cibles]</code></p>
 <blockquote>
-<p>Les &ldquo;options&rdquo; permettent de spécifier les paramètres du scan, tels que les techniques de scan à utiliser, les types de ports à scanner, etc. Les &ldquo;cibles&rdquo; sont les adresses IP ou les plages d&rsquo;adresses à scanner.</p>
+<p>Les <code>options</code> permettent de spécifier les paramètres du scan, tels que les techniques de scan à utiliser, les types de ports à scanner, etc. Les <code>cibles</code> désignent les adresses IP ou les plages d&rsquo;adresses à scanner.</p>
 </blockquote>
 
 
@@ -922,45 +961,45 @@
 </h3>
 <ul>
 <li>
-<p>L&rsquo;option <code>-sS</code> exécute un <code>scan SYN</code>, qui ne complète pas la connexion TCP et ne laisse aucune trace, ce qui le rend idéal pour une utilisation discrète, mais nécessite souvent des privilèges.</p>
+<p>Scan SYN (-sS): Ce type de scan envoie un paquet SYN sans finaliser la connexion TCP, ce qui le rend discret et difficile à détecter. Il est particulièrement utile pour les tests d&rsquo;intrusion furtifs, mais nécessite souvent des privilèges administratifs.</p>
 </li>
 <li>
-<p>Avec <code>-sT</code>, Nmap effectue un scan connecté, complétant la connexion TCP. Bien que cette méthode laisse une trace, elle peut être utilisée en toute sécurité sans privilèges.</p>
+<p>Scan Connecté (-sT): Contrairement au scan SYN, ce scan établit une connexion complète via TCP. Bien qu&rsquo;il laisse une trace, il peut être exécuté sans privilèges élevés.</p>
 </li>
 <li>
-<p>Le <code>scan UDP</code>, activé par <code>-sU</code>, est plus lent car il teste les ports UDP, notamment ceux utilisés par des services comme <code>DNS</code>(port 53), <code>SNMP</code>(port 161/163) et <code>DHCP</code> (port 67/68).</p>
+<p>Scan UDP (-sU): Ce scan teste les ports UDP, souvent utilisés par des services tels que DNS (port 53), SNMP (ports 161/163) et DHCP (ports 67/68). Il est généralement plus lent que le scan TCP en raison de la nature non connectée du protocole UDP.</p>
 </li>
 <li>
-<p><code>-sY</code> utilise le protocole <code>SCTP</code>, qui échoue à établir la connexion, évitant ainsi les journaux. Cela fonctionne de manière similaire à ``-PY.</p>
+<p>Scan SCTP INIT (-sY): Ce scan utilise le protocole SCTP, en envoyant un paquet INIT sans établir de connexion, similaire au SYN scan pour TCP. Il est utile pour éviter la journalisation des connexions.</p>
 </li>
 <li>
-<p>Les <code>scans Null</code> (-sN), <code>Fin</code> (-sF) et <code>Xmas</code> (-sX) envoient des paquets avec des flags TCP spécifiques pour pénétrer certains pare-feu et extraire des informations.</p>
+<p>Scans Null (-sN), Fin (-sF), et Xmas (-sX): Ces scans envoient des paquets avec des combinaisons spécifiques de flags TCP (aucun, FIN, ou un ensemble de flags inhabituels) pour contourner certains pare-feu et extraire des informations sur les ports ouverts.</p>
 </li>
 <li>
-<p>Le <code>scan Maimon</code> (-sM) envoie des flags FIN et ACK, principalement pour BSD, mais actuellement, il rapportera tous les ports comme fermés.</p>
+<p>Scan Maimon (-sM): Ce scan envoie des paquets avec les flags FIN et ACK, principalement destiné aux systèmes BSD. Cependant, il peut souvent rapporter tous les ports comme étant fermés dans les systèmes actuels.</p>
 </li>
 <li>
-<p>Les <code>scans ACK</code> (-sA) et <code>Window</code> (-sW) sont utilisés pour détecter les pare-feu en examinant la manière dont ils répondent aux paquets.</p>
+<p>Scans ACK (-sA) et Window (-sW): Utilisés pour identifier la présence de pare-feu, ces scans se basent sur la manière dont les pare-feu réagissent aux paquets ACK et sur l&rsquo;analyse des tailles de fenêtre TCP.</p>
 </li>
 <li>
-<p>Le <code>scan Idle</code> (-sI) est utilisé lorsque nous savons qu&rsquo;un pare-feu ne filtre pas certaines IP, permettant une reconnaissance plus discrète.</p>
+<p>Scan Idle (-sI): Ce scan permet une reconnaissance discrète en utilisant un hôte intermédiaire. Il est efficace lorsque certaines adresses IP ne sont pas filtrées par le pare-feu.</p>
 </li>
 <li>
-<p>L&rsquo;option <code>--badsum</code> envoie une somme de contrôle incorrecte, ce qui peut provoquer des réponses inattendues des pare-feu.</p>
+<p>Option &ndash;badsum: Envoie des paquets avec une somme de contrôle incorrecte pour provoquer des réponses inattendues des pare-feu, révélant potentiellement des informations sur leur configuration.</p>
 </li>
 <li>
-<p>Le scan <code>SCTP Weird</code> (-sZ) peut passer à travers des pare-feu, mais ne distingue pas entre les ports filtrés et ouverts.</p>
+<p>Scan SCTP Weird (-sZ): Conçu pour contourner les pare-feu, ce scan est cependant limité par son incapacité à distinguer les ports filtrés des ports ouverts.</p>
 </li>
 <li>
-<p>Le <code>scan de protocole IP</code> (-sO) envoie des en-têtes mal formés pour analyser les protocoles IP.</p>
+<p>Scan de Protocole IP (-sO): Ce scan envoie des en-têtes IP mal formés pour détecter les protocoles IP supportés par la cible.</p>
 </li>
 <li>
-<p>L&rsquo;option <code>-b &lt;server&gt;</code> est utilisée pour scanner un hôte depuis un autre via FTP, mais est peu utile en pratique dans la plupart des cas.</p>
+<p>Scan par FTP Bounce (-b <serveur>): Permet de scanner une cible via un serveur FTP intermédiaire. Bien que peu utilisé dans la pratique, il reste une technique intéressante pour certains environnements spécifiques.</p>
 </li>
 </ul>
 
 
-<h4 class="relative group">Découverte d&rsquo;Équipement 
+<h5 class="relative group">Découverte d&rsquo;Équipement 
     <div id="d%C3%A9couverte-d%C3%A9quipement" class="anchor"></div>
     
     <span
@@ -969,92 +1008,105 @@
             style="text-decoration-line: none !important;" href="#d%C3%A9couverte-d%C3%A9quipement" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
-<p>Lorsque Nmap lance sa phase de découverte, il utilise par défaut une combinaison de techniques pour identifier les équipements actifs sur le réseau, comprenant : -PA80 -PS443 -PE -PP. Ces options sont des spécifications de types de sondes utilisées par défaut par Nmap lors de la phase de découverte des équipements sur le réseau.</p>
-<blockquote>
-<p><code>PA80</code> : Cette option signifie que Nmap envoie des paquets <code>TCP SYN</code> vers le <code>port 80</code> (HTTP) des hôtes pour tenter d&rsquo;initier une connexion. Le port 80 est souvent utilisé pour les <code>serveurs web</code>.</p>
-</blockquote>
-<blockquote>
-<p><code>PS443</code> : Cela indique à Nmap d&rsquo;envoyer des paquets <code>TCP SYN</code> vers le <code>port 443</code> (HTTPS) pour tester la connectivité. Le port 443 est généralement utilisé pour les connexions sécurisées <code>HTTPS</code>.</p>
-</blockquote>
-<blockquote>
-<p><code>PE</code> : Cette option signifie que Nmap envoie des paquets <code>ICMP Echo Request</code> pour tester la connectivité avec les hôtes. Il s&rsquo;agit d&rsquo;une méthode non intrusive de vérification de la disponibilité des hôtes sur le réseau.</p>
-</blockquote>
-<blockquote>
-<p><code>PP</code> : Cela indique à Nmap d&rsquo;envoyer des paquets <code>ICMP Timestamp Request</code> pour vérifier la connectivité avec les hôtes. Il s&rsquo;agit également d&rsquo;une méthode non intrusive de vérification de la disponibilité des hôtes.</p>
-</blockquote>
-<p>Ainsi, en utilisant une combinaison de ces sondes, Nmap peut identifier les équipements actifs sur le réseau et établir une base de données sur laquelle il pourra ensuite effectuer des scans plus approfondis des ports et des services</p>
+</h5>
+<p>Lors de la phase de découverte, Nmap utilise par défaut une combinaison de techniques pour identifier les équipements actifs sur le réseau. Ces techniques incluent les options suivantes : <code>-PA80</code>, <code>-PS443</code>, <code>-PE</code>, et <code>-PP</code>, qui spécifient les sondes utilisées par Nmap pour cette étape.</p>
 <ul>
 <li>
-<p><code>sL</code> : Ce scan non intrusif permet de lister les cibles en effectuant des <code>requêtes DNS</code> pour la <code>résolution des noms</code>. C&rsquo;est une approche discrète pour obtenir une liste d&rsquo;équipements actifs.</p>
+<p><strong><code>PA80</code></strong> : Envoie des paquets <code>TCP SYN</code> vers le port 80 (HTTP) pour tenter d&rsquo;établir une connexion. Le port 80 étant largement utilisé pour les serveurs web, cette option permet de vérifier la disponibilité des hôtes exécutant des services HTTP.</p>
 </li>
 <li>
-<p><code>Pn</code> : En désactivant le ping, cet option indique à Nmap de ne pas effectuer de vérification de la disponibilité des hôtes via le ping. Utile si vous êtes sûr que toutes les cibles sont actives.</p>
+<p><strong><code>PS443</code></strong> : Envoie des paquets <code>TCP SYN</code> vers le port 443 (HTTPS), utilisé pour les connexions sécurisées. Cela permet de tester la connectivité des hôtes via des services HTTPS.</p>
 </li>
 <li>
-<p><code>sn</code> : Ce scan ne fait pas de scan de ports après la phase de reconnaissance, ce qui le rend relativement discret et adapté à une découverte rapide du réseau.</p>
+<p><strong><code>PE</code></strong> : Envoie des paquets <code>ICMP Echo Request</code> (requête de ping) pour vérifier la disponibilité des hôtes de manière non intrusive.</p>
 </li>
 <li>
-<p><code>PR</code> : En utilisant le <code>ping ARP</code>, cette option est souvent utilisée par défaut lors de l&rsquo;analyse des ordinateurs dans votre propre réseau local.</p>
-</li>
-<li>
-<p><code>-PM</code> : Effectue un ping <code>ICMP address mask</code> pour vérifier si la cible est active.</p>
-</li>
-<li>
-<p><code>PS &lt;ports&gt;</code> : Envoie des paquets <code>SYN</code> pour tester la connectivité des ports. Les réponses indiquent si le port est ouvert, fermé ou injoignable.</p>
-</li>
-<li>
-<p><code>PA &lt;ports&gt;</code> : Similaire à l&rsquo;option précédente, mais en utilisant des paquets <code>ACK</code>. La combinaison des deux peut donner de meilleurs résultats.</p>
-</li>
-<li>
-<p><code>PU &lt;ports&gt;</code> : Envoie des sondes à des ports censés être fermés, ce qui est utile pour tester les pare-feu.</p>
-</li>
-<li>
-<p><code>PY &lt;ports&gt;</code> : Envoie des sondes <code>SCTP INIT</code>, généralement au port 80(HTTP) par défaut, pour détecter l&rsquo;état ouvert/fermé/inactif des ports.</p>
+<p><strong><code>PP</code></strong> : Envoie des paquets <code>ICMP Timestamp Request</code> pour tester la connectivité, offrant une autre méthode discrète pour identifier les hôtes actifs.</p>
 </li>
 </ul>
-<p>-<code>PO &lt;protocols&gt;</code> : Indique les protocoles dans les en-têtes, par défaut <code>ICMP (1)</code>, <code>IGMP (2)</code> et <code>Encap IP (4)</code>.</p>
-<p><strong>Autres Options :</strong></p>
-<ul>
-<li>
-<p><code>-n</code> : Désactive la résolution DNS, ce qui peut accélérer le scan en évitant la résolution de noms d&rsquo;hôtes.</p>
-</li>
-<li>
-<p><code>-R</code> : Force la résolution DNS pour toutes les cibles, garantissant ainsi l&rsquo;affichage des noms d&rsquo;hôtes dans les résultats du scan.</p>
-</li>
-</ul>
+<p>En combinant ces sondes, Nmap est capable d&rsquo;identifier les équipements actifs sur le réseau, ce qui permet ensuite de procéder à des analyses plus approfondies des ports et des services.</p>
 
 
-<h4 class="relative group">Options de Port 
-    <div id="options-de-port" class="anchor"></div>
+<h5 class="relative group">Autres options de découverte 
+    <div id="autres-options-de-d%C3%A9couverte" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#options-de-port" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#autres-options-de-d%C3%A9couverte" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
 <ul>
 <li>
-<p><code>-p «ports»</code>: Permet de spécifier les ports à scanner. Utilisez cette option suivie de la liste des ports que vous souhaitez scanner. Par exemple, pour scanner tous les ports, vous pouvez utiliser <code>-p-</code> ou <code>-p all</code>.</p>
+<p><strong><code>sL</code></strong> : Ce scan non intrusif effectue des requêtes DNS pour la résolution des noms, ce qui permet de lister les cibles sans envoyer de paquets aux hôtes directement. Il s&rsquo;agit d&rsquo;une approche discrète pour recenser les équipements.</p>
 </li>
 <li>
-<p><code>-F</code>: Ce paramètre permet de réaliser un scan rapide en ne vérifiant que les 100 ports les plus couramment utilisés.</p>
+<p><strong><code>Pn</code></strong> : Désactive le ping, instructant Nmap de ne pas vérifier la disponibilité des hôtes via ICMP. Utile lorsque vous savez que les cibles sont actives mais ne répondent pas aux requêtes de ping.</p>
 </li>
 <li>
-<p><code>--top-ports «nombre»</code>: Cette option vous permet de spécifier le nombre de ports les plus courants à scanner, de 1 à 65335.</p>
+<p><strong><code>sn</code></strong> : Réalise uniquement la découverte d&rsquo;hôtes sans effectuer de scan de ports, ce qui le rend discret et efficace pour une cartographie rapide du réseau.</p>
 </li>
 <li>
-<p><code>-r</code>: Ce paramètre indique à Nmap de scanner les ports dans un ordre aléatoire, ce qui peut aider à éviter la détection par les systèmes de sécurité.</p>
+<p><strong><code>PR</code></strong> : Utilise un <code>ping ARP</code> pour identifier les hôtes actifs sur un réseau local. Cette méthode est souvent utilisée par défaut sur les réseaux Ethernet, car elle est précise et rapide dans un environnement local.</p>
 </li>
 <li>
-<p><code>--port-ratio &lt;ratio&gt;</code> : Cette option permet d&rsquo;analyser les ports les plus courants en spécifiant un ratio entre 0 et 1. Cela permet de focaliser l&rsquo;analyse sur les ports les plus susceptibles d&rsquo;être ouverts.</p>
+<p><strong><code>-PM</code></strong> : Effectue un ping <code>ICMP Address Mask Request</code> pour vérifier si l&rsquo;hôte est actif.</p>
+</li>
+<li>
+<p><strong><code>PS &lt;ports&gt;</code></strong> : Envoie des paquets <code>SYN</code> à des ports spécifiques pour tester leur connectivité. Les réponses permettent de déterminer si le port est ouvert, fermé, ou filtré.</p>
+</li>
+<li>
+<p><strong><code>PA &lt;ports&gt;</code></strong> : Semblable à <code>PS</code>, mais en utilisant des paquets <code>ACK</code> pour tester les ports. Cette méthode peut être utilisée en complément pour obtenir des informations supplémentaires.</p>
+</li>
+<li>
+<p><strong><code>PU &lt;ports&gt;</code></strong> : Envoie des sondes à des ports supposés fermés pour tester la réaction des pare-feu, une technique utile pour la détection des dispositifs de filtrage.</p>
+</li>
+<li>
+<p><strong><code>PY &lt;ports&gt;</code></strong> : Envoie des sondes <code>SCTP INIT</code> pour déterminer l&rsquo;état des ports (ouvert, fermé ou injoignable), généralement sur le port 80 par défaut.</p>
+</li>
+<li>
+<p><strong><code>PO &lt;protocols&gt;</code></strong> : Spécifie les protocoles à inclure dans les en-têtes des paquets, par exemple <code>ICMP (1)</code>, <code>IGMP (2)</code>, ou <code>Encap IP (4)</code>.</p>
+</li>
+<li>
+<p><strong><code>-n</code></strong> : Désactive la résolution DNS, ce qui permet d&rsquo;accélérer le scan en évitant de résoudre les noms d&rsquo;hôtes associés aux adresses IP.</p>
+</li>
+<li>
+<p><strong><code>-R</code></strong> : Force la résolution DNS pour toutes les cibles, garantissant ainsi que les noms d&rsquo;hôtes sont inclus dans les résultats du scan.</p>
 </li>
 </ul>
 
 
-<h4 class="relative group">Scan de Version (-sV) 
+<h5 class="relative group">Options de Ports 
+    <div id="options-de-ports" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#options-de-ports" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<ul>
+<li>
+<p><strong><code>-p &lt;ports&gt;</code></strong> : Permet de spécifier les ports à scanner. Cette option est suivie de la liste des ports ou des plages que vous souhaitez analyser. Par exemple, pour scanner tous les ports, utilisez <code>-p-</code> ou <code>-p all</code>.</p>
+</li>
+<li>
+<p><strong><code>-F</code></strong> : Effectue un scan rapide en ne vérifiant que les 100 ports les plus couramment utilisés, réduisant ainsi le temps d&rsquo;analyse.</p>
+</li>
+<li>
+<p><strong><code>--top-ports &lt;nombre&gt;</code></strong> : Spécifie le nombre de ports les plus courants à analyser, de 1 à 65 535, en fonction de leur fréquence d’utilisation sur les réseaux.</p>
+</li>
+<li>
+<p><strong><code>-r</code></strong> : Force Nmap à scanner les ports dans un ordre séquentiel (et non aléatoire), ce qui peut être utile pour des tests de performance ou pour éviter certaines stratégies de détection de scan.</p>
+</li>
+<li>
+<p><strong><code>--port-ratio &lt;ratio&gt;</code></strong> : Permet de focaliser l&rsquo;analyse sur les ports les plus communément ouverts, en spécifiant un ratio entre 0 et 1. Cela peut optimiser les scans en se concentrant sur les ports les plus susceptibles d’être actifs.</p>
+</li>
+</ul>
+
+
+<h5 class="relative group">Scan de Version (<code>-sV</code>) 
     <div id="scan-de-version--sv" class="anchor"></div>
     
     <span
@@ -1063,18 +1115,18 @@
             style="text-decoration-line: none !important;" href="#scan-de-version--sv" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
 <ul>
 <li>
-<p><code>-sV</code>: L&rsquo;option de scan de version permet à Nmap d&rsquo;identifier les versions des services qui tournent sur les ports ouverts. Vous pouvez régler l&rsquo;intensité de ce scan de 0 à 9, avec 7 comme valeur par défaut.</p>
+<p><strong><code>-sV</code></strong> : Cette option permet à Nmap d&rsquo;identifier les versions des services actifs sur les ports ouverts. Elle envoie des sondes spécifiques pour obtenir des informations détaillées sur les services. Vous pouvez ajuster l&rsquo;intensité du scan de version, sur une échelle de 0 à 9, avec une valeur par défaut de 7.</p>
 </li>
 <li>
-<p><code>--version-intensity «nombre»</code>: Cette option vous permet de régler l&rsquo;intensité du scan de version. Une intensité plus basse lancera uniquement les sondes les plus probables, ce qui réduit le temps de scan, notamment pour les scans UDP.</p>
+<p><strong><code>--version-intensity &lt;nombre&gt;</code></strong> : Permet de contrôler l&rsquo;intensité du scan de version. Une intensité plus faible lancera uniquement les sondes les plus probables, ce qui peut réduire la durée du scan, notamment dans le cadre de scans UDP.</p>
 </li>
 </ul>
 
 
-<h4 class="relative group">Détection d&rsquo;OS (-O) 
+<h5 class="relative group">Détection d&rsquo;OS (<code>-O</code>) 
     <div id="d%C3%A9tection-dos--o" class="anchor"></div>
     
     <span
@@ -1083,74 +1135,128 @@
             style="text-decoration-line: none !important;" href="#d%C3%A9tection-dos--o" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
 <ul>
 <li>
-<p><code>-O</code>: L&rsquo;option -O permet à Nmap de tenter de détecter le système d&rsquo;exploitation des hôtes analysés en analysant diverses caractéristiques des paquets réseau.</p>
+<p><strong><code>-O</code></strong> : Cette option active la détection du système d&rsquo;exploitation (OS) en analysant les réponses des paquets réseau. Nmap tente d&rsquo;identifier l&rsquo;OS en fonction des caractéristiques des hôtes.</p>
 </li>
 <li>
-<p><code>--osscan-limit</code>: Si cette option est activée, Nmap n&rsquo;essaiera pas de prédire l&rsquo;OS si moins de 2 ports (un ouvert, un fermé) sont détectés, ce qui économise du temps de scan.</p>
+<p><strong><code>--osscan-limit</code></strong> : Limite la détection d&rsquo;OS si moins de deux ports (un ouvert et un fermé) sont détectés. Cela permet de réduire le temps de scan si les conditions d&rsquo;analyse ne sont pas optimales.</p>
 </li>
 <li>
-<p><code>--osscan-guess</code>: Cette option améliore la détection d&rsquo;OS en cas d&rsquo;incertitude, en effectuant une analyse plus poussée des réponses réseau.</p>
+<p><strong><code>--osscan-guess</code></strong> : Améliore la précision de la détection en cas d&rsquo;incertitude, en effectuant une analyse plus approfondie des réponses réseau. Cette option force Nmap à faire des prédictions même si les résultats sont partiels.</p>
 </li>
 </ul>
 
 
-<h4 class="relative group">Scripts 
-    <div id="scripts" class="anchor"></div>
+<h3 class="relative group">III- Scripts 
+    <div id="iii--scripts" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#scripts" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#iii--scripts" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h3>
+<p>L&rsquo;option <code>--script</code> de Nmap permet d&rsquo;exécuter des scripts pendant les scans, augmentant ainsi la capacité de collecte d&rsquo;informations. Ces scripts, appelés <strong>Nmap Scripting Engine (NSE)</strong>, peuvent être spécifiés de différentes manières : par nom de fichier, catégorie, répertoire ou à l&rsquo;aide d&rsquo;expressions régulières. Vous pouvez aussi exécuter des scripts prédéfinis via les options suivantes :</p>
 <ul>
-<li>
-<p><code>--script «nom_fichier» | «catégorie» | «répertoire» | «expression» [,...]</code>: Cette option permet de spécifier les scripts à exécuter pendant le scan. Vous pouvez spécifier un nom de fichier, une catégorie, un répertoire ou une expression. Utilisez <code>-sC</code> ou <code>--script=default</code> pour exécuter les scripts par défaut.</p>
-<ul>
-<li><code>Auth</code>: Exécute tous les scripts disponibles pour l&rsquo;authentification.</li>
-<li><code>Default</code>: Exécute les scripts par défaut de la catégorie.</li>
-<li><code>Discovery</code>: Récupère des informations sur la cible.</li>
-<li><code>External</code>: Utilise des ressources externes.</li>
-<li><code>Intrusive</code>: Utilise des scripts considérés comme intrusifs.</li>
-<li><code>Malware</code>: Recherche des connexions ouvertes par des codes malveillants.</li>
-<li><code>Safe</code>: Exécute des scripts non intrusifs.</li>
-<li><code>Vuln</code>: Découvre les vulnérabilités connues.</li>
-<li><code>All</code>: Exécute tous les scripts NSE disponibles.</li>
-</ul>
-</li>
-<li>
-<p>Pour rechercher des scripts:</p>
-<ul>
-<li><code>nmap --script-help=&quot;http-*&quot;</code>: Scripts commençant par &ldquo;http-&rdquo;.</li>
-<li><code>nmap --script-help=&quot;not intrusive&quot;</code>: Tous sauf les intrusifs.</li>
-<li><code>nmap --script-help=&quot;default or safe&quot;</code>: Ceux qui sont dans l&rsquo;un ou l&rsquo;autre ou les deux.</li>
-<li><code>nmap --script-help=&quot;default and safe&quot;</code>: Ceux qui sont dans les deux.</li>
-<li><code>nmap --script-help=&quot;(default or safe or intrusive) and not http-*&quot;</code>.</li>
-</ul>
-</li>
-<li>
-<p><code>--script-args «n1»=«v1»,«n2»={_«n3»=«v3»},«n4»={_«v4»_,_«v5»}</code>: Permet de spécifier des arguments pour les scripts. Vous pouvez spécifier des valeurs pour des arguments individuels ou des ensembles d&rsquo;arguments.</p>
-</li>
-<li>
-<p><code>--script-args-file «nom_fichier»</code>: Cette option lit les arguments depuis un fichier spécifié, ce qui peut être utile pour des configurations complexes.</p>
-</li>
-<li>
-<p><code>--script-help «nom_fichier» | «catégorie» | «répertoire» | «expression» | all[,...]</code>: Cette option fournit de l&rsquo;aide sur les scripts. Vous pouvez spécifier un nom de fichier, une catégorie, un répertoire, une expression ou simplement <code>all</code> pour obtenir une aide complète.</p>
-</li>
-<li>
-<p><code>--script-trace</code>: Cette option fournit des informations détaillées sur l&rsquo;exécution des scripts, ce qui peut être utile pour le débogage.</p>
-</li>
-<li>
-<p><code>--script-updatedb</code>: Cette option met à jour la base de données des scripts, ce qui peut être nécessaire pour intégrer de nouveaux scripts ou des mises à jour.</p>
-</li>
+<li><strong>-sC</strong> ou <strong>&ndash;script=default</strong> : Exécute les scripts par défaut, équivalents à <code>--script=default</code>, conçus pour fournir un bon aperçu des vulnérabilités sans être trop intrusifs.</li>
 </ul>
 
 
-<h4 class="relative group">Contrôle du Temps 
+<h5 class="relative group">Catégories de scripts disponibles 
+    <div id="cat%C3%A9gories-de-scripts-disponibles" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#cat%C3%A9gories-de-scripts-disponibles" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<p>Les scripts NSE sont organisés en différentes catégories, chacune visant à analyser un aspect particulier de la cible :</p>
+<ul>
+<li><strong>Auth</strong> : Scripts pour tester les mécanismes d&rsquo;authentification.</li>
+<li><strong>Default</strong> : Ensemble de scripts par défaut qui fournissent un bon point de départ pour des analyses initiales.</li>
+<li><strong>Discovery</strong> : Scripts de découverte permettant d&rsquo;obtenir des informations supplémentaires sur la cible.</li>
+<li><strong>External</strong> : Scripts s&rsquo;appuyant sur des ressources externes pour analyser la cible.</li>
+<li><strong>Intrusive</strong> : Scripts pouvant provoquer des modifications ou un comportement inattendu sur la cible.</li>
+<li><strong>Malware</strong> : Scripts qui détectent les indicateurs de compromission (IoC) associés à des logiciels malveillants.</li>
+<li><strong>Safe</strong> : Scripts non intrusifs garantissant qu&rsquo;aucune modification n&rsquo;est apportée à la cible.</li>
+<li><strong>Vuln</strong> : Scripts dédiés à la détection de vulnérabilités connues.</li>
+<li><strong>All</strong> : Exécute l&rsquo;ensemble des scripts NSE disponibles.</li>
+</ul>
+
+
+<h5 class="relative group">Recherche et filtrage des scripts 
+    <div id="recherche-et-filtrage-des-scripts" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#recherche-et-filtrage-des-scripts" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<p>Pour affiner la sélection des scripts à utiliser, Nmap permet de rechercher des scripts spécifiques grâce à l&rsquo;option <code>--script-help</code>. Celle-ci permet d&rsquo;afficher des informations sur des scripts en fonction de leur nom, catégorie ou comportement. Exemples de recherches :</p>
+<ul>
+<li><code>nmap --script-help=&quot;http-*&quot;</code> : Affiche tous les scripts dont le nom commence par &ldquo;http-&rdquo;.</li>
+<li><code>nmap --script-help=&quot;not intrusive&quot;</code> : Exclut les scripts intrusifs et liste les autres.</li>
+<li><code>nmap --script-help=&quot;default or safe&quot;</code> : Affiche les scripts appartenant aux catégories &ldquo;default&rdquo; ou &ldquo;safe&rdquo;.</li>
+<li><code>nmap --script-help=&quot;default and safe&quot;</code> : Affiche les scripts qui sont à la fois dans les catégories &ldquo;default&rdquo; et &ldquo;safe&rdquo;.</li>
+<li><code>nmap --script-help=&quot;(default or safe or intrusive) and not http-*&quot;</code> : Affiche les scripts des catégories &ldquo;default&rdquo;, &ldquo;safe&rdquo; ou &ldquo;intrusive&rdquo; mais exclut ceux liés au protocole HTTP.</li>
+</ul>
+
+
+<h5 class="relative group">Utilisation des arguments de scripts 
+    <div id="utilisation-des-arguments-de-scripts" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#utilisation-des-arguments-de-scripts" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<p>Certains scripts NSE peuvent recevoir des arguments pour personnaliser leur fonctionnement. Vous pouvez les spécifier via l&rsquo;option <code>--script-args</code>, qui permet de passer des valeurs spécifiques à des paramètres de scripts :</p>
+<ul>
+<li><code>nmap --script-args «n1»=«v1»,«n2»={_«n3»=«v3»},«n4»={_«v4»_,_«v5»}</code> : Permet de définir plusieurs ensembles d&rsquo;arguments.</li>
+</ul>
+<p>Si vous avez une configuration plus complexe ou des ensembles d&rsquo;arguments récurrents, il est possible de les fournir à partir d&rsquo;un fichier texte en utilisant <code>--script-args-file</code>, ce qui est particulièrement pratique pour les configurations automatisées.</p>
+
+
+<h5 class="relative group">Aide, débogage et mise à jour des scripts 
+    <div id="aide-d%C3%A9bogage-et-mise-%C3%A0-jour-des-scripts" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#aide-d%C3%A9bogage-et-mise-%C3%A0-jour-des-scripts" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<ul>
+<li><strong>&ndash;script-help «nom_fichier» | «catégorie» | «répertoire» | «expression» | all</strong> : Cette option affiche de l&rsquo;aide sur les scripts en fonction du fichier, de la catégorie, du répertoire, ou d&rsquo;une expression régulière. Spécifier &ldquo;all&rdquo; affiche l&rsquo;aide pour tous les scripts disponibles.</li>
+<li><strong>&ndash;script-trace</strong> : Active le traçage détaillé de l&rsquo;exécution des scripts, fournissant des informations précieuses pour le débogage ou la compréhension des interactions entre les scripts et la cible.</li>
+<li><strong>&ndash;script-updatedb</strong> : Met à jour la base de données des scripts NSE installés, nécessaire lorsque vous ajoutez de nouveaux scripts ou effectuez des mises à jour sur les scripts existants.</li>
+</ul>
+
+
+<h3 class="relative group">IV- Contrôle du Temps et de l&rsquo;Aggressivité des Scans 
+    <div id="iv--contr%C3%B4le-du-temps-et-de-laggressivit%C3%A9-des-scans" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#iv--contr%C3%B4le-du-temps-et-de-laggressivit%C3%A9-des-scans" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Nmap propose plusieurs options pour ajuster le contrôle du temps et l&rsquo;agressivité des scans, permettant ainsi de mieux gérer les ressources et d&rsquo;adapter les performances en fonction des besoins spécifiques.</p>
+
+
+<h5 class="relative group">Contrôle du Temps 
     <div id="contr%C3%B4le-du-temps" class="anchor"></div>
     
     <span
@@ -1159,39 +1265,58 @@
             style="text-decoration-line: none !important;" href="#contr%C3%B4le-du-temps" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
+<p>Nmap permet de configurer les délais et les performances des scans en utilisant des unités de temps variées (millisecondes, secondes, minutes) :</p>
 <ul>
 <li>
-<p>Nmap peut ajuster le temps en secondes, minutes, ou millisecondes : Vous pouvez définir le temps en utilisant <code>--host-timeout arguments 900000ms</code>, <code>900</code>, <code>900s</code>, et <code>15m</code> qui effectueront tous la même tâche.</p>
+<p><strong>Temps de scan ajustable</strong> : Vous pouvez définir le temps en utilisant des arguments tels que <code>--host-timeout</code>, qui accepte des formats variés : <code>900000ms</code>, <code>900</code>, <code>900s</code>, et <code>15m</code> effectuent tous la même tâche, soit un délai de 15 minutes.</p>
 </li>
 <li>
-<p><code>--min-hostgroup «numhosts»; --max-hostgroup «numhosts»</code>: Ces options ajustent la taille des groupes d&rsquo;analyse en parallèle.</p>
+<p><strong>Contrôle des groupes d&rsquo;hôtes</strong> :</p>
+<ul>
+<li><code>--min-hostgroup «numhosts»</code> et <code>--max-hostgroup «numhosts»</code> permettent de définir la taille des groupes d&rsquo;hôtes analysés simultanément.</li>
+</ul>
 </li>
 <li>
-<p><code>--min-parallelism «numprobes»; --max-parallelism «numprobes»</code>: Ces options contrôlent le nombre de scanneurs en parallèle.</p>
+<p><strong>Contrôle du parallélisme</strong> :</p>
+<ul>
+<li><code>--min-parallelism «numprobes»</code> et <code>--max-parallelism «numprobes»</code> contrôlent le nombre de sondes envoyées en parallèle.</li>
+</ul>
 </li>
 <li>
-<p><code>--min-rtt-timeout «time», --max-rtt-timeout «time», --initial-rtt-timeout «time»</code>: Ces options modifient les délais de temps pour les connexions.</p>
+<p><strong>Temps de réponse RTT (Round Trip Time)</strong> :</p>
+<ul>
+<li><code>--min-rtt-timeout «time»</code>, <code>--max-rtt-timeout «time»</code>, et <code>--initial-rtt-timeout «time»</code> permettent d&rsquo;ajuster les délais de réponse pour les connexions.</li>
+</ul>
 </li>
 <li>
-<p><code>--max-retries «numtries»</code>: Cette option modifie le nombre de tentatives avant d&rsquo;abandonner.</p>
+<p><strong>Nombre de tentatives</strong> :</p>
+<ul>
+<li><code>--max-retries «numtries»</code> ajuste le nombre de tentatives avant d&rsquo;abandonner une connexion.</li>
+</ul>
 </li>
 <li>
-<p><code>--host-timeout «time»</code>: Cette option modifie le temps de scan par hôte.</p>
+<p><strong>Délai entre scans</strong> :</p>
+<ul>
+<li><code>--scan-delay «time»</code> et <code>--max-scan-delay «time»</code> modifient le délai entre chaque test envoyé à un hôte.</li>
+</ul>
 </li>
 <li>
-<p><code>--scan-delay «time»; --max-scan-delay «time»</code>: Ces options ajustent le délai entre chaque test.</p>
+<p><strong>Taux d&rsquo;envoi de paquets</strong> :</p>
+<ul>
+<li><code>--min-rate «number»</code> et <code>--max-rate «number»</code> ajustent le nombre de paquets envoyés par seconde, ce qui peut influencer la vitesse du scan.</li>
+</ul>
 </li>
 <li>
-<p><code>--min-rate «number»; --max-rate «number»</code>: Ces options modifient le nombre de paquets envoyés par seconde.</p>
-</li>
-<li>
-<p><code>--defeat-rst-ratelimit</code>: Cette option permet d&rsquo;accélérer le scan en ignorant les limites de réponse RST.</p>
+<p><strong>Bypass des limites RST</strong> :</p>
+<ul>
+<li><code>--defeat-rst-ratelimit</code> permet d&rsquo;ignorer les limitations de réponse RST (Reset) sur certains réseaux, accélérant ainsi le scan.</li>
+</ul>
 </li>
 </ul>
 
 
-<h4 class="relative group">Contrôle de l&rsquo;Aggressivité 
+<h5 class="relative group">Contrôle de l&rsquo;Aggressivité 
     <div id="contr%C3%B4le-de-laggressivit%C3%A9" class="anchor"></div>
     
     <span
@@ -1200,220 +1325,340 @@
             style="text-decoration-line: none !important;" href="#contr%C3%B4le-de-laggressivit%C3%A9" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
+<p>L&rsquo;option <code>-T</code> dans Nmap ajuste le niveau d&rsquo;agressivité du scan en modifiant divers paramètres comme les délais, le parallélisme, et la gestion des ressources. Les niveaux d&rsquo;agressivité sont définis comme suit :</p>
 <ul>
-<li><code>-T paranoid|sneaky|polite|normal|aggressive|insane</code>: Cette option ajuste l&rsquo;agressivité du scan.
-<ul>
-<li><code>-T0</code> (paranoid): Effectue un seul test à la fois, en attendant 5 minutes entre chaque test.</li>
-<li><code>-T1</code>(sneaky) et <code>-T2</code>(polite): Effectue les tests de manière similaire, mais en attendant respectivement 15 secondes et 0,4 secondes entre chaque test.</li>
-<li><code>-T3</code>(normal): C&rsquo;est l&rsquo;agressivité par défaut, incluant le parallélisme (équilibrage efficace de la vitesse du scan tout en maintenant une utilisation raisonnable des ressources).</li>
-<li><code>-T4</code>(agressive): tilise des paramètres prédéfinis pour un scan relativement rapide tout en évitant une utilisation excessive des ressources réseau. Il s&rsquo;agit d&rsquo;un bon compromis entre vitesse et prudence.</li>
-<li><code>-T5</code>(insane): Est considéré comme le niveau le plus agressif, utilisant toutes les ressources disponibles pour effectuer un scan aussi rapide que possible. Il s&rsquo;agit du niveau le plus rapide, mais aussi du plus intrusif et risqué.</li>
-</ul>
-</li>
+<li><strong>-T0 (paranoid)</strong> : Effectue un test à la fois, en introduisant un délai de 5 minutes entre chaque test. Utilisé pour des scans extrêmement furtifs.</li>
+<li><strong>-T1 (sneaky)</strong> : Ajoute un délai de 15 secondes entre chaque test.</li>
+<li><strong>-T2 (polite)</strong> : Réduit le délai à 0,4 seconde, tout en restant discret.</li>
+<li><strong>-T3 (normal)</strong> : Niveau par défaut, équilibrant vitesse et utilisation des ressources.</li>
+<li><strong>-T4 (aggressive)</strong> : Optimise le scan pour une vitesse accrue tout en limitant l&rsquo;impact réseau, adapté pour des scans relativement rapides sans trop de risques.</li>
+<li><strong>-T5 (insane)</strong> : Utilise toutes les ressources disponibles pour un scan aussi rapide que possible. Ce niveau est le plus rapide mais aussi le plus intrusif, présentant des risques accrus de détection et de perturbation.</li>
 </ul>
 
 
-<h4 class="relative group">Firewall/IDS 
-    <div id="firewallids" class="anchor"></div>
+<h3 class="relative group">V- Firewall/IDS: Options de Masquage et de Fragmentation dans Nmap 
+    <div id="v--firewallids-options-de-masquage-et-de-fragmentation-dans-nmap" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#firewallids" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#v--firewallids-options-de-masquage-et-de-fragmentation-dans-nmap" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Nmap offre des fonctionnalités avancées pour contourner les systèmes de sécurité tels que les pare-feu et les systèmes de détection d&rsquo;intrusion (IDS). Voici quelques-unes des principales options que vous pouvez utiliser pour améliorer la discrétion de vos scans.</p>
+
+
+<h4 class="relative group">Fragmentation des Paquets 
+    <div id="fragmentation-des-paquets" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#fragmentation-des-paquets" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>Option <code>-f</code></strong> : Cette option permet de fragmenter les paquets envoyés lors du scan. Par défaut, Nmap divise les paquets en morceaux de <strong>8 octets</strong> après l&rsquo;en-tête. Si vous souhaitez spécifier une taille de fragment différente, vous pouvez utiliser l&rsquo;option <code>..mtu</code>, tout en veillant à ce que le décalage soit un <strong>multiple de 8</strong>. Il est important de noter que la fragmentation n&rsquo;est pas prise en charge par les scanners de version et les scripts Nmap.</li>
+</ul>
+
+
+<h4 class="relative group">Masquage d&rsquo;Adresse IP 
+    <div id="masquage-dadresse-ip" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#masquage-dadresse-ip" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
 <ul>
 <li>
-<p><code>-f</code>: Cette option fragmente les paquets. Par défaut, Nmap fragmente les paquets en morceaux de <code>8 octets</code> après l&rsquo;en-tête. Pour spécifier une taille de fragment différente, vous pouvez utiliser <code>..mtu</code> (dans ce cas, n&rsquo;utilisez pas -f). Assurez-vous que le décalage est un <code>multiple de 8</code>. Il est à noter que les scanners de version et les scripts ne prennent pas en charge la fragmentation.</p>
-</li>
-<li>
-<p>Masquage d&rsquo;Adresse (-D)</p>
+<p><strong>Masquage d&rsquo;Adresse avec <code>-D</code></strong> :</p>
 <ul>
-<li><code>-D decoy1,decoy2,ME</code>: Nmap envoie des scanners avec d&rsquo;autres adresses IP comme origine pour vous cacher. Si vous ajoutez ME à la liste, Nmap vous positionnera là; il est préférable de mettre 5 ou 6 adresses avant la vôtre pour vous masquer complètement. Vous pouvez générer des adresses IP aléatoires avec RND:«nombre» pour générer «nombre» d&rsquo;adresses IP aléatoires. Celles-ci ne fonctionnent pas avec la détection de versions sans connexion TCP. Si vous êtes dans un réseau, il est préférable d&rsquo;utiliser des adresses IP qui sont actives, sinon il sera très facile de savoir que vous êtes la seule active.</li>
+<li><strong>Syntaxe</strong> : <code>-D decoy1,decoy2,ME</code></li>
+<li>Cette option permet à Nmap d&rsquo;envoyer des scans en utilisant d&rsquo;autres adresses IP comme origine, ce qui aide à dissimuler votre adresse IP réelle. En ajoutant <code>ME</code> à la liste, vous indiquez à Nmap que vous souhaitez inclure votre adresse IP. Il est recommandé de positionner <strong>5 à 6 adresses IP</strong> fictives avant la vôtre pour obtenir un masquage optimal.</li>
+<li>Vous pouvez également générer des adresses IP aléatoires à l&rsquo;aide de l&rsquo;option <code>RND:«nombre»</code>, où «nombre» représente le nombre d&rsquo;adresses IP à générer. Il est à noter que ces adresses ne fonctionneront pas avec la détection de versions sans connexion TCP. Sur un réseau, il est conseillé d&rsquo;utiliser des adresses IP qui sont actives ; sinon, il sera facile de déterminer que vous êtes l&rsquo;unique hôte actif.</li>
 </ul>
 </li>
 <li>
-<p>Pour utiliser des adresses IP aléatoires : <code>nmap -D RND:10 Ip_cible</code></p>
+<p><strong>Utilisation d&rsquo;adresses IP aléatoires</strong> :</p>
+<ul>
+<li>Par exemple, vous pouvez exécuter la commande suivante pour utiliser des adresses IP aléatoires lors d&rsquo;un scan :</li>
+</ul>
 </li>
 </ul>
+<p><code>nmap -D RND:10 Ip_cible </code></p>
 
 
-<h4 class="relative group">Spécification de l&rsquo;Adresse Source (-S) 
-    <div id="sp%C3%A9cification-de-ladresse-source--s" class="anchor"></div>
+<h5 class="relative group">Spécification de l&rsquo;Adresse Source et Options Réseau dans Nmap 
+    <div id="sp%C3%A9cification-de-ladresse-source-et-options-r%C3%A9seau-dans-nmap" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#sp%C3%A9cification-de-ladresse-source--s" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#sp%C3%A9cification-de-ladresse-source-et-options-r%C3%A9seau-dans-nmap" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
-<ul>
-<li><code>-S IP</code>: Cette option permet de spécifier l&rsquo;adresse IP source du paquet. Utile lorsque Nmap ne détecte pas automatiquement votre adresse IP ou pour faire croire qu&rsquo;un autre hôte effectue le scan.</li>
-</ul>
+</h5>
+<p>Nmap offre une variété d&rsquo;options pour spécifier des adresses IP, sélectionner des interfaces réseau et configurer des paquets, ce qui permet d&rsquo;adapter les scans à différents environnements et besoins.</p>
 
 
-<h4 class="relative group">Sélection de l&rsquo;Interface Réseau (-e) 
-    <div id="s%C3%A9lection-de-linterface-r%C3%A9seau--e" class="anchor"></div>
+<h4 class="relative group">Spécification de l&rsquo;Adresse Source 
+    <div id="sp%C3%A9cification-de-ladresse-source" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#s%C3%A9lection-de-linterface-r%C3%A9seau--e" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#sp%C3%A9cification-de-ladresse-source" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
 <ul>
-<li><code>-e «interface»</code>: Cette option permet de choisir l&rsquo;interface réseau à utiliser pour le scan.</li>
+<li><strong>Option <code>-S IP</code></strong> : Cette option permet de définir l&rsquo;adresse IP source des paquets envoyés par Nmap. Elle est particulièrement utile lorsque Nmap ne parvient pas à détecter automatiquement votre adresse IP ou lorsque vous souhaitez faire croire qu&rsquo;un autre hôte réalise le scan.</li>
 </ul>
+
+
+<h4 class="relative group">Sélection de l&rsquo;Interface Réseau 
+    <div id="s%C3%A9lection-de-linterface-r%C3%A9seau" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#s%C3%A9lection-de-linterface-r%C3%A9seau" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>Option <code>-e «interface»</code></strong> : Cette option permet de sélectionner l&rsquo;interface réseau spécifique à utiliser pour le scan.</li>
+</ul>
+
+
+<h4 class="relative group">Pratiques de Sécurité 
+    <div id="pratiques-de-s%C3%A9curit%C3%A9" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#pratiques-de-s%C3%A9curit%C3%A9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <blockquote>
-<p>Notons que certains admin réseaux trouvent plus pratique de laisser de nombreux ports ouverts plutôt que de chercher des solutions alternatives. Ces ports, tels que les ports DNS ou FTP, peuvent présenter des vulnérabilités. Pour explorer ces failles potentielles, Nmap propose les options &ndash;source-port «numéro de port» et -g «numéro de port» (équivalents).</p>
+<p>Il est bon de noter que certains administrateurs réseau préfèrent laisser de nombreux ports ouverts, tels que les ports DNS ou FTP par exemple, plutôt que de rechercher des solutions alternatives. Cela peut exposer le réseau à des vulnérabilités. Pour explorer ces failles potentielles, Nmap propose des options telles que <code>--source-port «numéro de port»</code> et <code>-g «numéro de port»</code>, qui sont équivalentes et permettent d&rsquo;exploiter ces ports.</p>
 </blockquote>
-<ul>
-<li>
-<p><code>--data</code> <em><code>«chaîne hexadécimale»</code></em>: Cette option permet d&rsquo;envoyer des données sous forme de texte en utilisant le format hexadécimal.</p>
-</li>
-<li>
-<p><code>--data-string</code> <em><code>«chaîne»</code></em>: Cette option permet d&rsquo;envoyer des données sous forme de texte normal.</p>
-</li>
-<li>
-<p><code>--data-length</code> <em><code>«nombre»</code></em>: Cette option spécifie la longueur des données à envoyer. Nmap envoie uniquement les en-têtes et ajoute un nombre spécifié d&rsquo;octets supplémentaires de manière aléatoire.</p>
-</li>
-<li>
-<p><code>--ip-options</code>: Utilisez cette option pour configurer complètement le paquet IP.</p>
-</li>
-<li>
-<p><code>--packet-trace</code>: Utilisez cette option si vous souhaitez voir les options dans les paquets envoyés et reçus.</p>
-</li>
-<li>
-<p><code>--ttl</code> <em><code>«valeur»</code></em>: Cette option permet de spécifier la valeur TTL (Time to Live) pour les paquets.</p>
-</li>
-<li>
-<p><code>--randomize-hosts</code>: Cette option rend l&rsquo;attaque moins évidente en randomisant l&rsquo;ordre des cibles.</p>
-</li>
-<li>
-<p><code>--spoof-mac</code> <em><code>«adresse MAC, préfixe ou nom de fournisseur»</code></em>: Utilisez cette option pour changer l&rsquo;adresse MAC utilisée lors du scan. Vous pouvez spécifier une adresse MAC, un préfixe ou le nom d&rsquo;un fournisseur.</p>
-</li>
-<li>
-<p><code>--proxies</code> <em><code>«liste d'URL de proxy séparées par des virgules»</code></em>: Utilisez cette option pour utiliser des proxys. Notez que parfois, un proxy ne maintient pas autant de connexions ouvertes que Nmap le souhaite, donc vous devrez peut-être modifier le parallélisme avec <code>--max-parallelism</code>.</p>
-</li>
-<li>
-<p><code>-sP</code>: Utilisez cette option pour découvrir les hôtes dans le réseau avec ARP.</p>
-</li>
-</ul>
 
 
-<h4 class="relative group">Sorties 
-    <div id="sorties" class="anchor"></div>
+<h3 class="relative group">VI- Options Avancées pour les Paquets 
+    <div id="vi--options-avanc%C3%A9es-pour-les-paquets" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#sorties" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<ul>
-<li>
-<p><code>-oN file</code> : Produit une sortie normale dans le fichier spécifié.</p>
-</li>
-<li>
-<p><code>-oX file</code> : Produit une sortie XML dans le fichier spécifié.</p>
-</li>
-<li>
-<p><code>-oS file</code> : Produit une sortie conçue pour les script kiddies dans le fichier spécifié.</p>
-</li>
-<li>
-<p><code>-oG file</code> : Produit une sortie au format greppable dans le fichier spécifié.</p>
-</li>
-<li>
-<p><code>-oA file</code> : Produit toutes les sorties sauf -oS dans le fichier spécifié.</p>
-</li>
-<li>
-<p><code>-v level</code> : Définit le niveau de verbosité.</p>
-</li>
-<li>
-<p><code>-d level</code> : Définit le niveau de débogage.</p>
-</li>
-<li>
-<p><code>--reason</code> : Affiche la raison de l&rsquo;état de l&rsquo;hôte.</p>
-</li>
-<li>
-<p><code>--stats-every time</code> : Affiche les statistiques à intervalles réguliers.</p>
-</li>
-<li>
-<p><code>--packet-trace</code> : Affiche les paquets envoyés.</p>
-</li>
-<li>
-<p><code>--open</code> : Affiche les ports ouverts et leur état.</p>
-</li>
-<li>
-<p><code>--resume file</code> : Permet de reprendre une analyse à partir d&rsquo;un fichier de reprise.</p>
-</li>
-</ul>
-
-
-<h3 class="relative group">Divers 
-    <div id="divers" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#divers" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#vi--options-avanc%C3%A9es-pour-les-paquets" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 <ul>
 <li>
-<p><code>-6</code> : Active la prise en charge d&rsquo;IPv6.</p>
+<p><strong><code>--data «chaîne hexadécimale»</code></strong> : Permet d&rsquo;envoyer des données sous forme de texte en utilisant le format hexadécimal.</p>
 </li>
 <li>
-<p><code>-A</code> : Équivalent à -O -sV -sC &ndash;traceroute.</p>
+<p><strong><code>--data-string «chaîne»</code></strong> : Permet d&rsquo;envoyer des données sous forme de texte normal.</p>
+</li>
+<li>
+<p><strong><code>--data-length «nombre»</code></strong> : Spécifie la longueur des données à envoyer. Nmap enverra uniquement les en-têtes et ajoutera un nombre spécifié d&rsquo;octets supplémentaires de manière aléatoire.</p>
+</li>
+<li>
+<p><strong><code>--ip-options</code></strong> : Utilisez cette option pour configurer entièrement les options du paquet IP.</p>
+</li>
+<li>
+<p><strong><code>--packet-trace</code></strong> : Affiche les informations sur les paquets envoyés et reçus, ce qui peut être utile pour le débogage.</p>
+</li>
+<li>
+<p><strong><code>--ttl «valeur»</code></strong> : Permet de spécifier la valeur TTL (Time to Live) des paquets envoyés.</p>
+</li>
+<li>
+<p><strong><code>--randomize-hosts</code></strong> : Rend le scan moins évident en randomisant l&rsquo;ordre des cibles, ce qui contribue à dissimuler les activités.</p>
+</li>
+<li>
+<p><strong><code>--spoof-mac «adresse MAC, préfixe ou nom de fournisseur»</code></strong> : Change l&rsquo;adresse MAC utilisée lors du scan, en spécifiant une adresse MAC, un préfixe ou le nom d&rsquo;un fournisseur.</p>
+</li>
+<li>
+<p><strong><code>--proxies «liste d'URL de proxy séparées par des virgules»</code></strong> : Utilisez cette option pour effectuer des scans à travers des proxys. Notez qu&rsquo;un proxy peut ne pas maintenir autant de connexions ouvertes que Nmap le désire ; par conséquent, il peut être nécessaire de modifier le parallélisme avec l&rsquo;option <code>--max-parallelism</code>.</p>
+</li>
+<li>
+<p><strong><code>-sP</code></strong> : Utilisez cette option pour découvrir les hôtes dans un réseau à l&rsquo;aide de l&rsquo;ARP (Address Resolution Protocol).</p>
 </li>
 </ul>
 
 
-<h4 class="relative group">Exécution 
-    <div id="ex%C3%A9cution" class="anchor"></div>
+<h3 class="relative group">VII- Options de Sortie dans Nmap 
+    <div id="vii--options-de-sortie-dans-nmap" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ex%C3%A9cution" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#vii--options-de-sortie-dans-nmap" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
-<p>Pendant l&rsquo;exécution de Nmap, vous pouvez modifier les options en cours de route :</p>
+</h3>
+<p>Nmap propose plusieurs options pour personnaliser la sortie des résultats de scan. Ces options permettent de stocker les données dans différents formats, facilitant ainsi l&rsquo;analyse ultérieure ou l&rsquo;intégration dans d&rsquo;autres outils.</p>
+
+
+<h5 class="relative group">Options de Sortie 
+    <div id="options-de-sortie" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#options-de-sortie" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
 <ul>
 <li>
-<p><code>v / V</code> : Augmente / diminue le niveau de verbosité.</p>
+<p><strong><code>-oN file</code></strong> : Génère une sortie normale dans le fichier spécifié, offrant une vue lisible et structurée des résultats.</p>
 </li>
 <li>
-<p><code>d / D</code> : Augmente / diminue le niveau de débogage.</p>
+<p><strong><code>-oX file</code></strong> : Produit une sortie au format XML dans le fichier spécifié, idéale pour les traitements automatisés et l&rsquo;intégration avec d&rsquo;autres outils d&rsquo;analyse.</p>
 </li>
 <li>
-<p><code>p / P</code> : Active / désactive la traçabilité des paquets.</p>
+<p><strong><code>-oS file</code></strong> : Crée une sortie conçue pour les utilisateurs peu expérimentés (souvent appelés &ldquo;script kiddies&rdquo;), facilitant la compréhension des résultats.</p>
 </li>
 <li>
-<p><code>?</code> : Affiche une aide interactive.</p>
+<p><strong><code>-oG file</code></strong> : Produit une sortie au format greppable, permettant une recherche facile et rapide à l&rsquo;aide d&rsquo;outils de ligne de commande.</p>
+</li>
+<li>
+<p><strong><code>-oA file</code></strong> : Génère toutes les sorties, sauf celle destinée aux script kiddies, dans le fichier spécifié. Cela inclut les formats normal, XML et greppable.</p>
 </li>
 </ul>
 
 
-<h4 class="relative group">Vulnscan 
-    <div id="vulnscan" class="anchor"></div>
+<h5 class="relative group">Options de Verbosité et de Débogage 
+    <div id="options-de-verbosit%C3%A9-et-de-d%C3%A9bogage" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#vulnscan" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#options-de-verbosit%C3%A9-et-de-d%C3%A9bogage" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<ul>
+<li>
+<p><strong><code>-v level</code></strong> : Définit le niveau de verbosité de la sortie, permettant d&rsquo;ajuster la quantité d&rsquo;informations affichées pendant le scan.</p>
+</li>
+<li>
+<p><strong><code>-d level</code></strong> : Spécifie le niveau de débogage, fournissant des détails supplémentaires sur le fonctionnement interne de Nmap, ce qui peut être utile pour résoudre des problèmes.</p>
+</li>
+</ul>
+
+
+<h5 class="relative group">Options d&rsquo;Affichage d&rsquo;État et de Statistiques 
+    <div id="options-daffichage-d%C3%A9tat-et-de-statistiques" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#options-daffichage-d%C3%A9tat-et-de-statistiques" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<ul>
+<li>
+<p><strong><code>--reason</code></strong> : Affiche la raison derrière l&rsquo;état de chaque hôte, fournissant un contexte pour les résultats du scan.</p>
+</li>
+<li>
+<p><strong><code>--stats-every time</code></strong> : Affiche les statistiques à intervalles réguliers pendant l&rsquo;exécution du scan, permettant de suivre l&rsquo;évolution du processus.</p>
+</li>
+<li>
+<p><strong><code>--packet-trace</code></strong> : Montre les paquets envoyés et reçus, ce qui peut être utile pour le débogage ou pour mieux comprendre le comportement du scan.</p>
+</li>
+<li>
+<p><strong><code>--open</code></strong> : Affiche uniquement les ports ouverts et leur état, facilitant ainsi la concentration sur les éléments importants des résultats.</p>
+</li>
+<li>
+<p><strong><code>--resume file</code></strong> : Permet de reprendre une analyse à partir d&rsquo;un fichier de reprise, ce qui est particulièrement utile pour les scans longs ou complexes.</p>
+</li>
+</ul>
+<p>Nmap propose un ensemble d&rsquo;options supplémentaires qui améliorent la flexibilité et la fonctionnalité du scan. Ces options permettent d&rsquo;adapter Nmap à des environnements variés et de répondre à des besoins spécifiques.</p>
+
+
+<h3 class="relative group">VIII- Options Diverses 
+    <div id="viii--options-diverses" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#viii--options-diverses" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>
+<p><strong><code>-6</code></strong> : Active la prise en charge du protocole IPv6, permettant ainsi d&rsquo;analyser des cibles utilisant ce protocole.</p>
+</li>
+<li>
+<p><strong><code>-A</code></strong> : Exécute un ensemble de fonctionnalités avancées, équivalent à la combinaison de <code>-O</code> (détection du système d&rsquo;exploitation), <code>-sV</code> (détection de version), <code>-sC</code> (exécution des scripts par défaut) et <code>--traceroute</code> (détermination du chemin vers l&rsquo;hôte).</p>
+</li>
+</ul>
+
+
+<h4 class="relative group">Modification des Options en Cours d&rsquo;Exécution 
+    <div id="modification-des-options-en-cours-dex%C3%A9cution" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#modification-des-options-en-cours-dex%C3%A9cution" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
-<p>Les scripts de Nmap Vulnscan examinent les versions des services obtenues dans une base de données hors ligne (téléchargée depuis d&rsquo;autres sources très importantes) et renvoient les vulnérabilités potentielles.</p>
-<p>Les bases de données utilisées sont :</p>
+<p>Nmap permet d&rsquo;ajuster certaines options pendant l&rsquo;exécution, offrant une plus grande interactivité et réactivité :</p>
+<ul>
+<li>
+<p><strong><code>v / V</code></strong> : Augmente ou diminue le niveau de verbosité, permettant de contrôler la quantité d&rsquo;informations affichées pendant le scan.</p>
+</li>
+<li>
+<p><strong><code>d / D</code></strong> : Augmente ou diminue le niveau de débogage, fournissant plus ou moins de détails sur le processus interne de Nmap.</p>
+</li>
+<li>
+<p><strong><code>p / P</code></strong> : Active ou désactive la traçabilité des paquets, ce qui peut être utile pour observer le comportement des paquets envoyés.</p>
+</li>
+<li>
+<p><strong><code>?</code></strong> : Affiche une aide interactive, offrant un accès rapide aux commandes et options disponibles.</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">IX- Nmap Vulnscan 
+    <div id="ix--nmap-vulnscan" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ix--nmap-vulnscan" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Nmap inclut un ensemble de scripts Vulnscan qui analysent les versions des services détectées lors des scans. Ces scripts se réfèrent à une base de données hors ligne, contenant des informations cruciales sur les vulnérabilités potentielles associées aux versions de services identifiées.</p>
+
+
+<h5 class="relative group">Bases de Données Utilisées 
+    <div id="bases-de-donn%C3%A9es-utilis%C3%A9es" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#bases-de-donn%C3%A9es-utilis%C3%A9es" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<p>Les scripts Vulnscan s&rsquo;appuient sur plusieurs bases de données de vulnérabilités, que vous devez télécharger et ajouter au répertoire <code>/usr/share/nmap/scripts/vulscan/</code> pour les utiliser efficacement. Voici les bases de données recommandées :</p>
 <ol>
 <li>Scipvuldb.csv - <a href="http://www.scip.ch/en/?vuldb" target="_blank">http://www.scip.ch/en/?vuldb</a></li>
 <li>Cve.csv - <a href="http://cve.mitre.org/" target="_blank">http://cve.mitre.org</a></li>
@@ -1425,31 +1670,32 @@
 <li>Openvas.csv - <a href="http://www.openvas.org/" target="_blank">http://www.openvas.org</a></li>
 </ol>
 <p>Il est également nécessaire de télécharger les paquets des bases de données et de les ajouter à /usr/share/nmap/scripts/vulscan/.</p>
-<p>Utilisation :</p>
+<p>Pour tirer parti de Nmap Vulnscan, vous pouvez utiliser les commandes suivantes :</p>
 <ul>
-<li>Pour tout utiliser :</li>
+<li><strong>Pour effectuer une analyse complète avec Vulnscan :</strong></li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nmap -sV --script<span class="o">=</span>vulscan &lt;HOST&gt;
 </span></span></code></pre></div><ul>
 <li>Pour utiliser une base de données spécifique :</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nmap -sV --script<span class="o">=</span>vulscan --script-args <span class="nv">vulscandb</span><span class="o">=</span>cve.csv &lt;HOST&gt;
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>Ces commandes permettent de détecter les vulnérabilités connues sur les services en cours d&rsquo;exécution sur l&rsquo;hôte ciblé, facilitant ainsi l&rsquo;évaluation de la sécurité.</p>
 
-<h3 class="relative group">Accélérer l&rsquo;analyse des services de Nmap x16 
-    <div id="acc%C3%A9l%C3%A9rer-lanalyse-des-services-de-nmap-x16" class="anchor"></div>
+
+<h3 class="relative group">X- Accélérer l&rsquo;analyse des services de Nmap x16 
+    <div id="x--acc%C3%A9l%C3%A9rer-lanalyse-des-services-de-nmap-x16" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#acc%C3%A9l%C3%A9rer-lanalyse-des-services-de-nmap-x16" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#x--acc%C3%A9l%C3%A9rer-lanalyse-des-services-de-nmap-x16" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>Selon <a href="https://joshua.hu/nmap-speedup-service-scanning-16x" target="_blank">cette publication</a>, vous pouvez accélérer l&rsquo;analyse des services Nmap en modifiant toutes les valeurs <code>totalwaitms</code> dans <code>/usr/share/nmap/nmap-service-probes</code> à <code>300</code> et <code>tcpwrappedms</code> à <code>200</code>.</p>
-<p>De plus, les sondes qui n&rsquo;ont pas de <code>servicewaitms</code> spécifiquement défini utilisent une valeur par défaut de <code>5000</code>. Par conséquent, nous pouvons soit ajouter des valeurs à chacune des sondes, soit compiler Nmap nous-mêmes et changer la valeur par défaut dans <a href="https://github.com/nmap/nmap/blob/master/service_scan.h#L79" target="_blank">service_scan.h</a>.</p>
-<p>Si vous ne souhaitez pas du tout changer les valeurs <code>totalwaitms</code> et <code>tcpwrappedms</code> dans le fichier <code>/usr/share/nmap/nmap-service-probes</code>, vous pouvez modifier le <a href="https://github.com/nmap/nmap/blob/master/service_scan.cc#L1358" target="_blank">code d&rsquo;analyse</a> de manière à ce que ces valeurs dans le fichier <code>nmap-service-probes</code> soient complètement ignorées.</p>
-<p>En conclusion, l&rsquo;utilisation de Nmap offre une gamme très variée d&rsquo;options pour l&rsquo;analyse des réseaux, la détection des services et la détection d&rsquo;éventuelles vulnérabilités. En explorant ses fonctionnalités et en ajustant certains paramètres, il est possible d&rsquo;optimiser l&rsquo;analyse et accélérer le processus de découverte et de sécurisation des réseaux informatiques. Que ce soit pour des besoins de sécurité, de dépannage réseau ou de gestion des actifs, Nmap reste un outil précieux et polyvalent pour les tâches de scanning réseau.</p>
+<p>Selon une <a href="https://joshua.hu/nmap-speedup-service-scanning-16x" target="_blank">étude publiée</a>, il est possible d&rsquo;accélérer considérablement l&rsquo;analyse des services avec Nmap en ajustant certains paramètres dans le fichier de configuration <code>/usr/share/nmap/nmap-service-probes</code>. Pour ce faire, modifiez toutes les occurrences de <code>totalwaitms</code> à <code>300</code> millisecondes et de <code>tcpwrappedms</code> à <code>200</code> millisecondes.</p>
+<p>Par ailleurs, les sondes qui ne possèdent pas de valeur <code>servicewaitms</code> définie utilisent par défaut une valeur de <code>5000</code> millisecondes. Pour optimiser davantage les performances, vous pouvez soit attribuer des valeurs spécifiques à chacune des sondes, soit compiler Nmap vous-même en modifiant la valeur par défaut dans le fichier <a href="https://github.com/nmap/nmap/blob/master/service_scan.h#L79" target="_blank">service_scan.h</a>.</p>
+<p>Si vous préférez ne pas modifier les valeurs <code>totalwaitms</code> et <code>tcpwrappedms</code> dans <code>/usr/share/nmap/nmap-service-probes</code>, une autre solution consiste à adapter le <a href="https://github.com/nmap/nmap/blob/master/service_scan.cc#L1358" target="_blank">code d&rsquo;analyse</a> de Nmap pour ignorer complètement ces valeurs lors de l&rsquo;exécution.</p>
+<p>En conclusion, Nmap est un outil essentiel pour les professionnels de la cybersécurité, et offre une vaste gamme de fonctionnalités pour l&rsquo;analyse des réseaux, la détection des services et l&rsquo;identification des vulnérabilités. En exploitant ses options flexibles et en ajustant les paramètres d&rsquo;analyse, les utilisateurs peuvent non seulement accélérer le processus de découverte, mais également garantir une approche sécurisée. Que ce soit pour des audits de sécurité, des tests de pénétration ou le dépannage réseau, Nmap demeure un allié précieux dans la construction d&rsquo;une infrastructure informatique robuste face à des menaces en constante évolution.</p>
 
         </div>
         

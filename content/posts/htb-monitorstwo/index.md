@@ -413,19 +413,19 @@ Depuis le terminal de `marcus`:
   bash-5.1# cat /root/root.txt
   <********************************>
 ```
-## Pwned ✅
+## Pwned 🗹
 
 ![image-6]
 
-Ainsi s'achève notre aventure ;) 
+Ainsi s'achève notre mission ;) 
 <br>
 ## VII- Extra - IppSec’s Exploit
 
-> Cette section est une ouverture et sera basé sur la vidéo de IppSec's [video walkthrough][10] où l'exploitation est réalisé de façon manuelle. Tout simplement le goat des writups. On apprend toujours de nouvelles méthodologies et astuces dans ses vidéos donc ça vaut le détour. 
+> Cette section fera office d'ouverture et sera basé sur la vidéo de IppSec's [video walkthrough][10] où l'exploitation est réalisé de façon manuelle. On apprend toujours de nouvelles méthodologies et astuces dans ses vidéos donc ça vaut le détour. 
 
 ### Accès Initial
 
-Nous réaliser l'exploitation du [CVE-2022-46169][2] en se basant sur le [post de Rapid7][11]) de façon manuelle:
+Nous réaliserons l'exploitation du [CVE-2022-46169][2] en se basant sur le [post de Rapid7][11]) de façon manuelle:
 
   1. Si les paramètres `LOCAL_DATA_ID` et/ou `HOST_ID` ne sont pas définis, le module tentera de forcer la valeur (ou les valeurs) manquante(s). Si une combinaison valide est trouvée, le module utilisera ces valeurs pour tenter l'exploitation.
   2. Si `LOCAL_DATA_ID` et/ou `HOST_ID` sont tous les deux définis, le module tentera immédiatement l'exploitation.

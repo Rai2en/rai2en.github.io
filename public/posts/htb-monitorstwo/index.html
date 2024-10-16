@@ -106,7 +106,7 @@
     "keywords": ["post"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4319"
+    "wordCount": "4313"
   }]
   </script>
 
@@ -767,7 +767,7 @@
     <li><a href="#iv--élevation-de-privilèges--1">IV- Élevation de privilèges  (1)</a></li>
     <li><a href="#v--mouvement-latérral">V- Mouvement latérral</a></li>
     <li><a href="#vi--élevation-de-privilèges-2">VI- Élevation de privilèges (2)</a></li>
-    <li><a href="#pwned-">Pwned ✅</a></li>
+    <li><a href="#pwned-">Pwned 🗹</a></li>
     <li><a href="#vii--extra---ippsecs-exploit">VII- Extra - IppSec’s Exploit</a>
       <ul>
         <li><a href="#accès-initial">Accès Initial</a></li>
@@ -802,7 +802,7 @@
     <li><a href="#iv--élevation-de-privilèges--1">IV- Élevation de privilèges  (1)</a></li>
     <li><a href="#v--mouvement-latérral">V- Mouvement latérral</a></li>
     <li><a href="#vi--élevation-de-privilèges-2">VI- Élevation de privilèges (2)</a></li>
-    <li><a href="#pwned-">Pwned ✅</a></li>
+    <li><a href="#pwned-">Pwned 🗹</a></li>
     <li><a href="#vii--extra---ippsecs-exploit">VII- Extra - IppSec’s Exploit</a>
       <ul>
         <li><a href="#accès-initial">Accès Initial</a></li>
@@ -1314,7 +1314,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
   &lt;********************************&gt;
 </code></pre>
 
-<h2 class="relative group">Pwned ✅ 
+<h2 class="relative group">Pwned 🗹 
     <div id="pwned-" class="anchor"></div>
     
     <span
@@ -1330,7 +1330,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
       
     </figure>
 </p>
-<p>Ainsi s&rsquo;achève notre aventure ;)
+<p>Ainsi s&rsquo;achève notre mission ;)
 <br></p>
 
 
@@ -1345,7 +1345,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
     
 </h2>
 <blockquote>
-<p>Cette section est une ouverture et sera basé sur la vidéo de IppSec&rsquo;s <a href="https://www.youtube.com/watch?v=dJfbogs8Yz0&amp;t=8s" target="_blank">video walkthrough</a> où l&rsquo;exploitation est réalisé de façon manuelle. Tout simplement le goat des writups. On apprend toujours de nouvelles méthodologies et astuces dans ses vidéos donc ça vaut le détour.</p>
+<p>Cette section fera office d&rsquo;ouverture et sera basé sur la vidéo de IppSec&rsquo;s <a href="https://www.youtube.com/watch?v=dJfbogs8Yz0&amp;t=8s" target="_blank">video walkthrough</a> où l&rsquo;exploitation est réalisé de façon manuelle. On apprend toujours de nouvelles méthodologies et astuces dans ses vidéos donc ça vaut le détour.</p>
 </blockquote>
 
 
@@ -1359,7 +1359,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
     </span>        
     
 </h3>
-<p>Nous réaliser l&rsquo;exploitation du <a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46169" target="_blank">CVE-2022-46169</a> en se basant sur le <a href="https://www.rapid7.com/db/modules/exploit/linux/http/cacti_unauthenticated_cmd_injection/" target="_blank">post de Rapid7</a>) de façon manuelle:</p>
+<p>Nous réaliserons l&rsquo;exploitation du <a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46169" target="_blank">CVE-2022-46169</a> en se basant sur le <a href="https://www.rapid7.com/db/modules/exploit/linux/http/cacti_unauthenticated_cmd_injection/" target="_blank">post de Rapid7</a>) de façon manuelle:</p>
 <ol>
 <li>Si les paramètres <code>LOCAL_DATA_ID</code> et/ou <code>HOST_ID</code> ne sont pas définis, le module tentera de forcer la valeur (ou les valeurs) manquante(s). Si une combinaison valide est trouvée, le module utilisera ces valeurs pour tenter l&rsquo;exploitation.</li>
 <li>Si <code>LOCAL_DATA_ID</code> et/ou <code>HOST_ID</code> sont tous les deux définis, le module tentera immédiatement l&rsquo;exploitation.</li>
