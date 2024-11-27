@@ -69,6 +69,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>//localhost:1313/posts/cve-2023-50564/</loc>
+    <lastmod>2023-09-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>//localhost:1313/posts/nmap-guide/</loc>
     <lastmod>2023-09-23T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>

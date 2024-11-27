@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Rai2en</copyright>
-    <lastBuildDate>Sat, 16 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2023-50564 - Pluck CMS v4.7.18</title>
+      <link>//localhost:1313/posts/cve-2023-50564/</link>
+      <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/cve-2023-50564/</guid>
+      <description>Découvrez la vulnérabilité CVE-2023-50564 qui affecte Pluck CMS v4.7.18, permettant une exécution de code arbitraire via un téléchargement de fichier malveillant.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/cve-2023-50564/cover.png" />
+    </item>
+    
     <item>
       <title>MonitorsTwo (HTB)</title>
       <link>//localhost:1313/posts/htb-monitorstwo/</link>
@@ -29,23 +39,23 @@
     </item>
     
     <item>
+      <title>Devvortex (HTB)</title>
+      <link>//localhost:1313/posts/htb-devvortex/</link>
+      <pubDate>Wed, 20 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/htb-devvortex/</guid>
+      <description>Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326).</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/htb-devvortex/cover.png" />
+    </item>
+    
+    <item>
       <title>Proxychains Guide</title>
       <link>//localhost:1313/posts/proxychains/</link>
-      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/posts/proxychains/</guid>
       <description>Dans le domaine de la cybersécurité et des tests de pénétration (pentesting), l&amp;rsquo;anonymat en ligne est crucial. Les professionnels de la cybersécurité utilisent des outils comme ProxyChains pour masquer leur identité et contourner les restrictions géographiques.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/proxychains/cover.png" />
-    </item>
-    
-    <item>
-      <title>HTB - Devvortex</title>
-      <link>//localhost:1313/posts/htb-devvortex/</link>
-      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/posts/htb-devvortex/</guid>
-      <description>DevVortex est une machine Linux de niveau easy nécessitant un brute force DNS pour trouver un sous-domaine, suivi d&amp;rsquo;un brute force de répertoire qui mènera sur la découverte d&amp;rsquo;un dashboard admin &lt;strong&gt;Joomla&lt;/strong&gt; obsolète&amp;hellip;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/htb-devvortex/cover.png" />
     </item>
     
     <item>

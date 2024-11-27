@@ -15,5 +15,5 @@ logo = "img/avatar.png"
 name = "Rai2en"
 image = "img/av.png"
 headline = "Just a cybersecurity enthusiast"
-bio = "Just a human or maybe not" # A little bit about me
+bio = "Exploiting the unseen, mastering the unknown"
 links = [ { email = "mailto:r4izen777@gmail.com" }, { github = "https://github.com/Rai2en" }, { linkedin = "https://www.linkedin.com/in/crispus-houessou/" }, { x-twitter = "https://x.com/0xR4zn" } ]

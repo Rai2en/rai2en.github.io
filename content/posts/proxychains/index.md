@@ -4,7 +4,7 @@ title: Proxychains Guide
 categories: markdown
 summary: ""
 tags: [proxychains, Network]
-date: 2023-09-23
+date: 2023-08-19
 ---
 
 Dans le domaine de la **cybersécurité** et des **tests de pénétration** (_pentesting_), l'anonymat en ligne est crucial. Les professionnels de la cybersécurité utilisent des outils comme **ProxyChains** pour masquer leur identité et contourner les restrictions géographiques. ProxyChains permet de rediriger le trafic à travers une série de serveurs proxy, rendant le traçage de l'origine du trafic extrêmement difficile. Cet article explore en profondeur l'utilisation de ProxyChains, de son installation sur des distributions populaires comme Kali et Ubuntu, à son utilisation sur diverses plateformes, y compris Windows. Nous examinerons également ses différentes applications, allant de la simple confidentialité à des scénarios plus complexes impliquant **SSH** et **Metasploit**.

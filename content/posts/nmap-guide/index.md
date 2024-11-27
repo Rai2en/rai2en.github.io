@@ -226,11 +226,11 @@ L'option `-T` dans Nmap ajuste le niveau d'agressivité du scan en modifiant div
 
 Nmap offre des fonctionnalités avancées pour contourner les systèmes de sécurité tels que les pare-feu et les systèmes de détection d'intrusion (IDS). Voici quelques-unes des principales options que vous pouvez utiliser pour améliorer la discrétion de vos scans.
 
-#### Fragmentation des Paquets
+###### Fragmentation des Paquets
 
 - **Option `-f`** : Cette option permet de fragmenter les paquets envoyés lors du scan. Par défaut, Nmap divise les paquets en morceaux de **8 octets** après l'en-tête. Si vous souhaitez spécifier une taille de fragment différente, vous pouvez utiliser l'option `..mtu`, tout en veillant à ce que le décalage soit un **multiple de 8**. Il est important de noter que la fragmentation n'est pas prise en charge par les scanners de version et les scripts Nmap.
 
-#### Masquage d'Adresse IP
+###### Masquage d'Adresse IP
 
 - **Masquage d'Adresse avec `-D`** :
     
@@ -249,15 +249,15 @@ Nmap offre des fonctionnalités avancées pour contourner les systèmes de sécu
 
 Nmap offre une variété d'options pour spécifier des adresses IP, sélectionner des interfaces réseau et configurer des paquets, ce qui permet d'adapter les scans à différents environnements et besoins.
 
-#### Spécification de l'Adresse Source
+##### Spécification de l'Adresse Source
 
 - **Option `-S IP`** : Cette option permet de définir l'adresse IP source des paquets envoyés par Nmap. Elle est particulièrement utile lorsque Nmap ne parvient pas à détecter automatiquement votre adresse IP ou lorsque vous souhaitez faire croire qu'un autre hôte réalise le scan.
 
-#### Sélection de l'Interface Réseau
+##### Sélection de l'Interface Réseau
 
 - **Option `-e «interface»`** : Cette option permet de sélectionner l'interface réseau spécifique à utiliser pour le scan.
 
-#### Pratiques de Sécurité
+##### Pratiques de Sécurité
 
 > Il est bon de noter que certains administrateurs réseau préfèrent laisser de nombreux ports ouverts, tels que les ports DNS ou FTP par exemple, plutôt que de rechercher des solutions alternatives. Cela peut exposer le réseau à des vulnérabilités. Pour explorer ces failles potentielles, Nmap propose des options telles que `--source-port «numéro de port»` et `-g «numéro de port»`, qui sont équivalentes et permettent d'exploiter ces ports.
 
@@ -330,7 +330,7 @@ Nmap propose un ensemble d'options supplémentaires qui améliorent la flexibili
 - **`-A`** : Exécute un ensemble de fonctionnalités avancées, équivalent à la combinaison de `-O` (détection du système d'exploitation), `-sV` (détection de version), `-sC` (exécution des scripts par défaut) et `--traceroute` (détermination du chemin vers l'hôte).
     
 
-#### Modification des Options en Cours d'Exécution
+##### Modification des Options en Cours d'Exécution
 
 Nmap permet d'ajuster certaines options pendant l'exécution, offrant une plus grande interactivité et réactivité :
 

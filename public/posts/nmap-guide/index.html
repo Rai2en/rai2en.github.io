@@ -644,7 +644,7 @@
     </div>
     
     
-    <div class="text-sm text-neutral-700 dark:text-neutral-400">Just a human or maybe not</div>
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">Exploiting the unseen, mastering the unknown</div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
@@ -774,11 +774,7 @@
         </li>
         <li><a href="#v--firewallids-options-de-masquage-et-de-fragmentation-dans-nmap">V- Firewall/IDS: Options de Masquage et de Fragmentation dans Nmap</a>
           <ul>
-            <li><a href="#fragmentation-des-paquets">Fragmentation des Paquets</a></li>
-            <li><a href="#masquage-dadresse-ip">Masquage d&rsquo;Adresse IP</a></li>
-            <li><a href="#spécification-de-ladresse-source">Spécification de l&rsquo;Adresse Source</a></li>
-            <li><a href="#sélection-de-linterface-réseau">Sélection de l&rsquo;Interface Réseau</a></li>
-            <li><a href="#pratiques-de-sécurité">Pratiques de Sécurité</a></li>
+            <li></li>
           </ul>
         </li>
         <li><a href="#vi--options-avancées-pour-les-paquets">VI- Options Avancées pour les Paquets</a></li>
@@ -789,7 +785,7 @@
         </li>
         <li><a href="#viii--options-diverses">VIII- Options Diverses</a>
           <ul>
-            <li><a href="#modification-des-options-en-cours-dexécution">Modification des Options en Cours d&rsquo;Exécution</a></li>
+            <li></li>
           </ul>
         </li>
         <li><a href="#ix--nmap-vulnscan">IX- Nmap Vulnscan</a>
@@ -833,11 +829,7 @@
         </li>
         <li><a href="#v--firewallids-options-de-masquage-et-de-fragmentation-dans-nmap">V- Firewall/IDS: Options de Masquage et de Fragmentation dans Nmap</a>
           <ul>
-            <li><a href="#fragmentation-des-paquets">Fragmentation des Paquets</a></li>
-            <li><a href="#masquage-dadresse-ip">Masquage d&rsquo;Adresse IP</a></li>
-            <li><a href="#spécification-de-ladresse-source">Spécification de l&rsquo;Adresse Source</a></li>
-            <li><a href="#sélection-de-linterface-réseau">Sélection de l&rsquo;Interface Réseau</a></li>
-            <li><a href="#pratiques-de-sécurité">Pratiques de Sécurité</a></li>
+            <li></li>
           </ul>
         </li>
         <li><a href="#vi--options-avancées-pour-les-paquets">VI- Options Avancées pour les Paquets</a></li>
@@ -848,7 +840,7 @@
         </li>
         <li><a href="#viii--options-diverses">VIII- Options Diverses</a>
           <ul>
-            <li><a href="#modification-des-options-en-cours-dexécution">Modification des Options en Cours d&rsquo;Exécution</a></li>
+            <li></li>
           </ul>
         </li>
         <li><a href="#ix--nmap-vulnscan">IX- Nmap Vulnscan</a>
@@ -1350,7 +1342,7 @@
 <p>Nmap offre des fonctionnalités avancées pour contourner les systèmes de sécurité tels que les pare-feu et les systèmes de détection d&rsquo;intrusion (IDS). Voici quelques-unes des principales options que vous pouvez utiliser pour améliorer la discrétion de vos scans.</p>
 
 
-<h4 class="relative group">Fragmentation des Paquets 
+<h6 class="relative group">Fragmentation des Paquets 
     <div id="fragmentation-des-paquets" class="anchor"></div>
     
     <span
@@ -1359,13 +1351,13 @@
             style="text-decoration-line: none !important;" href="#fragmentation-des-paquets" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h6>
 <ul>
 <li><strong>Option <code>-f</code></strong> : Cette option permet de fragmenter les paquets envoyés lors du scan. Par défaut, Nmap divise les paquets en morceaux de <strong>8 octets</strong> après l&rsquo;en-tête. Si vous souhaitez spécifier une taille de fragment différente, vous pouvez utiliser l&rsquo;option <code>..mtu</code>, tout en veillant à ce que le décalage soit un <strong>multiple de 8</strong>. Il est important de noter que la fragmentation n&rsquo;est pas prise en charge par les scanners de version et les scripts Nmap.</li>
 </ul>
 
 
-<h4 class="relative group">Masquage d&rsquo;Adresse IP 
+<h6 class="relative group">Masquage d&rsquo;Adresse IP 
     <div id="masquage-dadresse-ip" class="anchor"></div>
     
     <span
@@ -1374,7 +1366,7 @@
             style="text-decoration-line: none !important;" href="#masquage-dadresse-ip" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h6>
 <ul>
 <li>
 <p><strong>Masquage d&rsquo;Adresse avec <code>-D</code></strong> :</p>
@@ -1407,7 +1399,7 @@
 <p>Nmap offre une variété d&rsquo;options pour spécifier des adresses IP, sélectionner des interfaces réseau et configurer des paquets, ce qui permet d&rsquo;adapter les scans à différents environnements et besoins.</p>
 
 
-<h4 class="relative group">Spécification de l&rsquo;Adresse Source 
+<h5 class="relative group">Spécification de l&rsquo;Adresse Source 
     <div id="sp%C3%A9cification-de-ladresse-source" class="anchor"></div>
     
     <span
@@ -1416,13 +1408,13 @@
             style="text-decoration-line: none !important;" href="#sp%C3%A9cification-de-ladresse-source" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
 <ul>
 <li><strong>Option <code>-S IP</code></strong> : Cette option permet de définir l&rsquo;adresse IP source des paquets envoyés par Nmap. Elle est particulièrement utile lorsque Nmap ne parvient pas à détecter automatiquement votre adresse IP ou lorsque vous souhaitez faire croire qu&rsquo;un autre hôte réalise le scan.</li>
 </ul>
 
 
-<h4 class="relative group">Sélection de l&rsquo;Interface Réseau 
+<h5 class="relative group">Sélection de l&rsquo;Interface Réseau 
     <div id="s%C3%A9lection-de-linterface-r%C3%A9seau" class="anchor"></div>
     
     <span
@@ -1431,13 +1423,13 @@
             style="text-decoration-line: none !important;" href="#s%C3%A9lection-de-linterface-r%C3%A9seau" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
 <ul>
 <li><strong>Option <code>-e «interface»</code></strong> : Cette option permet de sélectionner l&rsquo;interface réseau spécifique à utiliser pour le scan.</li>
 </ul>
 
 
-<h4 class="relative group">Pratiques de Sécurité 
+<h5 class="relative group">Pratiques de Sécurité 
     <div id="pratiques-de-s%C3%A9curit%C3%A9" class="anchor"></div>
     
     <span
@@ -1446,7 +1438,7 @@
             style="text-decoration-line: none !important;" href="#pratiques-de-s%C3%A9curit%C3%A9" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
 <blockquote>
 <p>Il est bon de noter que certains administrateurs réseau préfèrent laisser de nombreux ports ouverts, tels que les ports DNS ou FTP par exemple, plutôt que de rechercher des solutions alternatives. Cela peut exposer le réseau à des vulnérabilités. Pour explorer ces failles potentielles, Nmap propose des options telles que <code>--source-port «numéro de port»</code> et <code>-g «numéro de port»</code>, qui sont équivalentes et permettent d&rsquo;exploiter ces ports.</p>
 </blockquote>
@@ -1608,7 +1600,7 @@
 </ul>
 
 
-<h4 class="relative group">Modification des Options en Cours d&rsquo;Exécution 
+<h5 class="relative group">Modification des Options en Cours d&rsquo;Exécution 
     <div id="modification-des-options-en-cours-dex%C3%A9cution" class="anchor"></div>
     
     <span
@@ -1617,7 +1609,7 @@
             style="text-decoration-line: none !important;" href="#modification-des-options-en-cours-dex%C3%A9cution" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h5>
 <p>Nmap permet d&rsquo;ajuster certaines options pendant l&rsquo;exécution, offrant une plus grande interactivité et réactivité :</p>
 <ul>
 <li>
@@ -1873,7 +1865,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/proxychains/">
+            <a class="flex group mr-3" href="/posts/htb-devvortex/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1885,11 +1877,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Proxychains Guide</span
+                  >Devvortex (HTB)</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2023-09-23 00:00:00 &#43;0000 UTC">23 September 2023</time>
+                    <time datetime="2023-09-20 00:00:00 &#43;0000 UTC">20 September 2023</time>
                   
                 </span>
               </span>
