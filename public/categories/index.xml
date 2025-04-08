@@ -6,8 +6,38 @@
     <description>Recent content in Categories on Raizen | Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2024 Rai2en</copyright>
-    <lastBuildDate>Sat, 16 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2025 Rai2en</copyright>
+    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Purple Team</title>
+      <link>//localhost:1313/categories/purple-team/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/categories/purple-team/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Tutoriels</title>
+      <link>//localhost:1313/categories/tutoriels/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/categories/tutoriels/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>//localhost:1313/categories/markdown/</link>
+      <pubDate>Sun, 04 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/categories/markdown/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Blog</title>
       <link>//localhost:1313/categories/blog/</link>
@@ -24,16 +54,6 @@
       <pubDate>Sat, 16 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/categories/post/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>//localhost:1313/categories/markdown/</link>
-      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/categories/markdown/</guid>
       <description></description>
       
     </item>

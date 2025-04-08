@@ -6,7 +6,7 @@
     <description>Recent content in Blog on Raizen | Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2024 Rai2en</copyright>
+    <copyright>© 2025 Rai2en</copyright>
     <lastBuildDate>Sat, 16 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MonitorsTwo (HTB)</title>
@@ -16,16 +16,6 @@
       <guid>//localhost:1313/posts/htb-monitorstwo/</guid>
       <description>MonitorsTwo est une machine Linux de difficulté facile. Elle met en avant quelques vulnérabilités et erreurs de configurations qui seront exploitées afin de prendre le contrôle du système suivant la kill-chain&amp;hellip;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/htb-monitorstwo/cover.png" />
-    </item>
-    
-    <item>
-      <title>HTB - Devvortex</title>
-      <link>//localhost:1313/posts/htb-devvortex/</link>
-      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/posts/htb-devvortex/</guid>
-      <description>DevVortex est une machine Linux de niveau easy nécessitant un brute force DNS pour trouver un sous-domaine, suivi d&amp;rsquo;un brute force de répertoire qui mènera sur la découverte d&amp;rsquo;un dashboard admin &lt;strong&gt;Joomla&lt;/strong&gt; obsolète&amp;hellip;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/htb-devvortex/cover.png" />
     </item>
     
   </channel>

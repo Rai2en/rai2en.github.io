@@ -46,6 +46,7 @@ showAuthorsBadges = false
 showWordCount = false
 showSummary = true
 sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email" ]
+tocPosition = "right"
 
 [list]
 showHero = true

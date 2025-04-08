@@ -6,15 +6,15 @@
     <description>Recent content in HackTheBox on Raizen | Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2024 Rai2en</copyright>
-    <lastBuildDate>Mon, 04 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2025 Rai2en</copyright>
+    <lastBuildDate>Wed, 20 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>HTB - Devvortex</title>
+      <title>Devvortex (HTB)</title>
       <link>//localhost:1313/posts/htb-devvortex/</link>
-      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/posts/htb-devvortex/</guid>
-      <description>DevVortex est une machine Linux de niveau easy nécessitant un brute force DNS pour trouver un sous-domaine, suivi d&amp;rsquo;un brute force de répertoire qui mènera sur la découverte d&amp;rsquo;un dashboard admin &lt;strong&gt;Joomla&lt;/strong&gt; obsolète&amp;hellip;</description>
+      <description>Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326).</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/posts/htb-devvortex/cover.png" />
     </item>
     

@@ -6,12 +6,12 @@
     <description>Recent content in CTF on Raizen | Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2024 Rai2en</copyright>
-    <lastBuildDate>Wed, 27 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2025 Rai2en</copyright>
+    <lastBuildDate>Wed, 20 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Exploitation de la vulnérabilité CVE-2023-23752 et élévation de privilèges avec CVE-2023-1326 sur HackTheBox</title>
+      <title>Devvortex (HTB)</title>
       <link>//localhost:1313/posts/htb-devvortex/</link>
-      <pubDate>Wed, 27 Sep 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/posts/htb-devvortex/</guid>
       <description>Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326).</description>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blue Team on Raizen | Blog</title>
+    <link>//localhost:1313/categories/blue-team/</link>
+    <description>Recent content in Blue Team on Raizen | Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 Rai2en</copyright>
+    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/blue-team/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cybersecurity Project: Purple Team</title>
+      <link>//localhost:1313/posts/cyberlab-ii/projet/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/cyberlab-ii/projet/</guid>
+      <description>Mise en place de 4 machines virtuelles pour simuler un environnement offensif/défensif avec Ansible.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
