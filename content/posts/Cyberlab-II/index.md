@@ -1,5 +1,5 @@
 ---
-title: "Cyberlab: Purple Team"
+title: "Cyberlab: Purple Team (Mitre Caldera, Wazuh)"
 description: "Environnement automatisé Red/Blue Team avec honeypot, simulateur C2 et SIEM"
 date: 2025-03-20
 summary: "L’idée est de créer un écosystème cohérent dans lequel les interactions entre le honeypot, le simulateur d’attaques (Caldera) et le SIEM (Wazuh) permettent de valider la résilience globale de l'infrastructure..."
