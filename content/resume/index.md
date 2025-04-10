@@ -22,17 +22,13 @@ layoutBackgroundHeaderSpace: false
 
 
 ---
-
-Bienvenue sur ma page de présentation professionnelle. Voici un résumé de mon parcours :
-
-## HOUESSOU-ADIN Crispus  
+  
 **Pentesteur Junior | Analyste SOC en devenir**  
 Passionné par la cybersécurité offensive & défensive  
 
 📍 Cotonou, Bénin  
-📞 +22969778265  
 📧 houessoucrispus@gmail.com  
-🌐 [rai2en.github.io](https://rai2en.github.io)
+🌐 [linkedin](https://www.linkedin.com/in/crispus-houessou/)
 
 ---
 
@@ -81,4 +77,4 @@ Passionné par la cybersécurité offensive & défensive
 ## Projets
 
 Découvrez mes projets en cybersécurité offensive et défensive sur la page dédiée :  
-👉 [Accéder à la section Projects](https://rai2en.github.io/projects/)
+➡️ [Accéder à la section Projects](/projects/)
