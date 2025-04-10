@@ -27,13 +27,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/tags/honeypot/</loc>
+    <loc>//localhost:1313/series/homelabs/</loc>
     <lastmod>2025-03-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/series/labs-cybers%C3%A9curit%C3%A9/</loc>
+    <loc>//localhost:1313/tags/honeypot/</loc>
     <lastmod>2025-03-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

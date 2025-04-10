@@ -34,12 +34,6 @@ My passion for cybersecurity extends beyond my professional role. This blog is a
 
 Throughout my career, I have earned various IT badges, which reflect my commitment to continuously expanding my knowledge and skills. My GitHub profile is a testament to my contributions to the cybersecurity community, showcasing projects and tools I have developed.
 
-### Projects and Tools
-
-  • Secur....
-
-  • Crypt....
-
 ### Contact
 
 For business inquiries or to connect with me:
