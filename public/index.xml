@@ -78,5 +78,28 @@
       
     </item>
     
+    <item>
+      <title>Mon CV</title>
+      <link>//localhost:1313/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/resume/</guid>
+      <description>Bienvenue sur ma page de présentation professionnelle. Voici un résumé de mon parcours :
+HOUESSOU-ADIN Crispus Pentesteur Junior | Analyste SOC en devenir
+Passionné par la cybersécurité offensive &amp;amp; défensive</description>
+      
+    </item>
+    
+    <item>
+      <title>Projets</title>
+      <link>//localhost:1313/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/projects/</guid>
+      <description>Bienvenue sur la page dédiée à mes projets. Vous trouverez ici un aperçu des différents projets que j’ai menés pour renforcer mes compétences en sécurité offensive et défensive :
+Cyberlab: Purple Team</description>
+      
+    </item>
+    
   </channel>
 </rss>
