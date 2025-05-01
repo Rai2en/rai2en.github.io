@@ -30,8 +30,6 @@ Ce Blog sera dédié à des sujets de cybersécurité, avec des articles détail
 - **_includes/** : Contient les fichiers inclus dans les mises en page.
 - **assets/** : Contient les fichiers CSS, JS et autres ressources.
 
-## Technologies Utilisées
-
 Ce blog est construit avec les technologies suivantes :
 
 - **[Hugo](https://gohugo.io/)** - Un générateur de site statique rapide et flexible.
@@ -39,13 +37,7 @@ Ce blog est construit avec les technologies suivantes :
 
 ## Contribuer
 
-Les contributions sont les bienvenues ! Si vous souhaitez suggérer des améliorations ou signaler des problèmes, veuillez ouvrir une issue ou soumettre une pull request. Voici comment vous pouvez contribuer :
-
-1. Fork ce dépôt.
-2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/nouvelle-fonctionnalite`).
-3. Faites un commit de vos modifications (`git commit -m 'Ajouter une nouvelle fonctionnalité'`).
-4. Poussez la branche (`git push origin feature/nouvelle-fonctionnalite`).
-5. Ouvrez une pull request.
+Les contributions sont les bienvenues ! Si vous souhaitez suggérer des améliorations ou signaler des problèmes, veuillez ouvrir une issue ou soumettre une pull request.
 
 ## Licence
 
