@@ -42,7 +42,3 @@ Les contributions sont les bienvenues ! Si vous souhaitez suggérer des amélior
 ## Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](https://github.com/Rai2en/rai2en.github.io?tab=MIT-1-ov-file#readme) pour plus de détails.
-
-## Contact
-
-Pour toute question ou suggestion, vous pouvez me contacter à travers [mon profil GitHub](https://github.com/Rai2en) ou via [Twitter](https://twitter.com/0xR4zn).
