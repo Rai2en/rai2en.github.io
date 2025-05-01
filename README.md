@@ -7,10 +7,6 @@
 
 Ce Blog sera dédié à des sujets de cybersécurité, avec des articles détaillés, des guides pratiques, analyses de vulnérabilités et Writups de CTF (Principalement du HackTheBox).
 
-## Accès au blog
-
-Vous pouvez visiter le blog à l'adresse suivante : [rai2en.github.io](https://rai2en.github.io/)
-
 ## Contenu du Blog
 
 ### Articles récents
