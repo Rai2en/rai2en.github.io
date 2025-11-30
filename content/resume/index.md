@@ -71,7 +71,8 @@ Passionné par la cybersécurité offensive & défensive
 - [Junior Pentester Certificate (EJPT) – INE Security](https://certs.ine.com/c500437f-48db-4583-9059-806c6377ba3e#acc.Uw2b7oke)  
 - [INE Certified Cloud Associate (ICCA) – INE Security](https://certs.ine.com/789bd8bb-1d98-4823-886b-4cecc73ede17#acc.7dt8yFkP) 
 - [Certified Cloud Security Practitioner - AWS (CCSP-AWS) – Secops Group](https://www.linkedin.com/in/crispus-houessou/details/certifications/1744279150108/single-media-viewer) 
-- [Certified Network Security Practitioner (CNSP) – Secops Group](https://www.linkedin.com/in/crispus-houessou/details/certifications/1744279177853/single-media-viewer)- [Certified Cybersecurity (CC) – (ISC)²](https://www.credly.com/badges/71c1439b-f493-49d5-a524-b6a4ec3e7ef8)
+- [Certified Network Security Practitioner (CNSP) – Secops Group](https://www.linkedin.com/in/crispus-houessou/details/certifications/1744279177853/single-media-viewer)
+- [Certified Cybersecurity (CC) – (ISC)²](https://www.credly.com/badges/71c1439b-f493-49d5-a524-b6a4ec3e7ef8)
 
 ---
 
