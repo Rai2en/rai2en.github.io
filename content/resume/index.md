@@ -26,7 +26,7 @@ layoutBackgroundHeaderSpace: false
 **Pentesteur Junior | Analyste SOC en devenir**  
 Passionné par la cybersécurité offensive & défensive  
 
-📍 Cotonou, Bénin  
+📍 Aulnay-sous-bois, France  
 📧 houessoucrispus@gmail.com  
 🌐 [linkedin](https://www.linkedin.com/in/crispus-houessou/)
 
@@ -60,7 +60,8 @@ Passionné par la cybersécurité offensive & défensive
 
 ## Formation
 
-- **Licence Système Réseaux et Sécurité** — ESGIS, Bénin 
+- **Master Cybersécurité & Cloud - IPSSI Paris
+- **Licence Système Réseaux & Sécurité** — ESGIS, Bénin 
 - **Baccalauréat Scientifique** — COL. Cath. Hibiscus
 
 ---
