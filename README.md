@@ -1,44 +1,169 @@
+# Raizen | Blog
 
-# /Blog/Readme
+> Personal cybersecurity portfolio and technical blog focused on offensive security, vulnerability research, CTF writeups, and practical security labs.
 
-![](https://github.com/Rai2en/rai2en.github.io/assets/img/readme.png)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-00f5d2?style=for-the-badge&logo=github)](https://rai2en.github.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-0.123.0-ff4088?style=for-the-badge&logo=hugo)](https://gohugo.io/)
+[![Blowfish](https://img.shields.io/badge/Theme-Blowfish-7c3aed?style=for-the-badge)](https://blowfish.page/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-## À propos
+## Overview
 
-Ce Blog sera dédié à des sujets de cybersécurité, avec des articles détaillés, des guides pratiques, analyses de vulnérabilités et Writups de CTF (Principalement du HackTheBox).
+This repository powers [rai2en.github.io](https://rai2en.github.io/), a static website built with Hugo and the Blowfish theme. It serves as a public portfolio for cybersecurity research, technical writeups, lab projects, and practical notes.
 
-## Contenu du Blog
+The site is designed to document real learning paths and hands-on security work, including Hack The Box machines, CVE analysis, offensive security tooling, Active Directory labs, web application testing, and defensive hardening projects.
 
-### Articles récents
+## Live site
 
-- **Proxychains** - Article expliquant le fonctionnement des proxies et leur utilisation. (8 mars 2024)
-- **MonitorsTwo (HTB)** - Analyse détaillée d'une machine Linux vulnérable sur HTB. (16 décembre 2023)
-- **Nmap Guide** - Un guide complet sur l'utilisation de Nmap pour l'analyse et la sécurisation des réseaux. (23 septembre 2023)
-- **HTB - Devvortex** - Writup HTB. (4 septembre 2023)
+Production URL:
 
-## Contenus
+```text
+https://rai2en.github.io/
+```
 
-- **Articles** : Des articles réguliers sur des sujets variés.
-- **Projets** : Présentation de mes projets personnels et professionnels.
-- **Contact** : Informations pour me contacter.
+## Content focus
 
-## Structure du dépôt
+The blog is organized around several technical tracks:
 
-- **index.html** : La page d'accueil du blog.
-- **_posts/** : Contient les articles de blog.
-- **_layouts/** : Contient les mises en page utilisées par le blog.
-- **_includes/** : Contient les fichiers inclus dans les mises en page.
-- **assets/** : Contient les fichiers CSS, JS et autres ressources.
+- HTB writeups - attack chains, enumeration, exploitation, privilege escalation, and lessons learned.
+- CVE deep dives - vulnerability analysis, exploitation context, mitigations, and defensive guidance.
+- CyberLabs - portfolio-grade security projects based on realistic lab environments.
+- Tools and techniques - practical notes on offensive security tooling, recon, network analysis, and methodology.
+- Professional portfolio pages - selected work, resume, contact information, and project summaries.
 
-Ce blog est construit avec les technologies suivantes :
+## Featured sections
 
-- **[Hugo](https://gohugo.io/)** - Un générateur de site statique rapide et flexible.
-- **[Blowfish](https://blowfish.page/docs/welcome/)** - Un thème minimaliste et élégant pour Hugo.
+- Posts: https://rai2en.github.io/posts/
+- Projects: https://rai2en.github.io/projects/
+- Series: https://rai2en.github.io/series/
+- Tags: https://rai2en.github.io/tags/
+- About: https://rai2en.github.io/about/
 
-## Contribuer
+## Technology stack
 
-Les contributions sont les bienvenues ! Si vous souhaitez suggérer des améliorations ou signaler des problèmes, veuillez ouvrir une issue ou soumettre une pull request.
+| Area | Technology |
+| --- | --- |
+| Static site generator | [Hugo Extended](https://gohugo.io/) |
+| Theme | [Blowfish](https://blowfish.page/) |
+| Styling | Custom CSS, dark cyberpunk theme, responsive cards |
+| Search | Hugo JSON output and Blowfish search integration |
+| Deployment | GitHub Actions and GitHub Pages |
+| Content format | Markdown with Hugo front matter |
 
-## Licence
+## Repository structure
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](https://github.com/Rai2en/rai2en.github.io?tab=MIT-1-ov-file#readme) pour plus de détails.
+```text
+.
+├── assets/                 # Custom CSS, images, logo, favicon, and theme overrides
+├── config/_default/        # Hugo and Blowfish configuration files
+├── content/                # Site content: posts, pages, series, tags, projects
+│   ├── about/              # About page
+│   ├── posts/              # Technical articles and writeups
+│   ├── projects/           # Portfolio project index
+│   ├── resume/             # Resume page
+│   └── series/             # Series landing pages
+├── layouts/                # Optional Hugo layout overrides
+├── static/                 # Static files served as-is
+├── themes/blowfish/        # Blowfish theme
+├── .github/workflows/      # GitHub Pages build and deployment workflow
+└── README.md
+```
+
+## Local development
+
+### Prerequisites
+
+- Hugo Extended `0.123.0` or compatible
+- Git
+- Dart Sass, if you are working on theme styles
+
+### Run locally
+
+```bash
+git clone --recurse-submodules https://github.com/Rai2en/rai2en.github.io.git
+cd rai2en.github.io
+hugo server -D --bind 127.0.0.1 --baseURL http://127.0.0.1:1313/ --disableFastRender
+```
+
+Then open:
+
+```text
+http://127.0.0.1:1313/
+```
+
+### Clean build
+
+```bash
+rm -rf resources/_gen public .hugo_build.lock
+hugo --gc --ignoreCache
+```
+
+### Production build
+
+```bash
+hugo --gc --minify
+```
+
+## Deployment
+
+Deployment is handled by GitHub Actions through `.github/workflows/gh-pages.yml`.
+
+The workflow runs on:
+
+- Pushes to `main`
+- Manual `workflow_dispatch` runs from the GitHub Actions tab
+
+Pipeline steps:
+
+1. Install Hugo Extended
+2. Install Dart Sass
+3. Checkout repository with submodules
+4. Build the site with Hugo
+5. Upload the generated `public/` artifact
+6. Deploy to GitHub Pages
+
+## Content conventions
+
+Each long-form post is stored as a page bundle:
+
+```text
+content/posts/<slug>/
+├── index.md
+├── cover.png
+└── img/
+```
+
+Common front matter fields:
+
+```yaml
+---
+title: "Post Title"
+date: 2026-01-01
+summary: "Short description for listing cards."
+tags: ["tag"]
+categories: ["category"]
+series: ["Series Name"]
+showTableOfContents: true
+tocPosition: right
+---
+```
+
+## Quality and security standards
+
+- Sensitive tokens, credentials, hostnames, and personal data should be removed or replaced with `[REDACTED]` before publishing.
+- Writeups should prioritize reproducibility, clear methodology, and defensive takeaways.
+- CVE and exploit content should include mitigation guidance and responsible framing.
+- Generated assets should be optimized and kept consistent with the site visual system.
+
+## Author
+
+Rai2en - Security Researcher and Offensive Security Enthusiast
+
+- GitHub: https://github.com/Rai2en
+- LinkedIn: https://www.linkedin.com/in/crispus-houessou/
+- X: https://x.com/0xR4zn
+- Website: https://rai2en.github.io/
+
+## License
+
+This repository is released under the MIT License. See [LICENSE](LICENSE) for details.
