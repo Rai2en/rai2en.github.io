@@ -1,19 +1,24 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Raizen | Blog"
+title = "RAiZEN"
 
 [params]
-displayName = "EN"
-isoCode = "en"
-rtl = false
-description = "My awesome website"
-dateFormat = "2 January 2006"
-logo = "img/avatar.png"
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  description = "Cybersecurity research, CTF writeups, exploit development & offensive security"
+  dateFormat = "2 January 2006"
+  logo = "img/av.png"
 
 [author]
-name = "Rai2en"
-image = "img/av.png"
-headline = "Just a cybersecurity enthusiast"
-bio = "Exploiting the unseen, mastering the unknown"
-links = [ { email = "mailto:r4izen777@gmail.com" }, { github = "https://github.com/Rai2en" }, { linkedin = "https://www.linkedin.com/in/crispus-houessou/" }, { x-twitter = "https://x.com/0xR4zn" } ]
+  name = "Rai2en"
+  image = "img/av.png"
+  headline = "Security Researcher & Offensive Security Enthusiast"
+  bio = "Breaking things to understand them. CTF player, exploit dev, OSCP candidate."
+  links = [
+    { email = "mailto:r4izen777@gmail.com" },
+    { github = "https://github.com/Rai2en" },
+    { linkedin = "https://www.linkedin.com/in/crispus-houessou/" },
+    { x-twitter = "https://x.com/0xR4zn" }
+  ]

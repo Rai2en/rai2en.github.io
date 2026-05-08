@@ -1,57 +1,39 @@
-# toml
-# [[main]]
-# identifier = "web"
-# pre = "link"
-# url = ""
-# weight = 40
-
-# [[main]]
-# identifier = "github"
-# pre = "github"
-# url = "https://github.com/"
-# weight = 50
-
-# [[main]]
-# identifier = "twitter"
-# pre = "twitter"
-# url = "https://twitter.com/"
-# weight = 60
+[[main]]
+  name = "Posts"
+  pageRef = "posts"
+  weight = 10
 
 [[main]]
-name = "About"
-pageRef = "About"
-identifier = "UuF8Dsi9PU"
-weight = 9999
+  name = "Series"
+  pageRef = "series"
+  weight = 20
 
 [[main]]
-name = "Posts"
-pageRef = "Posts"
-identifier = "3DkpvIItXb"
-weight = 9999
+  name = "Tags"
+  pageRef = "tags"
+  weight = 30
 
 [[main]]
-name = "Projects"
-pageRef = "Projects"
-identifier = "NJDraxc5iv"
-weight = 9999
+  name = "Projects"
+  pageRef = "projects"
+  weight = 40
 
 [[main]]
-name = "Resume"
-pageRef = "Resume"
-identifier = "ITTSztTAhl"
-weight = 9999
+  name = "About"
+  pageRef = "about"
+  weight = 50
 
 [[footer]]
-none = "none"
+  name = "Tags"
+  pageRef = "tags"
+  weight = 10
 
 [[footer]]
-name = "Tags"
-pageRef = "Tags"
-identifier = "QMYCRoy0GI"
-weight = 9999
+  name = "Series"
+  pageRef = "series"
+  weight = 20
 
 [[footer]]
-name = "Categories"
-pageRef = "Categories"
-identifier = "3UEQ9eg20M"
-weight = 9999
+  name = "Categories"
+  pageRef = "categories"
+  weight = 30

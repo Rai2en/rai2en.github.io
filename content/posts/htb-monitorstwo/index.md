@@ -1,5 +1,6 @@
 ---
 title: "MonitorsTwo (HTB)"
+series: [ "HTB Writeups" ]
 summary: "MonitorsTwo est une machine Linux de difficulté facile. Elle met en avant quelques vulnérabilités et erreurs de configurations qui seront exploitées afin de prendre le contrôle du système suivant la kill-chain..."
 categories: ["Post","Blog",]
 tags: ["post"]

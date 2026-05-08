@@ -1,7 +1,288 @@
+/* ==========================================
+   RAiZEN CYBER THEME — Custom Styles
+   ========================================== */
+
+/* === IMPORTS === */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* === CSS VARIABLES === */
+:root {
+  --cyber-glow-cyan: 0 0 15px rgba(0, 245, 210, 0.4), 0 0 40px rgba(0, 245, 210, 0.15);
+  --cyber-glow-purple: 0 0 15px rgba(175, 65, 255, 0.4), 0 0 40px rgba(175, 65, 255, 0.15);
+  --border-glow: rgba(0, 245, 210, 0.3);
+  --card-bg: rgba(13, 18, 33, 0.8);
+}
+
+/* === GLOBAL === */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+code, pre, kbd, .code-block, .chroma {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+}
+
+/* === HEADER / NAV === */
+#site-header {
+  backdrop-filter: blur(16px);
+  background: rgba(8, 11, 20, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 245, 210, 0.1);
+}
+
+#site-header a {
+  font-weight: 500;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+#site-header a:hover {
+  text-shadow: 0 0 8px rgba(0, 245, 210, 0.6);
+}
+
+/* === HERO / PROFILE HOMEPAGE === */
+.homepage-profile {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.homepage-avatar {
+  border: 3px solid rgba(0, 245, 210, 0.5);
+  box-shadow: var(--cyber-glow-cyan);
+  border-radius: 50%;
+  width: 140px !important;
+  height: 140px !important;
+  transition: box-shadow 0.3s;
+}
+.homepage-avatar:hover {
+  box-shadow: 0 0 25px rgba(0, 245, 210, 0.6), 0 0 60px rgba(0, 245, 210, 0.25);
+}
+
+.homepage-headline {
+  color: rgb(0, 245, 210) !important;
+  text-shadow: 0 0 10px rgba(0, 245, 210, 0.4);
+}
+
+.homepage-bio {
+  color: rgb(180, 205, 255) !important;
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Social links */
+.author-links a, .homepage-links a {
+  transition: all 0.2s;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  background: rgba(0, 245, 210, 0.05);
+  border: 1px solid rgba(0, 245, 210, 0.15);
+}
+.author-links a:hover, .homepage-links a:hover {
+  background: rgba(0, 245, 210, 0.12);
+  border-color: rgba(0, 245, 210, 0.4);
+  box-shadow: 0 0 10px rgba(0, 245, 210, 0.2);
+}
+
+/* === CARDS (posts, projects) === */
+.card, .article-card, .project-card {
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(75, 110, 170, 0.15) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover, .article-card:hover, .project-card:hover {
+  border-color: rgba(0, 245, 210, 0.35) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 245, 210, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Card accent line on hover */
+.card::after, .article-card::after, .project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 210, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover::after, .article-card:hover::after, .project-card:hover::after {
+  opacity: 1;
+}
+
+/* === TAGS === */
+.tag, .taxonomy-term {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(175, 65, 255, 0.1);
+  border: 1px solid rgba(175, 65, 255, 0.2);
+  color: rgb(205, 130, 255);
+  transition: all 0.2s;
+}
+.tag:hover, .taxonomy-term:hover {
+  background: rgba(175, 65, 255, 0.2);
+  border-color: rgba(175, 65, 255, 0.4);
+  box-shadow: 0 0 10px rgba(175, 65, 255, 0.2);
+}
+
+/* === CODE BLOCKS === */
+pre, .chroma, code[class*="language-"] {
+  border-radius: 8px !important;
+  border: 1px solid rgba(75, 110, 170, 0.2) !important;
+  background: rgba(8, 11, 20, 0.9) !important;
+}
+
+code:not(pre code) {
+  color: rgb(0, 245, 210);
+  background: rgba(0, 245, 210, 0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Copy button */
+.code-block .highlight button, .highlight .copy-button {
+  border-radius: 6px;
+  border: 1px solid rgba(75, 110, 170, 0.3);
+  background: rgba(13, 18, 33, 0.9);
+  color: rgb(180, 205, 255);
+  transition: all 0.2s;
+}
+.code-block .highlight button:hover, .highlight .copy-button:hover {
+  border-color: rgba(0, 245, 210, 0.5);
+  color: rgb(0, 245, 210);
+}
+
+/* === TABLE OF CONTENTS === */
 #TableOfContents {
-  max-width: 280px;
+  max-width: 300px;
   width: 100%;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
   padding-right: 1rem;
   font-size: 0.9rem;
+  border-left: 2px solid rgba(0, 245, 210, 0.2);
+}
+
+#TableOfContents ul {
+  list-style: none;
+  padding-left: 0;
+}
+#TableOfContents li {
+  margin: 0.3rem 0;
+}
+#TableOfContents a {
+  color: rgb(180, 205, 255);
+  transition: color 0.2s, padding-left 0.2s;
+  display: block;
+  padding: 0.2rem 0;
+}
+#TableOfContents a:hover {
+  color: rgb(0, 245, 210);
+  padding-left: 0.4rem;
+}
+
+/* === TABLES === */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+}
+th {
+  background: rgba(0, 245, 210, 0.08);
+  border-bottom: 2px solid rgba(0, 245, 210, 0.3);
+  color: rgb(0, 245, 210);
+  font-weight: 600;
+}
+td, th {
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(75, 110, 170, 0.15);
+}
+
+/* === BLOCKQUOTES === */
+blockquote {
+  border-left: 3px solid rgb(175, 65, 255);
+  background: rgba(175, 65, 255, 0.05);
+  border-radius: 0 8px 8px 0;
+  padding: 0.8rem 1.2rem;
+  color: rgb(205, 130, 255);
+  font-style: italic;
+}
+
+/* === BUTTON / CTA === */
+.btn, .button, a[role="button"] {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 245, 210, 0.3);
+  background: rgba(0, 245, 210, 0.05);
+  color: rgb(0, 245, 210);
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.btn:hover, .button:hover, a[role="button"]:hover {
+  background: rgba(0, 245, 210, 0.12);
+  border-color: rgba(0, 245, 210, 0.6);
+  box-shadow: 0 0 15px rgba(0, 245, 210, 0.25);
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(8, 11, 20, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 110, 170, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 245, 210, 0.5);
+}
+
+/* === PAGINATION === */
+.pagination a, .page-link {
+  border: 1px solid rgba(75, 110, 170, 0.2);
+  border-radius: 8px;
+  background: rgba(13, 18, 33, 0.6);
+  transition: all 0.2s;
+}
+.pagination a:hover, .page-link:hover {
+  border-color: rgba(0, 245, 210, 0.4);
+  box-shadow: 0 0 10px rgba(0, 245, 210, 0.1);
+}
+
+/* === SERIES COMPONENT === */
+.series-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(0, 245, 210, 0.08);
+  border: 1px solid rgba(0, 245, 210, 0.2);
+  color: rgb(0, 245, 210);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .homepage-avatar {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  #TableOfContents {
+    max-width: 100%;
+    border-left: none;
+    border-bottom: 2px solid rgba(0, 245, 210, 0.2);
+    padding: 0 0 1rem 0;
+    margin-bottom: 1.5rem;
+  }
 }

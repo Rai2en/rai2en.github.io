@@ -2,6 +2,7 @@
 layout: post
 title: Devvortex (HTB)
 categories: markdown
+series: [ "HTB Writeups" ]
 summary: "Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326)."
 tags: [CTF, Joomla, CVE-2023-23752, CVE-2023-1326, HackTheBox, Cybersecurity]
 date: 2023-09-20

@@ -2,6 +2,7 @@
 layout: post
 title: Nmap Guide
 categories: markdown
+series: [ "Tools & Techniques" ]
 summary: "Nmap, abréviation de *Network Mapper*, est un outil polyvalent et puissant qui peux se montrer utile autant pour un particulier q'un professionnel de la sécurité informatique cherchant à analyser, explorer et sécuriser..."
 tags: [Nmap, Network Analysis]
 date: 2023-09-23
