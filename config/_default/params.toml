@@ -21,15 +21,13 @@ featured = ["CVE-2023-50564", "htb-monitorstwo", "nmap-guide"]
   showScrollToTop = true
 
 [homepage]
-  layout = "background"
-  homepageImage = "img/04.png"
+  layout = "profile"
   showRecent = true
   showRecentItems = 6
   showMoreLink = true
   showMoreLinkDest = "/posts"
   cardView = true
   cardViewScreenWidth = false
-  layoutBackgroundBlur = true
 
 [article]
   showDate = true
