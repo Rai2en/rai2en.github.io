@@ -25,7 +25,7 @@ layoutBackgroundHeaderSpace: false
 
 **Network Security Administrator · CTF Player · Cybersecurity Enthusiast**
 
-I am a cybersecurity professional originally from Benin and currently based around Paris, France. My work sits at the intersection of network security, offensive security, hands-on labs, and continuous technical research.
+I am a cybersecurity professional based in Paris, France, currently preparing a Master's degree in Cybersecurity and Cloud. My work sits at the intersection of network security, offensive security, hands-on labs, and continuous technical research.
 
 I currently focus on securing network environments while strengthening my offensive security skills through penetration testing practice, Hack The Box challenges, vulnerability research, and technical write-ups.
 
