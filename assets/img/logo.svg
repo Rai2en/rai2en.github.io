@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f5d2"/>
+      <stop offset="100%" style="stop-color:#af41ff"/>
+    </linearGradient>
+  </defs>
+  <!-- Brackets -->
+  <text x="0" y="42" font-size="42" font-weight="bold" font-family="monospace" fill="#af41ff" opacity="0.7">{</text>
+  <text x="194" y="42" font-size="42" font-weight="bold" font-family="monospace" fill="#af41ff" opacity="0.7">}</text>
+  <!-- RAiZEN text -->
+  <text x="100" y="38" text-anchor="middle" font-size="28" font-weight="bold" font-family="monospace" fill="#00f5d2" filter="url(#glow)">RAiZEN</text>
+  <!-- Underline bar -->
+  <rect x="30" y="44" width="140" height="3" rx="1.5" fill="url(#bar)" opacity="0.8"/>
+  <!-- Tagline -->
+  <text x="100" y="49" text-anchor="middle" font-size="4" font-family="sans-serif" fill="#4b6eaa" opacity="0">SECURITY RESEARCH</text>
+</svg>

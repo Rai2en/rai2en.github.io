@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1221"/>
+      <stop offset="100%" style="stop-color:#080b14"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Hex background -->
+  <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" fill="url(#bg)" stroke="#00f5d2" stroke-width="1.5"/>
+  <!-- Inner accent ring -->
+  <polygon points="32,8 54,20 54,44 32,56 10,44 10,20" fill="none" stroke="rgba(0,245,210,0.2)" stroke-width="0.5"/>
+  <!-- R letter -->
+  <text x="32" y="42" text-anchor="middle" font-size="34" font-weight="bold" font-family="monospace" fill="#00f5d2" filter="url(#glow)">R</text>
+  <!-- Dot accent -->
+  <circle cx="48" cy="24" r="2" fill="#af41ff"/>
+</svg>

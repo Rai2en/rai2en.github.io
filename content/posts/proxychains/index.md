@@ -2,6 +2,7 @@
 layout: post
 title: Proxychains Guide
 categories: markdown
+series: [ "Tools & Techniques" ]
 summary: ""
 tags: [proxychains, Network]
 date: 2023-08-19

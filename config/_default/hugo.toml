@@ -15,6 +15,11 @@ buildFuture = false
 
 enableEmoji = true
 
+# Favicon
+[params]
+  favicon = "img/favicon.svg"
+  logo = "img/logo.svg"
+
 # googleAnalytics = "G-XXXXXXXXX"
 
 [taxonomies]
