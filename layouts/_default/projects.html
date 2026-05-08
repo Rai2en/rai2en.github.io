@@ -28,7 +28,7 @@
     --p-purple: rgb(175, 65, 255);
     max-width: 1180px;
     margin: 0 auto;
-    padding: 2.5rem 1rem 5rem;
+    padding: 1.6rem 1rem 5rem;
     color: var(--p-text);
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-feature-settings: "cv01", "ss03";
@@ -40,10 +40,10 @@
     position: relative;
     overflow: hidden;
     border: 1px solid var(--p-border);
-    border-radius: 28px;
-    min-height: 520px;
+    border-radius: 24px;
+    min-height: 360px;
     background: linear-gradient(135deg, rgba(8, 9, 10, 0.98), rgba(14, 18, 32, 0.9)), url('/img/projects-hero.png') center right / cover no-repeat;
-    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255,255,255,0.05);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
   .projects-hero::before {
@@ -69,8 +69,8 @@
   .projects-hero-content {
     position: relative;
     z-index: 1;
-    max-width: 680px;
-    padding: clamp(2rem, 6vw, 5rem);
+    max-width: 700px;
+    padding: clamp(1.6rem, 4.2vw, 3.4rem);
   }
 
   .projects-eyebrow,
@@ -101,10 +101,10 @@
   .projects-title {
     margin: 0;
     color: var(--p-text);
-    font-size: clamp(2.6rem, 8vw, 5.25rem);
-    line-height: 0.94;
-    font-weight: 800;
-    letter-spacing: -0.065em;
+    font-size: clamp(2rem, 5vw, 3.7rem);
+    line-height: 1.02;
+    font-weight: 780;
+    letter-spacing: -0.052em;
   }
 
   .projects-title span {
@@ -115,30 +115,38 @@
   }
 
   .projects-subtitle {
-    max-width: 610px;
-    margin: 1.5rem 0 0;
+    max-width: 660px;
+    margin: 1.15rem 0 0;
     color: var(--p-soft);
-    font-size: clamp(1rem, 1.8vw, 1.18rem);
-    line-height: 1.75;
+    font-size: clamp(0.98rem, 1.5vw, 1.08rem);
+    line-height: 1.72;
+  }
+
+  .projects-subtitle p {
+    margin: 0 0 0.8rem;
+  }
+
+  .projects-subtitle p:last-child {
+    margin-bottom: 0;
   }
 
   .projects-cta-row {
     display: flex;
     flex-wrap: wrap;
     gap: 0.85rem;
-    margin-top: 2rem;
+    margin-top: 1.35rem;
   }
 
   .projects-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 0.72rem 1rem;
+    min-height: 42px;
+    padding: 0.66rem 1rem;
     border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
     color: var(--p-text);
-    background: rgba(255,255,255,0.045);
+    background: rgba(255,255,255,0.07);
     font-size: 0.92rem;
     font-weight: 700;
     transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
@@ -163,7 +171,7 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.8rem;
-    margin: -3.2rem 1.2rem 4rem;
+    margin: -2.2rem 1.2rem 4rem;
   }
 
   .projects-metric {
@@ -555,7 +563,7 @@
 
   @media (max-width: 640px) {
     .projects-shell { padding: 1rem 0.75rem 4rem; }
-    .projects-hero { min-height: 560px; border-radius: 22px; }
+    .projects-hero { min-height: 430px; border-radius: 22px; }
     .projects-hero-content { padding: 2rem 1.2rem; }
     .projects-metrics { grid-template-columns: 1fr; margin: 1rem 0 3rem; }
     .research-grid { grid-template-columns: 1fr; }
@@ -569,12 +577,14 @@
   <div class="projects-hero">
     <div class="projects-hero-content">
       <div class="projects-eyebrow">Portfolio cybersécurité</div>
-      <h1 class="projects-title">Des projets <span>concrets</span>, exécutés de bout en bout.</h1>
-      <p class="projects-subtitle">Une sélection curatée de labs, recherches CVE, writeups et ressources publiques. Chaque carte privilégie le concret: contexte, impact, stack technique et lien direct vers l'article ou le repo.</p>
+      <h1 class="projects-title">Bienvenue sur mon portfolio cybersécurité.</h1>
+      <div class="projects-subtitle">
+        <p>Vous y trouverez une sélection de projets réalisés autour du pentest, de l'analyse de vulnérabilités, de la détection et de la sécurisation d'environnements.</p>
+        <p>L'objectif est simple : montrer ma progression, ma rigueur technique et ma capacité à documenter clairement une démarche de sécurité, de l'analyse initiale jusqu'aux recommandations.</p>
+      </div>
       <div class="projects-cta-row">
         <a class="projects-cta primary" href="#featured-projects">Explorer les projets</a>
         <a class="projects-cta" href="https://github.com/Rai2en">Voir GitHub</a>
-        <a class="projects-cta" href="/series/cyberlabs/">CyberLabs</a>
       </div>
     </div>
   </div>
