@@ -19,6 +19,17 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* Improve readability on long professional/about pages */
+main article p,
+main article li,
+main article td {
+  color: rgb(205, 218, 245);
+}
+
+main article strong {
+  color: rgb(235, 245, 255);
+}
+
 code, pre, kbd, .code-block, .chroma {
   font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
 }

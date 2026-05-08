@@ -1,49 +1,108 @@
 ---
 title: "About"
-date: 22/02/2023
+date: 2023-02-22
 draft: false
 
-showDate : false
-showDateOnlyInArticle : false
-showDateUpdated : false
-showHeadingAnchors : false
-showPagination : false
-showReadingTime : false
-showTableOfContents : true
-showTaxonomies : false 
-showWordCount : false
-showSummary : false
-sharingLinks : false
+showDate: false
+showDateOnlyInArticle: false
+showDateUpdated: false
+showHeadingAnchors: true
+showPagination: false
+showReadingTime: false
+showTableOfContents: true
+showTaxonomies: false
+showWordCount: false
+showSummary: false
+sharingLinks: false
 showEdit: false
 showViews: true
 showLikes: false
 showAuthor: true
 layoutBackgroundHeaderSpace: false
+---
 
+## Crispus Houessou-Adin
+
+**Network Security Administrator · CTF Player · Cybersecurity Enthusiast**
+
+I am a cybersecurity professional originally from Benin and currently based around Paris, France. My work sits at the intersection of network security, offensive security, hands-on labs, and continuous technical research.
+
+I currently focus on securing network environments while strengthening my offensive security skills through penetration testing practice, Hack The Box challenges, vulnerability research, and technical write-ups.
 
 ---
-### Profile
 
-Originally from Benin, I am currently a Cybersecurity student with a Bachelor of Science in Network Security. My journey in cybersecurity has taken me to exciting places, both professionally and personally. Presently, I work as a Network Security Administrator, where I also delve into penetration testing and actively participate in Hackthebox CTF challenges.
+## What I do
 
-### Interests and Activities
+My day-to-day work and personal research are centered around practical cybersecurity topics:
 
-My passion for cybersecurity extends beyond my professional role. This blog is a space where I share my experiences, CTF write-ups, and IT-related content. I invite you to explore my posts and join me in the thrilling world of cybersecurity.
+| Area | Focus |
+|---|---|
+| **Network Security** | Infrastructure hardening, monitoring, segmentation, secure administration |
+| **Offensive Security** | Reconnaissance, exploitation, privilege escalation, post-exploitation methodology |
+| **CTF & Labs** | Hack The Box machines, lab documentation, attack-path analysis |
+| **Vulnerability Research** | CVE analysis, proof-of-concept review, remediation guidance |
+| **Purple Teaming** | Detection engineering, attack simulation, SIEM-oriented lab environments |
+| **Technical Writing** | CTF write-ups, tool guides, cyber notes, exploit breakdowns |
 
-### Achievements
+---
 
-Throughout my career, I have earned various IT badges, which reflect my commitment to continuously expanding my knowledge and skills. My GitHub profile is a testament to my contributions to the cybersecurity community, showcasing projects and tools I have developed.
+## Background
 
-### Contact
+I hold a **Bachelor of Science in Network Security** and continue to build expertise through professional experience, self-directed research, and hands-on labs.
 
-For business inquiries or to connect with me:
+My technical path combines defensive foundations with offensive methodology: understanding how systems are attacked in order to better secure, monitor, and harden them.
 
- • LinkedIn: [Crispus Houessou][link1]
+---
 
- • Twitter: [@0xR4zn][link2]
+## This blog
 
-> Feel free to reach out if you have any questions or if you'd like to discuss anything related to cybersecurity. Join me on this exciting journey as we navigate the ever-evolving world of cybersecurity together!
+This website is my personal knowledge base and publication space. I use it to document what I learn, share practical cybersecurity content, and keep a public record of my technical progression.
 
+You will mainly find:
 
-[link1]: https://www.linkedin.com/in/crispus-houessou/
-[link2]: https://x.com/0xR4zn
+- **CTF write-ups** with clear attack paths and lessons learned
+- **CVE analyses** with impact, exploitation logic, and remediation notes
+- **Tool guides** for reconnaissance, networking, proxying, and offensive workflows
+- **Cyber labs** around detection, purple teaming, automation, and infrastructure security
+- **Personal notes** from my learning journey in offensive security
+
+The goal is simple: produce useful, reproducible, and well-structured cybersecurity content.
+
+---
+
+## Selected work
+
+A few public projects and topics I have worked on:
+
+- **OSCP Notes** — structured notes and resources for offensive security preparation
+- **CVE-2023-50564 Pluck CMS PoC** — proof of concept and vulnerability documentation
+- **CVE-2023-4220 Chamilo LMS** — exploitation script and technical notes
+- **Hack The Box write-ups** — practical walkthroughs and methodology breakdowns
+- **Cyberlab / Purple Team environments** — Wazuh, Caldera, honeypots, and detection-oriented labs
+
+---
+
+## Current interests
+
+I am especially interested in:
+
+- Active Directory security
+- Linux and Windows privilege escalation
+- Web exploitation
+- Exploit development basics
+- Detection engineering and SIEM use cases
+- Automation for cybersecurity documentation
+- Building better workflows for CTF and research write-ups
+
+---
+
+## Contact
+
+If you want to connect, discuss cybersecurity, collaborate on a project, or exchange around CTFs and labs, feel free to reach out.
+
+- **LinkedIn**: [Crispus Houessou-Adin](https://www.linkedin.com/in/crispus-houessou/)
+- **GitHub**: [Rai2en](https://github.com/Rai2en)
+- **X / Twitter**: [@0xR4zn](https://x.com/0xR4zn)
+- **Email**: [r4izen777@gmail.com](mailto:r4izen777@gmail.com)
+
+> Breaking things to understand them. Securing systems by learning how they fail.
