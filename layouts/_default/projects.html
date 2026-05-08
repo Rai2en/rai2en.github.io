@@ -228,6 +228,14 @@
     line-height: 1.65;
   }
 
+  .projects-section-desc p {
+    margin: 0 0 0.7rem;
+  }
+
+  .projects-section-desc p:last-child {
+    margin-bottom: 0;
+  }
+
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -577,7 +585,7 @@
   <div class="projects-hero">
     <div class="projects-hero-content">
       <div class="projects-eyebrow">Portfolio cybersécurité</div>
-      <h1 class="projects-title">Bienvenue sur mon portfolio cybersécurité.</h1>
+      <h1 class="projects-title">Bienvenue sur mon portfolio.</h1>
       <div class="projects-subtitle">
         <p>Vous y trouverez une sélection de projets réalisés autour du pentest, de l'analyse de vulnérabilités, de la détection et de la sécurisation d'environnements.</p>
         <p>L'objectif est simple : montrer ma progression, ma rigueur technique et ma capacité à documenter clairement une démarche de sécurité, de l'analyse initiale jusqu'aux recommandations.</p>
@@ -600,9 +608,11 @@
     <div class="projects-section-head">
       <div>
         <div class="projects-section-kicker">Projets sélectionnés</div>
-        <h2 class="projects-section-title">Labs complets et démonstrables</h2>
+        <h2 class="projects-section-title">Labs et projets techniques</h2>
       </div>
-      <p class="projects-section-desc">Des projets présentés comme de vrais case studies: architecture, menace, exploitation, détection, durcissement et livrables exploitables.</p>
+      <div class="projects-section-desc">
+        <p>Une sélection de projets réalisés autour de la sécurité offensive et défensive. Chaque projet présente le contexte, la démarche suivie, les résultats obtenus et les recommandations associées.</p>
+      </div>
     </div>
 
     <div class="projects-grid">
@@ -636,9 +646,11 @@
     <div class="projects-section-head">
       <div>
         <div class="projects-section-kicker">Recherches et repos publics</div>
-        <h2 class="projects-section-title">Preuves publiques et artefacts GitHub</h2>
+        <h2 class="projects-section-title">Articles, scripts et ressources GitHub</h2>
       </div>
-      <p class="projects-section-desc">Les titres sont directement cliquables vers les repos ou articles associés pour maximiser la traçabilité.</p>
+      <div class="projects-section-desc">
+        <p>Cette section rassemble mes contenus publics : articles, travaux de recherches, scripts, outils et write-ups. Les liens permettent d'accéder aux ressources associées afin de consulter le code, et les résultats détaillés.</p>
+      </div>
     </div>
 
     <div class="research-grid">
@@ -685,8 +697,8 @@
   </section>
 
   <section class="projects-final-cta">
-    <h2>Un portfolio orienté impact, pas une simple liste de liens.</h2>
-    <p>Cette section met en avant les compétences clés attendues en cybersécurité: construire un lab, attaquer proprement, détecter, corriger, automatiser et documenter avec des preuves vérifiables.</p>
+    <h2>Un portfolio construit pour présenter mes compétences en situation réelle.</h2>
+    <p>Les projets présentés montrent ma capacité à analyser un environnement, identifier des vulnérabilités, tester de manière contrôlée, proposer des corrections et documenter clairement les résultats.</p>
     <div class="projects-cta-row" style="justify-content:center">
       <a class="projects-cta primary" href="/about/">Me contacter</a>
       <a class="projects-cta" href="/posts/">Voir tous les articles</a>
