@@ -30,6 +30,17 @@ code, pre, kbd, .code-block, .chroma {
   border-bottom: 1px solid rgba(0, 245, 210, 0.1);
 }
 
+/* Keep the header logo compact next to "Raizen | Blog" */
+#site-header img.logo,
+.main-menu img.logo {
+  max-height: 2.25rem !important;
+  max-width: 2.25rem !important;
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
 #site-header a {
   font-weight: 500;
   transition: color 0.2s, text-shadow 0.2s;

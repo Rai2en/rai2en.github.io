@@ -3,6 +3,7 @@ defaultAppearance = "dark"
 autoSwitchAppearance = false
 enableSearch = true
 enableCodeCopy = true
+disableTextInHeader = false
 mainSections = [ "posts" ]
 
 # Featured posts (slugs from content/posts/)
@@ -20,13 +21,15 @@ featured = ["CVE-2023-50564", "htb-monitorstwo", "nmap-guide"]
   showScrollToTop = true
 
 [homepage]
-  layout = "profile"
+  layout = "background"
+  homepageImage = "img/04.png"
   showRecent = true
   showRecentItems = 6
   showMoreLink = true
   showMoreLinkDest = "/posts"
   cardView = true
   cardViewScreenWidth = false
+  layoutBackgroundBlur = true
 
 [article]
   showDate = true
