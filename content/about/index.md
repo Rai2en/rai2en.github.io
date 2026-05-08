@@ -74,11 +74,11 @@ The goal is simple: produce useful, reproducible, and well-structured cybersecur
 
 A few public projects and topics I have worked on:
 
-- **OSCP Notes** — structured notes and resources for offensive security preparation
-- **CVE-2023-50564 Pluck CMS PoC** — proof of concept and vulnerability documentation
-- **CVE-2023-4220 Chamilo LMS** — exploitation script and technical notes
-- **Hack The Box write-ups** — practical walkthroughs and methodology breakdowns
-- **Cyberlab / Purple Team environments** — Wazuh, Caldera, honeypots, and detection-oriented labs
+- [**OSCP Notes**](https://github.com/Rai2en/OSCP-Notes) - structured notes and resources for offensive security preparation
+- [**CVE-2023-50564 Pluck CMS PoC**](https://github.com/Rai2en/CVE-2023-50564_Pluck-v4.7.18_PoC) - proof of concept and vulnerability documentation
+- [**CVE-2023-4220 Chamilo LMS**](https://github.com/Rai2en/CVE-2023-4220-Chamilo-LMS) - exploitation script and technical notes
+- [**Hack The Box write-ups**](/series/htb-writeups/) - practical walkthroughs and methodology breakdowns
+- [**Cyberlab / Purple Team environments**](/series/cyberlabs/) - Wazuh, Caldera, honeypots, and detection-oriented labs
 
 ---
 
