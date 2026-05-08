@@ -11,13 +11,13 @@ featured = ["CVE-2023-50564", "htb-monitorstwo", "nmap-guide"]
 
 [header]
   layout = "fixed"
-  showAppearanceSwitcher = false
+  showAppearanceSwitcher = true
   showLogo = true
 
 [footer]
   showCopyright = true
   showThemeAttribution = false
-  showAppearanceSwitcher = false
+  showAppearanceSwitcher = true
   showScrollToTop = true
 
 [homepage]
