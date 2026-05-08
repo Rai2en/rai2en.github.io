@@ -1,0 +1,686 @@
+{{ define "main" }}
+{{ $featured := slice
+  (dict "title" "Cyberlab: Purple Team" "page" "posts/Cyberlab-II" "summary" "Lab Red/Blue Team automatisé avec Ansible, MITRE Caldera, Wazuh et honeypot pour valider détection, résilience et réponse." "area" "Purple Team" "impact" "Ingénierie détection" "stack" (slice "Ansible" "Wazuh" "Caldera" "MITRE ATT&CK") "primary" "/posts/cyberlab-ii/" "secondary" "https://github.com/Rai2en/rai2en.github.io" "secondaryLabel" "Source")
+  (dict "title" "Active Directory Internal Pentest Lab" "page" "posts/active-directory-internal-pentest-lab" "summary" "Chaîne d'attaque interne complète: cartographie, pivot, Kerberoasting, DCSync, Pass-the-Hash et recommandations défensives." "area" "Pentest interne" "impact" "Chemin de compromission domaine" "stack" (slice "AD" "Kerberoasting" "DCSync" "Windows" "Linux") "primary" "/posts/active-directory-internal-pentest-lab/" "secondary" "https://rai2en.github.io/series/cyberlabs/" "secondaryLabel" "CyberLabs")
+  (dict "title" "Web Application Pentest Lab" "page" "posts/web-application-pentest-lab" "summary" "Pentest web applicatif orienté OWASP: IDOR, LFI, SQLi, XSS stockée, vol de session et plan de remédiation." "area" "Sécurité web" "impact" "Chaîne d'attaque OWASP" "stack" (slice "Burp Suite" "IDOR" "LFI" "SQLi" "XSS") "primary" "/posts/web-application-pentest-lab/" "secondary" "https://rai2en.github.io/series/cyberlabs/" "secondaryLabel" "CyberLabs")
+  (dict "title" "Secure Network Architecture Lab" "page" "posts/secure-network-architecture-lab" "summary" "Architecture réseau sécurisée avec segmentation, firewall, serveur HTTPS, base de données isolée, Fail2ban et validation offensive." "area" "Infrastructure" "impact" "Architecture durcie" "stack" (slice "Vagrant" "Firewall" "TLS" "Fail2ban" "Hardening") "primary" "/posts/secure-network-architecture-lab/" "secondary" "https://rai2en.github.io/series/cyberlabs/" "secondaryLabel" "CyberLabs")
+}}
+{{ $research := slice
+  (dict "title" "CVE-2023-50564 - Pluck CMS RCE" "page" "posts/CVE-2023-50564" "summary" "PoC public Python pour une vulnérabilité Pluck CMS v4.7.18, avec analyse technique et recommandations de mitigation." "meta" "18 stars - 5 forks" "href" "https://github.com/Rai2en/CVE-2023-50564_Pluck-v4.7.18_PoC" "article" "/posts/cve-2023-50564/" "tags" (slice "Python" "RCE" "CMS"))
+  (dict "title" "CVE-2023-4220 - Chamilo LMS" "page" "" "summary" "Script Python d'exploitation pour Chamilo LMS, focalisé sur la reproductibilité, l'usage contrôlé et la compréhension de la faille." "meta" "5 stars - 2 forks" "href" "https://github.com/Rai2en/CVE-2023-4220-Chamilo-LMS" "article" "" "tags" (slice "Python" "LMS" "Exploit"))
+  (dict "title" "OSCP Notes" "page" "" "summary" "Base de notes offensive security publique: méthodologie, rappels pratiques, commandes utiles et préparation terrain." "meta" "67 stars - 35 forks" "href" "https://github.com/Rai2en/OSCP-Notes" "article" "" "tags" (slice "OSCP" "Notes" "Methodology"))
+}}
+{{ $writeups := slice
+  (dict "title" "Devvortex (HTB)" "page" "posts/htb-Devvortex" "href" "/posts/htb-devvortex/" "summary" "Joomla CVE-2023-23752, secrets applicatifs, compromission utilisateur et privilèges root via apport-cli.")
+  (dict "title" "MonitorsTwo (HTB)" "page" "posts/htb-monitorstwo" "href" "/posts/htb-monitorstwo/" "summary" "Machine Linux orientée enumeration, exploitation web, conteneurs et élévation de privilèges.")
+}}
+<style>
+  .projects-shell {
+    --p-bg: #08090a;
+    --p-panel: rgba(15, 16, 22, 0.82);
+    --p-panel-strong: rgba(20, 22, 34, 0.94);
+    --p-border: rgba(255, 255, 255, 0.08);
+    --p-border-hot: rgba(0, 245, 210, 0.34);
+    --p-text: #f7f8f8;
+    --p-muted: #b3bccd;
+    --p-soft: #dbe4f2;
+    --p-cyan: rgb(0, 245, 210);
+    --p-purple: rgb(175, 65, 255);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 5rem;
+    color: var(--p-text);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "cv01", "ss03";
+  }
+
+  .projects-shell a { text-decoration: none; }
+
+  .projects-hero {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--p-border);
+    border-radius: 28px;
+    min-height: 520px;
+    background: linear-gradient(135deg, rgba(8, 9, 10, 0.98), rgba(14, 18, 32, 0.9)), url('/img/projects-hero.png') center right / cover no-repeat;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  .projects-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(0,245,210,0.18), transparent 28%),
+      radial-gradient(circle at 72% 12%, rgba(175,65,255,0.20), transparent 30%),
+      linear-gradient(90deg, rgba(6,8,14,0.96) 0%, rgba(6,8,14,0.76) 42%, rgba(6,8,14,0.18) 100%);
+  }
+
+  .projects-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 75%);
+    pointer-events: none;
+  }
+
+  .projects-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    padding: clamp(2rem, 6vw, 5rem);
+  }
+
+  .projects-eyebrow,
+  .projects-section-kicker,
+  .project-card-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--p-cyan);
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .projects-eyebrow::before,
+  .projects-section-kicker::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--p-cyan);
+    box-shadow: 0 0 18px rgba(0,245,210,0.72);
+  }
+
+  .projects-title {
+    margin: 0;
+    color: var(--p-text);
+    font-size: clamp(2.6rem, 8vw, 5.25rem);
+    line-height: 0.94;
+    font-weight: 800;
+    letter-spacing: -0.065em;
+  }
+
+  .projects-title span {
+    background: linear-gradient(90deg, var(--p-cyan), #8aa7ff 48%, var(--p-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .projects-subtitle {
+    max-width: 610px;
+    margin: 1.5rem 0 0;
+    color: var(--p-soft);
+    font-size: clamp(1rem, 1.8vw, 1.18rem);
+    line-height: 1.75;
+  }
+
+  .projects-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 2rem;
+  }
+
+  .projects-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.72rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--p-text);
+    background: rgba(255,255,255,0.045);
+    font-size: 0.92rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .projects-cta.primary {
+    color: #031311;
+    background: linear-gradient(135deg, var(--p-cyan), #8df7ff);
+    border-color: rgba(0,245,210,0.72);
+    box-shadow: 0 0 34px rgba(0,245,210,0.25);
+  }
+
+  .projects-cta:hover {
+    transform: translateY(-2px);
+    border-color: var(--p-border-hot);
+    box-shadow: 0 18px 42px rgba(0,0,0,0.28);
+  }
+
+  .projects-metrics {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin: -3.2rem 1.2rem 4rem;
+  }
+
+  .projects-metric {
+    padding: 1.2rem;
+    border: 1px solid var(--p-border);
+    border-radius: 18px;
+    background: rgba(10, 12, 20, 0.84);
+    backdrop-filter: blur(18px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 18px 44px rgba(0,0,0,0.25);
+  }
+
+  .projects-metric strong {
+    display: block;
+    color: var(--p-text);
+    font-size: 1.8rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .projects-metric span {
+    display: block;
+    margin-top: 0.45rem;
+    color: var(--p-muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .projects-section {
+    margin-top: 4.5rem;
+  }
+
+  .projects-section-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .projects-section-title {
+    margin: 0;
+    color: var(--p-text);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1;
+    font-weight: 760;
+    letter-spacing: -0.052em;
+  }
+
+  .projects-section-desc {
+    max-width: 460px;
+    margin: 0;
+    color: var(--p-muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .project-card-pro {
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+    border: 1px solid var(--p-border);
+    border-radius: 24px;
+    background: var(--p-panel);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .project-card-pro:hover {
+    transform: translateY(-4px);
+    border-color: var(--p-border-hot);
+    box-shadow: 0 28px 70px rgba(0,0,0,0.34), 0 0 0 1px rgba(0,245,210,0.08);
+  }
+
+  .project-card-media {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 35%, rgba(0,245,210,0.16), rgba(175,65,255,0.09) 42%, rgba(8,9,10,0.92));
+  }
+
+  .project-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.82;
+    filter: saturate(1.05) contrast(1.06);
+    transform: scale(1.015);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  .project-card-pro:hover .project-card-media img {
+    transform: scale(1.055);
+    opacity: 0.94;
+  }
+
+  .project-card-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 20%, rgba(8,9,10,0.72) 88%);
+  }
+
+  .project-card-body {
+    padding: 1.4rem;
+  }
+
+  .project-card-topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+    color: var(--p-muted);
+    font-size: 0.78rem;
+  }
+
+  .project-card-topline span:first-child {
+    color: var(--p-cyan);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .project-card-title {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.14;
+    letter-spacing: -0.035em;
+    font-weight: 750;
+  }
+
+  .project-card-title a {
+    color: var(--p-text);
+  }
+
+  .project-card-title a:hover {
+    color: var(--p-cyan);
+  }
+
+  .project-card-summary {
+    margin: 0.9rem 0 0;
+    color: var(--p-soft);
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .project-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1.25rem;
+  }
+
+  .project-chip {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    padding: 0.34rem 0.55rem;
+    color: #cbd3e2;
+    background: rgba(255,255,255,0.035);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+  }
+
+  .project-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.35rem;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--p-cyan);
+    font-weight: 760;
+    font-size: 0.9rem;
+  }
+
+  .project-link.secondary {
+    color: #b8c0d4;
+  }
+
+  .project-link:hover {
+    color: #ffffff;
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .research-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+    padding: 1.35rem;
+    border: 1px solid var(--p-border);
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  }
+
+  .research-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(175,65,255,0.42);
+    background: linear-gradient(180deg, rgba(175,65,255,0.11), rgba(255,255,255,0.025));
+  }
+
+  .research-card h3 {
+    margin: 0;
+    font-size: 1.16rem;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+
+  .research-card h3 a {
+    color: var(--p-text);
+  }
+
+  .research-card h3 a:hover {
+    color: #d59cff;
+  }
+
+  .research-meta {
+    margin: 0.65rem 0 0;
+    color: var(--p-purple);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.78rem;
+  }
+
+  .research-summary {
+    margin: 1rem 0 0;
+    color: var(--p-soft);
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .research-card .project-chip-row {
+    margin-top: auto;
+    padding-top: 1.2rem;
+  }
+
+  .writeup-lane {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--p-border);
+    border-radius: 26px;
+    background: rgba(255,255,255,0.025);
+  }
+
+  .writeup-panel {
+    border-radius: 20px;
+    padding: 1.35rem;
+    background: var(--p-panel-strong);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .writeup-panel h3 {
+    margin: 0 0 0.7rem;
+    color: var(--p-text);
+    font-size: 1.2rem;
+  }
+
+  .writeup-panel p {
+    margin: 0;
+    color: var(--p-muted);
+    line-height: 1.65;
+  }
+
+  .writeup-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .writeup-item {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.028);
+  }
+
+  .writeup-thumb {
+    position: relative;
+    width: 112px;
+    height: 72px;
+    overflow: hidden;
+    border-radius: 14px;
+    background:
+      radial-gradient(circle at 24% 28%, rgba(0,245,210,0.34), transparent 34%),
+      radial-gradient(circle at 76% 18%, rgba(175,65,255,0.26), transparent 38%),
+      rgba(9,12,22,0.95);
+    border: 1px solid rgba(0,245,210,0.18);
+  }
+
+  .writeup-thumb::after {
+    content: "HTB";
+    position: absolute;
+    left: 0.55rem;
+    bottom: 0.45rem;
+    z-index: 2;
+    padding: 0.18rem 0.38rem;
+    border-radius: 999px;
+    color: #061210;
+    background: var(--p-cyan);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    box-shadow: 0 0 18px rgba(0,245,210,0.35);
+  }
+
+  .writeup-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+    filter: saturate(1.18) contrast(1.12) brightness(1.16);
+  }
+
+  .writeup-item h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .writeup-item h4 a {
+    color: var(--p-text);
+  }
+
+  .writeup-item h4 a:hover {
+    color: var(--p-cyan);
+  }
+
+  .writeup-item p {
+    margin: 0.35rem 0 0;
+    color: var(--p-muted);
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  .projects-final-cta {
+    margin-top: 4.5rem;
+    padding: clamp(1.6rem, 4vw, 2.4rem);
+    border: 1px solid rgba(0,245,210,0.22);
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at 8% 12%, rgba(0,245,210,0.16), transparent 28%),
+      radial-gradient(circle at 92% 18%, rgba(175,65,255,0.16), transparent 26%),
+      rgba(255,255,255,0.028);
+    text-align: center;
+  }
+
+  .projects-final-cta h2 {
+    margin: 0;
+    color: var(--p-text);
+    font-size: clamp(1.6rem, 4vw, 2.65rem);
+    line-height: 1.06;
+    letter-spacing: -0.046em;
+  }
+
+  .projects-final-cta p {
+    max-width: 680px;
+    margin: 1rem auto 0;
+    color: var(--p-soft);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 960px) {
+    .projects-metrics,
+    .research-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .projects-grid,
+    .writeup-lane { grid-template-columns: 1fr; }
+    .projects-section-head { display: block; }
+    .projects-section-desc { margin-top: 0.8rem; }
+  }
+
+  @media (max-width: 640px) {
+    .projects-shell { padding: 1rem 0.75rem 4rem; }
+    .projects-hero { min-height: 560px; border-radius: 22px; }
+    .projects-hero-content { padding: 2rem 1.2rem; }
+    .projects-metrics { grid-template-columns: 1fr; margin: 1rem 0 3rem; }
+    .research-grid { grid-template-columns: 1fr; }
+    .project-card-pro { min-height: auto; }
+    .writeup-item { grid-template-columns: 1fr; }
+    .writeup-thumb { width: 100%; height: 150px; }
+  }
+</style>
+
+<section class="projects-shell">
+  <div class="projects-hero">
+    <div class="projects-hero-content">
+      <div class="projects-eyebrow">Portfolio cybersécurité</div>
+      <h1 class="projects-title">Des projets <span>concrets</span>, exécutés de bout en bout.</h1>
+      <p class="projects-subtitle">Une sélection curatée de labs, recherches CVE, writeups et ressources publiques. Chaque carte privilégie le concret: contexte, impact, stack technique et lien direct vers l'article ou le repo.</p>
+      <div class="projects-cta-row">
+        <a class="projects-cta primary" href="#featured-projects">Explorer les projets</a>
+        <a class="projects-cta" href="https://github.com/Rai2en">Voir GitHub</a>
+        <a class="projects-cta" href="/series/cyberlabs/">CyberLabs</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-metrics" aria-label="Project highlights">
+    <div class="projects-metric"><strong>8</strong><span>repos publics visibles sur GitHub</span></div>
+    <div class="projects-metric"><strong>3</strong><span>labs portfolio convertis en case studies</span></div>
+    <div class="projects-metric"><strong>2</strong><span>PoC CVE Python publiés</span></div>
+    <div class="projects-metric"><strong>67</strong><span>stars sur OSCP Notes</span></div>
+  </div>
+
+  <section id="featured-projects" class="projects-section">
+    <div class="projects-section-head">
+      <div>
+        <div class="projects-section-kicker">Projets sélectionnés</div>
+        <h2 class="projects-section-title">Labs complets et démonstrables</h2>
+      </div>
+      <p class="projects-section-desc">Des projets présentés comme de vrais case studies: architecture, menace, exploitation, détection, durcissement et livrables exploitables.</p>
+    </div>
+
+    <div class="projects-grid">
+      {{ range $featured }}
+        {{ $img := "" }}
+        {{ with site.GetPage .page }}
+          {{ with .Resources.GetMatch "cover.*" }}{{ $img = .RelPermalink }}{{ end }}
+        {{ end }}
+        <article class="project-card-pro">
+          <div class="project-card-media">
+            {{ if $img }}<img src="{{ $img }}" alt="Cover image for {{ .title }}" loading="lazy">{{ end }}
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-topline"><span>{{ .area }}</span><span>{{ .impact }}</span></div>
+            <h3 class="project-card-title"><a href="{{ .primary }}">{{ .title }}</a></h3>
+            <p class="project-card-summary">{{ .summary }}</p>
+            <div class="project-chip-row">
+              {{ range .stack }}<span class="project-chip">{{ . }}</span>{{ end }}
+            </div>
+            <div class="project-card-actions">
+              <a class="project-link" href="{{ .primary }}">Lire l'étude de cas →</a>
+              <a class="project-link secondary" href="{{ .secondary }}">{{ .secondaryLabel }} →</a>
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="projects-section-head">
+      <div>
+        <div class="projects-section-kicker">Recherches et repos publics</div>
+        <h2 class="projects-section-title">Preuves publiques et artefacts GitHub</h2>
+      </div>
+      <p class="projects-section-desc">Les titres sont directement cliquables vers les repos ou articles associés pour maximiser la traçabilité.</p>
+    </div>
+
+    <div class="research-grid">
+      {{ range $research }}
+        <article class="research-card">
+          <h3><a href="{{ .href }}">{{ .title }}</a></h3>
+          <p class="research-meta">{{ .meta }}</p>
+          <p class="research-summary">{{ .summary }}</p>
+          <div class="project-chip-row">
+            {{ range .tags }}<span class="project-chip">{{ . }}</span>{{ end }}
+          </div>
+          <div class="project-card-actions">
+            <a class="project-link" href="{{ .href }}">Ouvrir le repo →</a>
+            {{ if .article }}<a class="project-link secondary" href="{{ .article }}">Lire l'analyse →</a>{{ end }}
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="writeup-lane">
+      <div class="writeup-panel">
+        <div class="projects-section-kicker">Writeups HTB</div>
+        <h3>Méthodologie offensive documentée</h3>
+        <p>Les writeups Hack The Box montrent le raisonnement, la progression d'une kill-chain, les erreurs d'énumération à éviter et les enseignements défensifs.</p>
+      </div>
+      <div class="writeup-list">
+        {{ range $writeups }}
+          {{ $img := "" }}
+          {{ with site.GetPage .page }}
+            {{ with .Resources.GetMatch "cover.*" }}{{ $img = .RelPermalink }}{{ end }}
+          {{ end }}
+          <article class="writeup-item">
+            <div class="writeup-thumb">{{ if $img }}<img src="{{ $img }}" alt="Cover for {{ .title }}" loading="lazy">{{ end }}</div>
+            <div>
+              <h4><a href="{{ .href }}">{{ .title }}</a></h4>
+              <p>{{ .summary }}</p>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-final-cta">
+    <h2>Un portfolio orienté impact, pas une simple liste de liens.</h2>
+    <p>Cette section met en avant les compétences clés attendues en cybersécurité: construire un lab, attaquer proprement, détecter, corriger, automatiser et documenter avec des preuves vérifiables.</p>
+    <div class="projects-cta-row" style="justify-content:center">
+      <a class="projects-cta primary" href="/about/">Me contacter</a>
+      <a class="projects-cta" href="/posts/">Voir tous les articles</a>
+    </div>
+  </section>
+</section>
+{{ end }}
