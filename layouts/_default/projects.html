@@ -14,6 +14,14 @@
   (dict "title" "Devvortex (HTB)" "page" "posts/htb-Devvortex" "href" "/posts/htb-devvortex/" "summary" "Joomla CVE-2023-23752, secrets applicatifs, compromission utilisateur et privilèges root via apport-cli.")
   (dict "title" "MonitorsTwo (HTB)" "page" "posts/htb-monitorstwo" "href" "/posts/htb-monitorstwo/" "summary" "Machine Linux orientée enumeration, exploitation web, conteneurs et élévation de privilèges.")
 }}
+{{ $certifications := slice
+  (dict "title" "Junior Penetration Tester (eJPT)" "issuer" "INE Security" "issued" "Février 2025" "expires" "Février 2028" "level" "Pentest junior" "focus" "Reconnaissance, exploitation web, réseau et reporting" "image" "/img/certifications/ejpt.png" "logo" "/img/certifications/ine-logo.png" "href" "https://certs.ine.com/c500437f-48db-4583-9059-806c6377ba3e#acc.Uw2b7oke")
+  (dict "title" "Certified in Cybersecurity (CC)" "issuer" "ISC2" "issued" "Avril 2025" "expires" "Avril 2028" "level" "Fondamentaux sécurité" "focus" "Principes de sécurité, réseau, contrôle d'accès et opérations" "image" "/img/certifications/credly-certified-in-cybersecurity-cc.png" "logo" "/img/certifications/credly-certified-in-cybersecurity-cc.png" "href" "https://www.credly.com/badges/71c1439b-f493-49d5-a524-b6a4ec3e7ef8")
+  (dict "title" "Certified Cloud Security Practitioner - AWS (CCSP-AWS)" "issuer" "The SecOps Group" "issued" "Certification vérifiée" "expires" "Lien LinkedIn" "level" "Cloud security" "focus" "Sécurité AWS, risques cloud et bonnes pratiques opérationnelles" "image" "/img/certifications/secops-logo.svg" "logo" "/img/certifications/secops-logo.svg" "href" "https://www.linkedin.com/in/crispus-houessou/overlay/Certifications/1736231011/treasury/?profileId=ACoAADPwEsoBN0Z_rBWYNA_bhB9MmtobV39XynE")
+  (dict "title" "Certified Network Security Practitioner (CNSP)" "issuer" "The SecOps Group" "issued" "Certification vérifiée" "expires" "Lien LinkedIn" "level" "Network security" "focus" "Sécurisation réseau, contrôle, défense et posture opérationnelle" "image" "/img/certifications/secops-logo.svg" "logo" "/img/certifications/secops-logo.svg" "href" "https://www.linkedin.com/in/crispus-houessou/overlay/Certifications/1233099207/treasury/?profileId=ACoAADPwEsoBN0Z_rBWYNA_bhB9MmtobV39XynE")
+  (dict "title" "INE Certified Cloud Associate (ICCA)" "issuer" "INE Security" "issued" "Janvier 2025" "expires" "Janvier 2028" "level" "Cloud associate" "focus" "Concepts cloud, sécurité, services et vocabulaire technique" "image" "/img/certifications/icca.png" "logo" "/img/certifications/ine-logo.png" "href" "https://certs.ine.com/789bd8bb-1d98-4823-886b-4cecc73ede17#acc.7dt8yFkP")
+}}
+{{ $credlyBadges := site.Data.credly_badges }}
 <style>
   .projects-shell {
     --p-bg: #08090a;
@@ -430,6 +438,196 @@
     padding-top: 1.2rem;
   }
 
+  .certifications-stage {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,245,210,0.14);
+    border-radius: 30px;
+    padding: clamp(1rem, 2.8vw, 1.6rem);
+    background:
+      radial-gradient(circle at 6% 4%, rgba(0,245,210,0.16), transparent 28%),
+      radial-gradient(circle at 88% 8%, rgba(175,65,255,0.20), transparent 30%),
+      linear-gradient(180deg, rgba(255,255,255,0.048), rgba(255,255,255,0.018));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 28px 70px rgba(0,0,0,0.28);
+  }
+
+  .certifications-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 88%);
+    pointer-events: none;
+  }
+
+  .certifications-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .cert-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 330px;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 24px;
+    padding: 1rem;
+    background: rgba(8, 11, 20, 0.78);
+    backdrop-filter: blur(18px);
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .cert-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -20% -42% -20%;
+    height: 58%;
+    background: radial-gradient(circle at 50% 0%, rgba(0,245,210,0.16), transparent 62%);
+    pointer-events: none;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,245,210,0.38);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.36), 0 0 0 1px rgba(0,245,210,0.08);
+  }
+
+  .cert-link-wrap {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    color: inherit;
+  }
+
+  .cert-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 128px;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    background: radial-gradient(circle at 50% 45%, rgba(255,255,255,0.08), rgba(255,255,255,0.018) 58%, transparent 70%);
+  }
+
+  .cert-badge {
+    width: 112px;
+    height: 112px;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 24px rgba(0,0,0,0.36));
+    transition: transform 0.22s ease;
+  }
+
+  .cert-card:hover .cert-badge { transform: scale(1.045) rotate(-1deg); }
+
+  .cert-issuer-logo {
+    position: absolute;
+    right: 0.45rem;
+    bottom: 0.45rem;
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    padding: 0.38rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    background: rgba(4, 7, 14, 0.78);
+  }
+
+  .cert-card h3 {
+    margin: 0;
+    color: var(--p-text);
+    font-size: 1rem;
+    line-height: 1.23;
+    letter-spacing: -0.025em;
+  }
+
+  .cert-meta {
+    margin: 0.55rem 0 0;
+    color: var(--p-cyan);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.73rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .cert-focus {
+    margin: 0.85rem 0 0;
+    color: var(--p-soft);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .cert-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    color: var(--p-muted);
+    font-size: 0.74rem;
+  }
+
+  .cert-card-footer span {
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 999px;
+    padding: 0.22rem 0.48rem;
+    background: rgba(255,255,255,0.035);
+  }
+
+  .badges-strip {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 0.72rem;
+    margin-top: 1rem;
+  }
+
+  .badge-mini {
+    display: grid;
+    min-height: 164px;
+    place-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 0.55rem;
+    border: 1px solid rgba(255,255,255,0.075);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.028);
+    color: var(--p-text);
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .badge-mini:hover {
+    transform: translateY(-3px);
+    border-color: rgba(175,65,255,0.42);
+    background: rgba(175,65,255,0.07);
+  }
+
+  .badge-mini img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 18px rgba(0,0,0,0.30));
+  }
+
+  .badge-mini strong {
+    display: block;
+    color: var(--p-text);
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+
+  .badge-mini span {
+    color: var(--p-muted);
+    font-size: 0.65rem;
+  }
+
   .writeup-lane {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -563,6 +761,8 @@
   @media (max-width: 960px) {
     .projects-metrics,
     .research-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .certifications-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .badges-strip { grid-template-columns: repeat(5, minmax(0, 1fr)); }
     .projects-grid,
     .writeup-lane { grid-template-columns: 1fr; }
     .projects-section-head { display: block; }
@@ -574,8 +774,11 @@
     .projects-hero { min-height: 430px; border-radius: 22px; }
     .projects-hero-content { padding: 2rem 1.2rem; }
     .projects-metrics { grid-template-columns: 1fr; margin: 1rem 0 3rem; }
-    .research-grid { grid-template-columns: 1fr; }
+    .research-grid,
+    .certifications-grid { grid-template-columns: 1fr; }
+    .badges-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .project-card-pro { min-height: auto; }
+    .cert-card { min-height: auto; }
     .writeup-item { grid-template-columns: 1fr; }
     .writeup-thumb { width: 100%; height: 150px; }
   }
@@ -599,10 +802,56 @@
 
   <div class="projects-metrics" aria-label="Project highlights">
     <div class="projects-metric"><strong>8</strong><span>repos publics visibles sur GitHub</span></div>
-    <div class="projects-metric"><strong>3</strong><span>labs portfolio convertis en case studies</span></div>
-    <div class="projects-metric"><strong>2</strong><span>PoC CVE Python publiés</span></div>
+    <div class="projects-metric"><strong>5</strong><span>certifications cybersécurité et cloud</span></div>
+    <div class="projects-metric"><strong>10</strong><span>badges publics vérifiés sur Credly</span></div>
     <div class="projects-metric"><strong>67</strong><span>stars sur OSCP Notes</span></div>
   </div>
+
+  <section id="certifications" class="projects-section">
+    <div class="projects-section-head">
+      <div>
+        <div class="projects-section-kicker">Certifications</div>
+        <h2 class="projects-section-title">Certifications et badges vérifiés</h2>
+      </div>
+      <div class="projects-section-desc">
+        <p>Cette section regroupe mes certifications cybersécurité, cloud et réseau. Chaque carte renvoie vers la preuve publique associée lorsque le lien de vérification est disponible.</p>
+      </div>
+    </div>
+
+    <div class="certifications-stage">
+      <div class="certifications-grid">
+        {{ range $certifications }}
+          <article class="cert-card">
+            <a class="cert-link-wrap" href="{{ .href }}" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la preuve de certification {{ .title }}">
+              <div class="cert-visual">
+                <img class="cert-badge" src="{{ .image }}" alt="Badge {{ .title }}" loading="lazy">
+                <img class="cert-issuer-logo" src="{{ .logo }}" alt="Logo {{ .issuer }}" loading="lazy">
+              </div>
+              <h3>{{ .title }}</h3>
+              <p class="cert-meta">{{ .issuer }} - {{ .level }}</p>
+              <p class="cert-focus">{{ .focus }}</p>
+              <div class="cert-card-footer">
+                <span>{{ .issued }}</span>
+                <span>{{ .expires }}</span>
+              </div>
+            </a>
+          </article>
+        {{ end }}
+      </div>
+
+      {{ with $credlyBadges }}
+        <div class="badges-strip" aria-label="Badges Credly publics">
+          {{ range . }}
+            <a class="badge-mini" href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le badge Credly {{ .title }}">
+              <img src="{{ .img }}" alt="Badge {{ .title }}" loading="lazy">
+              <strong>{{ .title }}</strong>
+              <span>{{ .issuer }}</span>
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
 
   <section id="featured-projects" class="projects-section">
     <div class="projects-section-head">

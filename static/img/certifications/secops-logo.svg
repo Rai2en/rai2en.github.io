@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="The SecOps Group">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#00f5d2"/>
+      <stop offset="0.55" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#af41ff"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0  0 0 0 0 0.96  0 0 0 0 0.82  0 0 0 .7 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#060912"/>
+  <path d="M256 56 412 116v122c0 98-61 178-156 218C161 416 100 336 100 238V116L256 56Z" fill="none" stroke="url(#g)" stroke-width="24" filter="url(#glow)"/>
+  <path d="M162 210h188M162 256h188M162 302h188" stroke="#dffcff" stroke-width="22" stroke-linecap="round" opacity=".9"/>
+  <text x="256" y="385" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" fill="#ffffff" letter-spacing="4">TSG</text>
+</svg>

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "305065dd-a110-4c9b-adb7-0aaf3e45647c",
+    "title": "Cisco Networking Academy Learn-A-Thon 2026",
+    "issuer": "Cisco",
+    "issued": "2026-04-29",
+    "expires": null,
+    "img": "/img/certifications/credly-cisco-networking-academy-learn-a-thon-2026.png",
+    "url": "https://www.credly.com/badges/305065dd-a110-4c9b-adb7-0aaf3e45647c"
+  },
+  {
+    "id": "71c1439b-f493-49d5-a524-b6a4ec3e7ef8",
+    "title": "Certified in Cybersecurity (CC)",
+    "issuer": "ISC2",
+    "issued": "2025-04-09",
+    "expires": "2028-04-30",
+    "img": "/img/certifications/credly-certified-in-cybersecurity-cc.png",
+    "url": "https://www.credly.com/badges/71c1439b-f493-49d5-a524-b6a4ec3e7ef8"
+  },
+  {
+    "id": "f872a4b1-5cc1-44c2-9c22-5f378f3da58f",
+    "title": "Networking Academy Learn-A-Thon 2023",
+    "issuer": "Cisco",
+    "issued": "2023-11-19",
+    "expires": null,
+    "img": "/img/certifications/credly-networking-academy-learn-a-thon-2023.png",
+    "url": "https://www.credly.com/badges/f872a4b1-5cc1-44c2-9c22-5f378f3da58f"
+  },
+  {
+    "id": "8cec8dc7-58c2-41c3-a3cc-1d4fff8ae7e0",
+    "title": "Introduction to Cybersecurity",
+    "issuer": "Cisco",
+    "issued": "2023-11-05",
+    "expires": null,
+    "img": "/img/certifications/credly-introduction-to-cybersecurity.png",
+    "url": "https://www.credly.com/badges/8cec8dc7-58c2-41c3-a3cc-1d4fff8ae7e0"
+  },
+  {
+    "id": "58d232ab-3581-4bca-9587-ebe18f0d890a",
+    "title": "Cyber Threat Management",
+    "issuer": "Cisco",
+    "issued": "2023-09-28",
+    "expires": null,
+    "img": "/img/certifications/credly-cyber-threat-management.png",
+    "url": "https://www.credly.com/badges/58d232ab-3581-4bca-9587-ebe18f0d890a"
+  },
+  {
+    "id": "b1f703f0-764c-44ae-87ee-45efa1d908e0",
+    "title": "Network Defense",
+    "issuer": "Cisco",
+    "issued": "2023-09-18",
+    "expires": null,
+    "img": "/img/certifications/credly-network-defense.png",
+    "url": "https://www.credly.com/badges/b1f703f0-764c-44ae-87ee-45efa1d908e0"
+  },
+  {
+    "id": "2a7218b5-d521-4df5-b299-c4f186979428",
+    "title": "Network Support and Security",
+    "issuer": "Cisco",
+    "issued": "2023-09-12",
+    "expires": null,
+    "img": "/img/certifications/credly-network-support-and-security.png",
+    "url": "https://www.credly.com/badges/2a7218b5-d521-4df5-b299-c4f186979428"
+  },
+  {
+    "id": "cba2d06d-8a12-4eba-990d-9921859097f8",
+    "title": "Endpoint Security",
+    "issuer": "Cisco",
+    "issued": "2023-09-10",
+    "expires": null,
+    "img": "/img/certifications/credly-endpoint-security.png",
+    "url": "https://www.credly.com/badges/cba2d06d-8a12-4eba-990d-9921859097f8"
+  },
+  {
+    "id": "4e5815de-7048-4295-ad47-f576e3f446b4",
+    "title": "Networking Basics",
+    "issuer": "Cisco",
+    "issued": "2023-09-09",
+    "expires": null,
+    "img": "/img/certifications/credly-networking-basics.png",
+    "url": "https://www.credly.com/badges/4e5815de-7048-4295-ad47-f576e3f446b4"
+  },
+  {
+    "id": "83b3affc-8db7-4012-97fa-a3519dc516ec",
+    "title": "Python Essentials 2",
+    "issuer": "Cisco",
+    "issued": "2023-09-09",
+    "expires": null,
+    "img": "/img/certifications/credly-python-essentials-2.png",
+    "url": "https://www.credly.com/badges/83b3affc-8db7-4012-97fa-a3519dc516ec"
+  }
+]

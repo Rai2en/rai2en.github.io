@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Junior Penetration Tester",
+    "issued_on": "2025-02-01",
+    "expired_on": "2028-02-01",
+    "url": "https://certs.ine.com/c500437f-48db-4583-9059-806c6377ba3e",
+    "issuer": "INE",
+    "img": "/img/certifications/ejpt.png"
+  },
+  {
+    "name": "INE Certified Cloud Associate",
+    "issued_on": "2025-01-03",
+    "expired_on": "2028-01-03",
+    "url": "https://certs.ine.com/789bd8bb-1d98-4823-886b-4cecc73ede17",
+    "issuer": "INE",
+    "img": "/img/certifications/icca.png"
+  }
+]
