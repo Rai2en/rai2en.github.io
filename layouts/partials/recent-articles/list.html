@@ -1,0 +1,14 @@
+{{ $recentArticles := 5 }}
+{{ $recentArticles = .Site.Params.homepage.showRecentItems }}
+{{ $sourceSite := .Site }}
+{{ $recentPages := where $sourceSite.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ if and (eq (len $recentPages) 0) (ne .Site.Language.Lang .Sites.First.Language.Lang) }}
+  {{ $sourceSite = .Sites.First }}
+  {{ $recentPages = where $sourceSite.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ end }}
+
+<section class="space-y-10 w-full">
+  {{ range first $recentArticles $recentPages }}
+  {{ partial "article-link/simple.html" . }}
+  {{ end }}
+</section>

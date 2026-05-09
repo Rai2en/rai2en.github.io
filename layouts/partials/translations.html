@@ -1,0 +1,39 @@
+{{ if gt (len .Site.Languages) 1 }}
+{{ $current := . }}
+{{ $homeTranslations := .Site.Home.AllTranslations }}
+<div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    <span class="mr-1">
+      {{ partial "icon.html" "language" }}
+    </span>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="{{ .Title }}">
+      {{- i18n "global.language" | markdownify -}}
+    </div>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        {{ range .Site.Languages }}
+          {{ $lang := .Lang }}
+          {{ $target := "" }}
+          {{ range $current.AllTranslations }}
+            {{ if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end }}
+          {{ end }}
+          {{ if eq $target "" }}
+            {{ range $homeTranslations }}
+              {{ if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end }}
+            {{ end }}
+          {{ end }}
+          {{ if ne $target "" }}
+          <a href="{{ $target }}" class="flex items-center">
+            <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="{{ .LanguageName }}">
+              {{ .Params.displayName | default .LanguageName | emojify }}
+            </p>
+          </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

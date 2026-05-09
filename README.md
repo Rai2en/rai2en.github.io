@@ -34,9 +34,8 @@ The blog is organized around several technical tracks:
 ## Featured sections
 
 - Posts: https://rai2en.github.io/posts/
-- Projects: https://rai2en.github.io/projects/
-- Series: https://rai2en.github.io/series/
-- Tags: https://rai2en.github.io/tags/
+- Portfolio: https://rai2en.github.io/portfolio/
+- Topics: https://rai2en.github.io/topics/
 - About: https://rai2en.github.io/about/
 
 ## Technology stack
@@ -56,12 +55,13 @@ The blog is organized around several technical tracks:
 .
 ├── assets/                 # Custom CSS, images, logo, favicon, and theme overrides
 ├── config/_default/        # Hugo and Blowfish configuration files
-├── content/                # Site content: posts, pages, series, tags, projects
+├── content/                # Site content: posts, pages, taxonomies, portfolio
 │   ├── about/              # About page
 │   ├── posts/              # Technical articles and writeups
-│   ├── projects/           # Portfolio project index
+│   ├── portfolio/          # Portfolio project index
 │   ├── resume/             # Resume page
-│   └── series/             # Series landing pages
+│   ├── series/             # Series landing pages
+│   └── topics.md           # Unified Tags and Series hub
 ├── layouts/                # Optional Hugo layout overrides
 ├── static/                 # Static files served as-is
 ├── themes/blowfish/        # Blowfish theme

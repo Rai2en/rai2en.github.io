@@ -1,9 +1,11 @@
 ---
-title: "Projects"
+title: "Portfolio"
 description: "Portfolio de projets cybersécurité: labs, recherches CVE, writeups HTB et artefacts GitHub publics."
 date: 2026-05-08
 draft: false
 layout: "projects"
+translationKey: "portfolio"
+aliases: ["/projects/"]
 showDate: false
 showDateOnlyInArticle: false
 showDateUpdated: false

@@ -1,0 +1,24 @@
+languageCode = "fr"
+languageName = "Français"
+weight = 2
+title = "Raizen | Blog"
+
+[params]
+  displayName = "FR"
+  isoCode = "fr"
+  rtl = false
+  description = "Recherche cybersécurité, writeups CTF, développement d'exploits et sécurité offensive"
+  dateFormat = "2 January 2006"
+  logo = "img/av.png"
+
+[author]
+  name = "Rai2en"
+  image = "img/av.png"
+  headline = "Security Researcher & Offensive Security Enthusiast"
+  bio = "Breaking things to understand them."
+  links = [
+    { email = "mailto:r4izen777@gmail.com" },
+    { github = "https://github.com/Rai2en" },
+    { linkedin = "https://www.linkedin.com/in/crispus-houessou/" },
+    { x-twitter = "https://x.com/0xR4zn" }
+  ]

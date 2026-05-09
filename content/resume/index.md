@@ -80,4 +80,4 @@ Passionné par la cybersécurité offensive & défensive
 ## Projets
 
 Découvrez mes projets en cybersécurité offensive et défensive sur la page dédiée :  
-➡️ [Accéder à la section Projects](/projects/)
+➡️ [Accéder au portfolio](/portfolio/)

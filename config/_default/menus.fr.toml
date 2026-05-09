@@ -1,10 +1,10 @@
 [[main]]
-  name = "Posts"
+  name = "Articles"
   pageRef = "posts"
   weight = 10
 
 [[main]]
-  name = "Topics"
+  name = "Sujets"
   pageRef = "topics"
   weight = 20
 
@@ -14,12 +14,12 @@
   weight = 30
 
 [[main]]
-  name = "About"
+  name = "À propos"
   pageRef = "about"
   weight = 40
 
 [[footer]]
-  name = "Topics"
+  name = "Sujets"
   pageRef = "topics"
   weight = 10
 
@@ -29,6 +29,6 @@
   weight = 20
 
 [[footer]]
-  name = "Categories"
+  name = "Catégories"
   pageRef = "categories"
   weight = 30

@@ -2,6 +2,7 @@
 title: "About"
 date: 2023-02-22
 draft: false
+translationKey: "about"
 
 showDate: false
 showDateOnlyInArticle: false

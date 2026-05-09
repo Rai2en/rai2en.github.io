@@ -1,7 +1,7 @@
 ---
+title: "Articles"
+description: "Writeups CTF, analyses CVE, guides d'outils et notes de cybersécurité."
 translationKey: "posts"
-title: "Posts"
-description: "CTF writeups, CVE analyses, tool guides & cybersecurity research"
 cascade:
   showDate: true
   showAuthor: true
@@ -17,4 +17,3 @@ cascade:
   groupByYear: true
   cardView: true
 ---
-
