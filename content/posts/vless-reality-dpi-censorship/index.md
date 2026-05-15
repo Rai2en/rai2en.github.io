@@ -17,7 +17,6 @@ Les protocoles de contournement réseau ont beaucoup évolué. Pendant longtemps
 
 Dans ce contexte, VLESS associé à Reality est souvent présenté comme une approche plus robuste. L'idée n'est pas seulement de chiffrer le trafic. L'objectif est de le rendre difficile à distinguer d'une connexion HTTPS normale. C'est une différence majeure : un trafic chiffré peut quand même être repéré s'il possède une signature inhabituelle, alors qu'un trafic qui ressemble exactement à une navigation web ordinaire offre moins de points d'accroche à un système de censure ou de filtrage.
 
-Cet article synthétise et reformule les éléments techniques issus de deux ressources : l'article Meridian sur VLESS + Reality et l'article Habr sur VLESS face à la censure moderne. Le but est de construire une explication complète, lisible et utile pour comprendre les mécanismes en jeu, sans se limiter à une simple comparaison de protocoles.
 
 > Note d'usage : les technologies décrites ici peuvent servir à protéger la confidentialité, tester des architectures réseau ou contourner des filtrages abusifs. Elles doivent être utilisées dans un cadre légal et responsable, sur des systèmes que vous administrez ou que vous êtes autorisé à tester.
 
