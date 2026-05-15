@@ -53,6 +53,7 @@ Packet ID: 0x00000001
 Message packet-ID: [4 octets]
 ```
 
+
 Le contenu peut être protégé, mais la silhouette reste reconnaissable. Pour un système de DPI, c'est comparable à reconnaître un type de véhicule à sa forme générale, même sans voir le conducteur.
 
 WireGuard a un problème similaire : son premier message de handshake a une structure compacte et efficace, mais suffisamment stable pour être reconnue. Cette visibilité n'est pas un défaut de sécurité cryptographique. C'est une conséquence de sa conception : WireGuard a été pensé pour être simple, moderne et performant, pas pour imiter parfaitement une navigation web.
@@ -359,9 +360,8 @@ Mais cette approche a aussi des contraintes :
 
 L'architecture générale ressemble à ceci :
 
-```text
-Client -> CDN -> Serveur d'origine -> Service VLESS
-```
+![Flux Client vers CDN vers serveur d'origine vers service VLESS](img/vless-cdn-flow.png)
+
 
 Le CDN améliore la résilience au blocage IP, mais il ne corrige pas un fingerprint TLS incohérent ou un serveur d'origine exposé.
 
